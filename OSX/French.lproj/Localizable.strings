@@ -1,0 +1,147 @@
+﻿/* 
+   Localizable.strings
+   XML Print Model Creator
+
+   Created by Jean-Baptiste Nahan on 08/02/09.
+   Copyright 2009 In Extenso. All rights reserved.
+ */
+
+/* Other */
+"PropertyTitle" = "%@ properties";
+"TitleColButton" = "%i column. Edit...";
+"TitleRowButton" = "%i row. Edit...";
+"TitleColsButton" = "%i columns. Edit...";
+"TitleRowsButton" = "%i rows. Edit...";
+"OK" = "OK";
+
+/* CM */
+"Copy" = "Copy";
+"Cut" = "Cut";
+"Paste" = "Paste";
+"NLine" = "Add Line";
+"NRect" = "Add Rectangle";
+"NText" = "Add Text";
+"NArray" = "Add Array";
+
+/* Undo Manager Action */
+"UMEnable" = "Enable";
+"UMDisable" = "Disable";
+"UMSet" = "Set";
+"UMUset" = "Unset";
+
+"UMFistPage" = "First page";
+"UMOtherPage" = "Other page";
+"UMLastPage" = "Last page";
+"UMChangePageOrientation" = "Page Orientation";
+"UMChangePageFormat" = "Page Format";
+"UMPagination" = "Pagination";
+"UMPaginationFormat" = "Pagination Format";
+"UMPaginationPosition" = "Pagination Position";
+"UMPaginationFont" = "Pagination Font";
+"UMPaginationSize" = "Pagination Size";
+"UMPaginationColor" = "Pagination Color";
+"UMPaginationBold" = "Pagination Bold";
+"UMPaginationItalic" = "Pagination Italic";
+"UMPaginationUnderline" = "Pagination Underline";
+"UMPaginationAlign" = "Pagination Alignement";
+
+"UMBold" = "Bold";
+"UMItalic" = "Italic";
+"UMUnderline" = "Underline";
+"UMFont" = "Font";
+"UMTextSize" = "Text size";
+"UMTextColor" = "Text Color";
+"UMTextAlign" = "Text Align";
+
+"UMAddObject" = "Add Object";
+"UMChangePlan" = "Change Plan";
+
+"UMPosition" = "Deplacement";
+"UMVisibility" = "Visibility";
+"UMName" = "Name";
+"UMBgVisibility" = "Background Visibility";
+"UMBorderSize" = "Border Size";
+"UMBorderTopColor" = "Border top color";
+"UMBorderRightColor" = "Border right color";
+"UMBorderBottomColor" = "Border bottom color";
+"UMBorderLeftColor" = "Border left color";
+"UMBorderTopVisibility" = "Border top visibility";
+"UMBorderRightVisibility" = "Border right visibility";
+"UMBorderBottomVisibility" = "Border bottom visibility";
+"UMBorderLeftVisibility" = "Border left visibility";
+
+"UMText" = "Text";
+"UMTraitColor" = "Line Color";
+"UMTraitStyle" = "Line Style";
+"UMShowHeader" = "Header Visibility";
+"UMRepeatHeader" = "Repeat Header";
+"UMRepeatArrayToOtherPage" = "Repeat Array";
+"UMTopOnOtherPage" = "Top on other page";
+"UMHeightOnOtherPage" = "Height on other page";
+"UMDataSource" = "Data Source";
+
+"UMColName" = "Column Name";
+"UMColData" = "Column Data";
+"UMColWidth" = "Column Width";
+"UMColDataAlign" = "Column Data Align";
+"UMColHeaderData" = "Column Header Data";
+"UMColHeaderAlign" = "Column Header Align";
+"UMColRightBorderVisibility" = "Column Right Border Visibility";
+"UMColRightBorderWidth" = "Column Right Border Width";
+"UMColRightBorderColor" = "Column Right Border Color";
+
+"UMRowName" = "Row Name";
+"UMRowGenre" = "Row Genre";
+"UMRowHauteurLigne" = "Row Height";
+"UMRowBGColor" = "Row Background Color";
+"UMRowBGVisibility" = "Row Background Visibility";
+"UMRowFont" = "Row Font";
+"UMRowTextSize" = "Row Text Size";
+"UMRowTextColor" = "Row Text Color";
+"UMRowTextBold" = "Row Text Bold";
+"UMRowTextItalic" = "Row Text Italic";
+"UMRowTextUnderline" = "Row Text Underline";
+"UMRowBorderTopVisibility" = "Row Border Top Visibility";
+"UMRowBorderTopWidth" = "Row Border Top Width";
+"UMRowBorderTopColor" = "Row Border Top Color";
+"UMRowBorderBottomVisibility" = "Row Border Bottom Visibility";
+"UMRowBorderBottomWidth" = "Row Border Bottom Width";
+"UMRowBorderBottomColor" = "Row Border Bottom Color";
+"" = "";
+"" = "";
+"" = "";
+
+/* Export */
+
+"EXPictureTitle" = "Export to picture...";
+"EXPictureTo" = "Export to :";
+"EXPictureButton" = "Export";
+"EXModelTitle" = "Export...";
+"EXModelTo" = "Export to :";
+"EXModelButton" = "Export";
+
+/* Import */
+
+"IMErrorFileTitle" = "Ce document n'est pas nouveau !";
+"IMErrorFileText" = "Pour importer, créer un nouveau document non enregistré.";
+"IMPanelPromptTitle" = "Importer";
+"IMPanelTitle" = "Importation d'un ancien format";
+
+/* Tools */
+"zoomSelectorTitle" = "Zoom";
+"lineTool" = "Line";
+"rectTool" = "Rect";
+"textTool" = "Text";
+"deleteTool" = "Delete";
+"arrayTool" = "Array";
+"orderUpTool" = "Send Forward";
+"orderDoubleUpTool" = "Send To Front";
+"orderDownTool" = "Send Backward";
+"orderDoubleDownTool" = "Send To Back";
+
+/* Objects */
+"OBJNew" = "New";
+"PMCTrait" = "Line";
+"PMCRectangle" = "Rect";
+"PMCText" = "Text";
+"PMCTableau" = "Array";
