@@ -55,11 +55,8 @@
 		5C1F7774114253370074F760 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F7772114253370074F760 /* Preferences.xib */; };
 		5C1F778F114253F70074F760 /* Advanced.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F778C114253F70074F760 /* Advanced.png */; };
 		5C1F7790114253F70074F760 /* General.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F778D114253F70074F760 /* General.png */; };
-		5C1F7797114255FF0074F760 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1F7796114255FF0074F760 /* Sparkle.framework */; };
-		5C1F779B114256210074F760 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1F7796114255FF0074F760 /* Sparkle.framework */; };
 		5C1F77A6114259920074F760 /* Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F77A4114259920074F760 /* Updates.png */; };
 		5C1F77A7114259920074F760 /* UpdatesAppleIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F77A5114259920074F760 /* UpdatesAppleIcon.tiff */; };
-		5C1F77AA11425AC40074F760 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F77A911425AC40074F760 /* dsa_pub.pem */; };
 		5C473F790F45E3850080D8A3 /* AlignTextCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C473F760F45E3850080D8A3 /* AlignTextCenter.png */; };
 		5C473F7A0F45E3850080D8A3 /* AlignTextLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C473F770F45E3850080D8A3 /* AlignTextLeft.png */; };
 		5C473F7B0F45E3850080D8A3 /* AlignTextRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C473F780F45E3850080D8A3 /* AlignTextRight.png */; };
@@ -76,7 +73,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5C1F779B114256210074F760 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,7 +186,6 @@
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				290B15500F42DFE6007B9473 /* AppKit.framework in Frameworks */,
-				5C1F7797114255FF0074F760 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +462,6 @@
 				5C1F7790114253F70074F760 /* General.png in Resources */,
 				5C1F77A6114259920074F760 /* Updates.png in Resources */,
 				5C1F77A7114259920074F760 /* UpdatesAppleIcon.tiff in Resources */,
-				5C1F77AA11425AC40074F760 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
