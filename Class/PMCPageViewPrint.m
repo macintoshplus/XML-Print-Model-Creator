@@ -72,9 +72,18 @@
 		pageRect = NSMakeRect(0, i*_defaultSize.height, _defaultSize.width, _defaultSize.height);
 		
 		//NSLog(@"RECT for page %d : %@", i, NSStringFromRect(pageRect));
+		//Redimmensionne l'image
 		
-		[img drawInRect:pageRect fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];
-		
+		/*NSImage *resizedImage = [[NSImage alloc] initWithSize:_defaultSize];
+		if([img size].width>_defaultSize.width){
+			
+			[resizedImage lockFocus];
+			[img drawInRect: NSMakeRect(0, 0, _defaultSize.width, _defaultSize.height) fromRect: NSMakeRect(0, 0, img.size.width, img.size.height) operation: NSCompositeSourceOver fraction: 1.0];
+			[resizedImage unlockFocus];
+		}*/
+		//NSCompositeCopy
+		[img drawInRect:pageRect fromRect:NSMakeRect(0, 0, [img size].width, [img size].height) operation:NSCompositeSourceOver fraction:1.0];
+
 	}
 	
 	[NSGraphicsContext restoreGraphicsState];
