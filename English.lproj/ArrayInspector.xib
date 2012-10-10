@@ -555,7 +555,7 @@
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="573130078">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSScrollView" id="412538403">
@@ -581,11 +581,10 @@
 												<reference key="NSSuperview" ref="501990118"/>
 												<reference key="NSTableView" ref="730531824"/>
 											</object>
-											<object class="_NSCornerView" key="NSCornerView" id="333519362">
-												<reference key="NSNextResponder" ref="412538403"/>
+											<object class="_NSCornerView" key="NSCornerView">
+												<nil key="NSNextResponder"/>
 												<int key="NSvFlags">-2147483392</int>
 												<string key="NSFrame">{{-26, 0}, {16, 17}}</string>
-												<reference key="NSSuperview" ref="412538403"/>
 											</object>
 											<array class="NSMutableArray" key="NSTableColumns">
 												<object class="NSTableColumn" id="752591911">
@@ -698,7 +697,6 @@
 									<reference key="NSBGColor" ref="762456450"/>
 									<int key="NScvFlags">4</int>
 								</object>
-								<reference ref="333519362"/>
 							</array>
 							<string key="NSFrame">{{20, 38}, {146, 360}}</string>
 							<reference key="NSSuperview" ref="573130078"/>
@@ -836,8 +834,9 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{527, 418}</string>
+					<reference key="NSSuperview"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 900}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -1180,7 +1179,7 @@
 							<reference key="NSSupport" ref="686816170"/>
 							<reference key="NSControlView" ref="931667102"/>
 							<int key="NSButtonFlags">1210863872</int>
-							<int key="NSButtonFlags2">130</int>
+							<int key="NSButtonFlags2">2</int>
 							<reference key="NSNormalImage" ref="760305319"/>
 							<reference key="NSAlternateImage" ref="106246096"/>
 							<string key="NSAlternateContents"/>

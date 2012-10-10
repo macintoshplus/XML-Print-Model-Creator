@@ -109,13 +109,13 @@
 					<object class="NSTextField" id="160642363">
 						<reference key="NSNextResponder" ref="6441984"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{2, 97}, {78, 17}}</string>
+						<string key="NSFrame">{{2, 98}, {85, 17}}</string>
 						<reference key="NSSuperview" ref="6441984"/>
 						<reference key="NSNextKeyView" ref="295935187"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="484072844">
 							<int key="NSCellFlags">68157504</int>
-							<int key="NSCellFlags2">272630784</int>
+							<int key="NSCellFlags2">4199424</int>
 							<string key="NSContents">Pagination :</string>
 							<reference key="NSSupport" ref="59552263"/>
 							<reference key="NSControlView" ref="160642363"/>
