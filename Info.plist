@@ -74,11 +74,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.7.0</string>
+	<string>0.7.0 Alpha 1</string>
 	<key>CFBundleSignature</key>
 	<string>XPMC</string>
 	<key>CFBundleVersion</key>
-	<string>0.7.0 - Licence CeCILL V2</string>
+	<string>0.7.0 Alpha 1 - Licence CeCILL V2</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
