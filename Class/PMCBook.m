@@ -1329,19 +1329,19 @@
 	NSXMLElement *premiereNode = [NSXMLNode elementWithName:@"premiere"];
 	[pagesNode addChild:premiereNode];
 	[premiereNode addAttribute:[NSXMLNode attributeWithName:@"active" stringValue:((_firstPage)? @"1":@"0")]];
-	[[pages objectAtIndex:0] exportToModel:premiereNode];
+	[(PMCPage*)[pages objectAtIndex:0] exportToModel:premiereNode];
 	
 	
 	NSXMLElement *autreNode = [NSXMLNode elementWithName:@"autre"];
 	[pagesNode addChild:autreNode];
 	[autreNode addAttribute:[NSXMLNode attributeWithName:@"active" stringValue:((_otherPage)? @"1":@"0")]];
-	[[pages objectAtIndex:1] exportToModel:autreNode];
+	[(PMCPage*)[pages objectAtIndex:1] exportToModel:autreNode];
 	
 	
 	NSXMLElement *derniereNode = [NSXMLNode elementWithName:@"derniere"];
 	[pagesNode addChild:derniereNode];
 	[derniereNode addAttribute:[NSXMLNode attributeWithName:@"active" stringValue:((_lastPage)? @"1":@"0")]];
-	[[pages objectAtIndex:2] exportToModel:derniereNode];
+	[(PMCPage*)[pages objectAtIndex:2] exportToModel:derniereNode];
 	
 	
 	NSData * data = [xmlDoc XMLDataWithOptions:NSXMLDocumentTidyXML];

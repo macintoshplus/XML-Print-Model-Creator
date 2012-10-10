@@ -12,7 +12,7 @@
 
 @interface PMCTableauRow : NSObject
 {
-	NSString * name;
+	/*NSString * name;
 	NSString * genre;
 	int hauteurLigne;
 	NSColor * colorBG;
@@ -33,7 +33,7 @@
 	int borderBottomWidth;
 	NSColor * borderBottomColor;
 	
-	NSUndoManager * undoManager;
+	NSUndoManager * undoManager;*/
 	
 }
 
@@ -72,7 +72,7 @@
 
 @interface PMCTableauCol : NSObject
 {
-	NSString * name;
+	/*NSString * name;
 	NSString * data;
 	int colWidth;
 	int dataAlign;
@@ -84,7 +84,7 @@
 	int borderRightWidth;
 	NSColor * borderRightColor;
 	
-	NSUndoManager * undoManager;
+	NSUndoManager * undoManager;*/
 }
 
 
@@ -116,7 +116,7 @@
 
 @interface PMCTableau : PMCRectangle {
 	/* Properties */
-	NSMutableArray * columnDef;
+	/*NSMutableArray * columnDef;
 	NSMutableArray * rowDef;
 	
 	BOOL showHeader;
@@ -126,7 +126,7 @@
 	int topOnOtherPage;
 	int heightOnOtherPage;
 	
-	NSString * dataSource;
+	NSString * dataSource;*/
 	
 }
 

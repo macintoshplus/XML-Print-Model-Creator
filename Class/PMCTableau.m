@@ -37,7 +37,7 @@
 	NSLog(@"PMCTableauRow:copyWithZone:%@",self);
 	id obj = [[PMCTableauRow alloc] init];
     NSString *sn=[name copy];
-	[obj setName:sn];
+	[(PMCTableauRow*)obj setName:sn];
     [sn release];
     NSString * s = [genre copy];
 	[obj setGenre:s];
@@ -180,7 +180,7 @@
 
 - (void)setName:(NSString *)newVal
 {
-	[[undoManager prepareWithInvocationTarget:self] setName:name];
+	[(PMCTableauRow*)[undoManager prepareWithInvocationTarget:self] setName:name];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMRowName",@"Localizable",@"Undo Manager Action")];
 	}
@@ -488,7 +488,7 @@
 	NSLog(@"PMCTableauCol:copyWithZone:%@",self);
 	id obj = [[[PMCTableauCol alloc] init] autorelease];
     NSString * s = [name copy];
-	[obj setName:s];
+	[(PMCTableauCol*)obj setName:s];
     [s release];
     
     NSData *d=[data copy];
@@ -585,7 +585,7 @@
 
 - (void)setName:(NSString*)newVal
 {
-	[[undoManager prepareWithInvocationTarget:self] setName:name];
+	[(PMCTableauCol*)[undoManager prepareWithInvocationTarget:self] setName:name];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMColName",@"Localizable",@"Undo Manager Action")];
 	}
@@ -597,7 +597,7 @@
 
 - (void)setData:(NSString*)newVal
 {
-	[[undoManager prepareWithInvocationTarget:self] setData:data];
+	[(PMCTableauCol*)[undoManager prepareWithInvocationTarget:self] setData:data];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMColData",@"Localizable",@"Undo Manager Action")];
 	}
@@ -880,7 +880,7 @@ if(![undoManager isUndoing]){
 }
 
 - (void)setDataSource:(NSString*)newVal{
-	[[undoManager prepareWithInvocationTarget:self] setDataSource:dataSource];
+	[(PMCTableau*)[undoManager prepareWithInvocationTarget:self] setDataSource:dataSource];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMDataSource",@"Localizable",@"Undo Manager Action")];
 	}

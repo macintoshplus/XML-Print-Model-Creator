@@ -186,7 +186,7 @@
 
 - (void)setStyle:(int)newStyle
 {
-	[[undoManager prepareWithInvocationTarget:self] setStyle:_style];
+	[(PMCTrait*)[undoManager prepareWithInvocationTarget:self] setStyle:_style];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMTraitStyle",@"Localizable",@"Undo Manager Action")];
 	}

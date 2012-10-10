@@ -22,7 +22,7 @@
 #import "PMCPageView.h"
 
 
-@interface PMCBook : NSDocument
+@interface PMCBook : NSDocument <NSToolbarDelegate>
 {
 	IBOutlet NSView *main_ObjectListView;
 	

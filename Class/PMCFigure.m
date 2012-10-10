@@ -203,7 +203,7 @@ NSString *FigureDrawingContentsKey = @"drawingContents";
 
 - (void)setWidth:(float)val
 {
-	[[undoManager prepareWithInvocationTarget:self] setWidth:width];
+	[(PMCFigure*)[undoManager prepareWithInvocationTarget:self] setWidth:width];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMPosition",@"Localizable",@"Undo Manager Action")];
 	}
@@ -224,7 +224,7 @@ NSString *FigureDrawingContentsKey = @"drawingContents";
 } 
 
 - (void)setName:(NSString*)newName{
-	[[undoManager prepareWithInvocationTarget:self] setName:_name];
+	[(PMCFigure*)[undoManager prepareWithInvocationTarget:self] setName:_name];
 	if(![undoManager isUndoing]){
 		[undoManager setActionName:NSLocalizedStringFromTable(@"UMName",@"Localizable",@"Undo Manager Action")];
 	}
