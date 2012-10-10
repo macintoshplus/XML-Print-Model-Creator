@@ -168,10 +168,8 @@
 		5C1F7773114253370074F760 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
 		5C1F778C114253F70074F760 /* Advanced.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Advanced.png; path = Images/Advanced.png; sourceTree = "<group>"; };
 		5C1F778D114253F70074F760 /* General.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = General.png; path = Images/General.png; sourceTree = "<group>"; };
-		5C1F7796114255FF0074F760 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		5C1F77A4114259920074F760 /* Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Updates.png; path = Images/Updates.png; sourceTree = "<group>"; };
 		5C1F77A5114259920074F760 /* UpdatesAppleIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = UpdatesAppleIcon.tiff; path = Images/UpdatesAppleIcon.tiff; sourceTree = "<group>"; };
-		5C1F77A911425AC40074F760 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Frameworks/dsa_pub.pem; sourceTree = "<group>"; };
 		5C473F760F45E3850080D8A3 /* AlignTextCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlignTextCenter.png; path = Images/AlignTextCenter.png; sourceTree = "<group>"; };
 		5C473F770F45E3850080D8A3 /* AlignTextLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlignTextLeft.png; path = Images/AlignTextLeft.png; sourceTree = "<group>"; };
 		5C473F780F45E3850080D8A3 /* AlignTextRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlignTextRight.png; path = Images/AlignTextRight.png; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C1F7796114255FF0074F760 /* Sparkle.framework */,
 				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
 				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
 				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
@@ -326,7 +323,6 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5C1F77A911425AC40074F760 /* dsa_pub.pem */,
 				5C1F7772114253370074F760 /* Preferences.xib */,
 				29D3022E1140F9E6003A2153 /* ArrayInspector.xib */,
 				29FD0E8311402EB700BD461D /* FontInspector.xib */,
