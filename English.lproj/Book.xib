@@ -52,7 +52,7 @@
 			<object class="NSWindowTemplate" id="275939982">
 				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{53, 379}, {937, 599}}</string>
+				<string key="NSWindowRect">{{53, 237}, {937, 599}}</string>
 				<int key="NSWTFlags">1886912512</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -788,6 +788,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 127}, {68, 17}}</string>
 						<reference key="NSSuperview" ref="565139182"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="224117069">
 							<int key="NSCellFlags">68157504</int>
@@ -805,6 +806,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{87, 121}, {231, 26}}</string>
 						<reference key="NSSuperview" ref="565139182"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSPopUpButtonCell" key="NSCell" id="478237699">
 							<int key="NSCellFlags">-2076180416</int>
@@ -900,6 +902,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{88, 96}, {180, 18}}</string>
 						<reference key="NSSuperview" ref="565139182"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="502639796">
 							<int key="NSCellFlags">-2080374784</int>
@@ -928,6 +931,7 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{90, 47}, {225, 38}}</string>
 						<reference key="NSSuperview" ref="565139182"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						<int key="NSNumRows">2</int>
@@ -957,7 +961,7 @@
 								<reference key="NSSupport" ref="209454588"/>
 								<reference key="NSControlView" ref="507767028"/>
 								<int key="NSButtonFlags">1211912448</int>
-								<int key="NSButtonFlags2">128</int>
+								<int key="NSButtonFlags2">0</int>
 								<object class="NSImage" key="NSNormalImage">
 									<int key="NSImageFlags">549453824</int>
 									<string key="NSSize">{18, 18}</string>
@@ -1067,7 +1071,7 @@ QXBwbGUgQ29tcHV0ZXIsIEluYy4sIDIwMDUAAAAAA</bytes>
 							<string key="NSContents">Radio</string>
 							<reference key="NSSupport" ref="209454588"/>
 							<int key="NSButtonFlags">1211912448</int>
-							<int key="NSButtonFlags2">128</int>
+							<int key="NSButtonFlags2">0</int>
 							<object class="NSImage" key="NSNormalImage">
 								<int key="NSImageFlags">549453824</int>
 								<string key="NSSize">{18, 18}</string>
@@ -1121,6 +1125,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{88, 18}, {229, 18}}</string>
 						<reference key="NSSuperview" ref="565139182"/>
+						<reference key="NSWindow"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="963085563">
 							<int key="NSCellFlags">-2080374784</int>
@@ -1129,7 +1134,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference key="NSSupport" ref="209454588"/>
 							<reference key="NSControlView" ref="950992420"/>
 							<int key="NSButtonFlags">1211912448</int>
-							<int key="NSButtonFlags2">130</int>
+							<int key="NSButtonFlags2">2</int>
 							<reference key="NSNormalImage" ref="992407895"/>
 							<reference key="NSAlternateImage" ref="941645742"/>
 							<string key="NSAlternateContents"/>
@@ -1142,6 +1147,7 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 				</array>
 				<string key="NSFrameSize">{335, 164}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 		</array>
@@ -2049,7 +2055,223 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 			<nil key="sourceID"/>
 			<int key="maxID">101096</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">PMCBook</string>
+					<string key="superclassName">NSDocument</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="copy:">id</string>
+						<string key="cut:">id</string>
+						<string key="delete:">id</string>
+						<string key="exportToModel:">id</string>
+						<string key="exportToPicture:">id</string>
+						<string key="export_extensionsChange:">id</string>
+						<string key="importOldXMLSources:">id</string>
+						<string key="paste:">id</string>
+						<string key="tool_NewArray:">id</string>
+						<string key="tool_NewLine:">id</string>
+						<string key="tool_NewRect:">id</string>
+						<string key="tool_NewText:">id</string>
+						<string key="tool_ZoomChange:">id</string>
+						<string key="tool_deleteSelectedObject:">id</string>
+						<string key="tool_orderDoubleDownSelectedObject:">id</string>
+						<string key="tool_orderDoubleUpSelectedObject:">id</string>
+						<string key="tool_orderDownSelectedObject:">id</string>
+						<string key="tool_orderUpSelectedObject:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="copy:">
+							<string key="name">copy:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="cut:">
+							<string key="name">cut:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="delete:">
+							<string key="name">delete:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="exportToModel:">
+							<string key="name">exportToModel:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="exportToPicture:">
+							<string key="name">exportToPicture:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="export_extensionsChange:">
+							<string key="name">export_extensionsChange:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="importOldXMLSources:">
+							<string key="name">importOldXMLSources:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="paste:">
+							<string key="name">paste:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_NewArray:">
+							<string key="name">tool_NewArray:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_NewLine:">
+							<string key="name">tool_NewLine:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_NewRect:">
+							<string key="name">tool_NewRect:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_NewText:">
+							<string key="name">tool_NewText:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_ZoomChange:">
+							<string key="name">tool_ZoomChange:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_deleteSelectedObject:">
+							<string key="name">tool_deleteSelectedObject:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_orderDoubleDownSelectedObject:">
+							<string key="name">tool_orderDoubleDownSelectedObject:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_orderDoubleUpSelectedObject:">
+							<string key="name">tool_orderDoubleUpSelectedObject:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_orderDownSelectedObject:">
+							<string key="name">tool_orderDownSelectedObject:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_orderUpSelectedObject:">
+							<string key="name">tool_orderUpSelectedObject:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="export_exportExtentionSelector">NSView</string>
+						<string key="export_formatMenu">NSPopUpButton</string>
+						<string key="export_mode">NSMatrix</string>
+						<string key="export_noExportEmptyPage">NSButton</string>
+						<string key="export_oneFilePerPage">NSButton</string>
+						<string key="export_onlyCurrentPage">NSButton</string>
+						<string key="figuresArrayController">NSArrayController</string>
+						<string key="main_ObjectListView">NSView</string>
+						<string key="main_ScroolPropertyView">NSScrollView</string>
+						<string key="main_ScroolView">NSScrollView</string>
+						<string key="main_SplitVertical">NSSplitView</string>
+						<string key="ol_ObjectTableView">NSTableView</string>
+						<string key="ol_PageSelector">NSPopUpButton</string>
+						<string key="pagesArrayController">NSArrayController</string>
+						<string key="tool_ZoomMenu">NSPopUpButton</string>
+						<string key="tool_ZoomView">NSView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="export_exportExtentionSelector">
+							<string key="name">export_exportExtentionSelector</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="export_formatMenu">
+							<string key="name">export_formatMenu</string>
+							<string key="candidateClassName">NSPopUpButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="export_mode">
+							<string key="name">export_mode</string>
+							<string key="candidateClassName">NSMatrix</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="export_noExportEmptyPage">
+							<string key="name">export_noExportEmptyPage</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="export_oneFilePerPage">
+							<string key="name">export_oneFilePerPage</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="export_onlyCurrentPage">
+							<string key="name">export_onlyCurrentPage</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="figuresArrayController">
+							<string key="name">figuresArrayController</string>
+							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="main_ObjectListView">
+							<string key="name">main_ObjectListView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="main_ScroolPropertyView">
+							<string key="name">main_ScroolPropertyView</string>
+							<string key="candidateClassName">NSScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="main_ScroolView">
+							<string key="name">main_ScroolView</string>
+							<string key="candidateClassName">NSScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="main_SplitVertical">
+							<string key="name">main_SplitVertical</string>
+							<string key="candidateClassName">NSSplitView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="ol_ObjectTableView">
+							<string key="name">ol_ObjectTableView</string>
+							<string key="candidateClassName">NSTableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="ol_PageSelector">
+							<string key="name">ol_PageSelector</string>
+							<string key="candidateClassName">NSPopUpButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pagesArrayController">
+							<string key="name">pagesArrayController</string>
+							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tool_ZoomMenu">
+							<string key="name">tool_ZoomMenu</string>
+							<string key="candidateClassName">NSPopUpButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tool_ZoomView">
+							<string key="name">tool_ZoomView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PMCBook.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PMCInspectorViewController</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="documentObjectController">NSObjectController</string>
+						<string key="figuresArrayController">NSArrayController</string>
+						<string key="inspectorView">NSScrollView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="documentObjectController">
+							<string key="name">documentObjectController</string>
+							<string key="candidateClassName">NSObjectController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="figuresArrayController">
+							<string key="name">figuresArrayController</string>
+							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="inspectorView">
+							<string key="name">inspectorView</string>
+							<string key="candidateClassName">NSScrollView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PMCInspectorViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">

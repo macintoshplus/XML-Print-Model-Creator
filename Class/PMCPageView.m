@@ -72,12 +72,13 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 		 observe the controller for changes -- note, pass binding identifier as the context, so we get that back in observeValueForKeyPath:... -- that way we can determine what needs to be updated
 		 */
 		
-		NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
+		NSDictionary *bindingsData = [[NSDictionary dictionaryWithObjectsAndKeys:
 									  observableObject, NSObservedObjectKey,
-									  [observableKeyPath copy], NSObservedKeyPathKey,
-									  [options copy], NSOptionsKey, nil];
+									  observableKeyPath, NSObservedKeyPathKey,
+									  options, NSOptionsKey, nil] retain];
 		[bindingInfo setObject:bindingsData forKey:FIGURES_BINDING_NAME];
-		
+        [bindingsData release];
+        
 		[observableObject addObserver:self
 						   forKeyPath:observableKeyPath
 							  options:(NSKeyValueObservingOptionNew |
@@ -97,12 +98,12 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 			 observe the controller for changes -- note, pass binding identifier as the context, so we get that back in observeValueForKeyPath:... -- that way we can determine what needs to be updated
 			 */
 			
-			NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
+			NSDictionary *bindingsData = [[NSDictionary dictionaryWithObjectsAndKeys:
 										  observableObject, NSObservedObjectKey,
-										  [observableKeyPath copy], NSObservedKeyPathKey,
-										  [options copy], NSOptionsKey, nil];
+										  observableKeyPath, NSObservedKeyPathKey,
+										  options, NSOptionsKey, nil] retain];
 			[bindingInfo setObject:bindingsData forKey:SELECTIONINDEXES_BINDING_NAME];
-			
+			[bindingsData release];
 			
 			[observableObject addObserver:self
 							   forKeyPath:observableKeyPath
@@ -122,8 +123,8 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 				
 				NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
 											  observableObject, NSObservedObjectKey,
-											  [observableKeyPath copy], NSObservedKeyPathKey,
-											  [options copy], NSOptionsKey, nil];
+											  observableKeyPath, NSObservedKeyPathKey,
+											  options, NSOptionsKey, nil];
 				[bindingInfo setObject:bindingsData forKey:FORMAT_BINDING_NAME];
 				
 				[observableObject addObserver:self
@@ -145,8 +146,8 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 					
 					NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
 												  observableObject, NSObservedObjectKey,
-												  [observableKeyPath copy], NSObservedKeyPathKey,
-												  [options copy], NSOptionsKey, nil];
+												  observableKeyPath, NSObservedKeyPathKey,
+												  options, NSOptionsKey, nil];
 					[bindingInfo setObject:bindingsData forKey:ORIENTATION_BINDING_NAME];
 					
 					[observableObject addObserver:self
@@ -236,11 +237,13 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 		NSMutableArray *onlyNew = [newGraphics mutableCopy];
 		[onlyNew removeObjectsInArray:oldFigures];
 		[self startObservingFigures:onlyNew];
-		
+		[onlyNew release];
+        
 		NSMutableArray *removed = [oldFigures mutableCopy];
 		[removed removeObjectsInArray:newGraphics];
 		[self stopObservingFigures:removed];
-		
+		[removed release];
+        
 		[self setOldFigures:newGraphics];
 		
 		// could check drawingBounds of old and new, but...
@@ -394,6 +397,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 				[s setShadowBlurRadius:5.0];
 				[s setShadowOffset:NSMakeSize(0.0, 0.0)];
 				[s set];
+                [s release];
 				/*if([[figure className] isEqualToString:@"PMCTrait"]){
 					if(graphicDrawingBounds.size.height<graphicDrawingBounds.size.width) graphicDrawingBounds.origin.y=graphicDrawingBounds.origin.y-(graphicDrawingBounds.size.height/2);
 					else graphicDrawingBounds.origin.x=graphicDrawingBounds.origin.x-(graphicDrawingBounds.size.width/2);
@@ -544,7 +548,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 			[[self selectionIndexesContainer] setValue:selection forKeyPath:[self selectionIndexesKeyPath]];
 		}
 		
-		NSMenu * m = [[NSMenu alloc] init];
+		NSMenu * m = [[[NSMenu alloc] init] autorelease];
 		[m setAutoenablesItems:FALSE];
 		NSMenuItem * i1=[[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"deleteTool",@"Localizable",@"Tools") action:@selector(tool_deleteSelectedObject:) keyEquivalent:@"e"];
 		[i1 setTarget:doc];

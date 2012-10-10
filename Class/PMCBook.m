@@ -164,10 +164,13 @@
 	PMCPageContainer * p = [[PMCPageContainer alloc] initWithFrame:r];
 	[p setMargin:margin];
 	[p setContentView:pView];
+    [pView release];
 	[p setNeedsDisplay:TRUE];
 	[p apply];
 	[p changeContent];
-	[main_ScroolView setDocumentView:p];/**/
+	[main_ScroolView setDocumentView:p];
+    [p release];
+    /**/
 	//[main_ScroolView setDocumentView:_actualPage];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(splitViewWillResizeSubviews:) name:NSSplitViewWillResizeSubviewsNotification object:nil];
@@ -232,7 +235,7 @@
 	[dico setObject:_colorFontPagination forKey:@"DocColorFontPagination"];
 	
 	
-	NSMutableDictionary * ar = [[NSMutableDictionary alloc] init];
+	NSMutableDictionary * ar = [[[NSMutableDictionary alloc] init] autorelease];
 	
 	int i;
 	int max=[pages count];
@@ -242,6 +245,7 @@
 	}
 	
 	[ar setObject:dico forKey:@"InfosDocs"];
+    [dico release];
 	
 	[[self windowForSheet] setDocumentEdited:FALSE];
 	
@@ -310,24 +314,28 @@
 			PMCTrait * t = [[PMCTrait alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page1 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCRectangle"]){
 			PMCRectangle * r = [[PMCRectangle alloc] initWithData:obj];
 			[r setUndoManager:[self undoManager]];
 			[_page1 addObject:r atPlan:0];
+            [r release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[r name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCText"]){
 			PMCText * t = [[PMCText alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page1 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTableau"]){
 			PMCTableau * t = [[PMCTableau alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page1 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		
@@ -349,24 +357,28 @@
 			PMCTrait * t = [[PMCTrait alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page2 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCRectangle"]){
 			PMCRectangle * r = [[PMCRectangle alloc] initWithData:obj];
 			[r setUndoManager:[self undoManager]];
 			[_page2 addObject:r atPlan:0];
+            [r release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[r name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCText"]){
 			PMCText * t = [[PMCText alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page2 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTableau"]){
 			PMCTableau * t = [[PMCTableau alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page2 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 	}
@@ -384,24 +396,28 @@
 			PMCTrait * t = [[PMCTrait alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page3 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCRectangle"]){
 			PMCRectangle * r = [[PMCRectangle alloc] initWithData:obj];
 			[r setUndoManager:[self undoManager]];
 			[_page3 addObject:r atPlan:0];
+            [r release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[r name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCText"]){
 			PMCText * t = [[PMCText alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page3 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTableau"]){
 			PMCTableau * t = [[PMCTableau alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page3 addObject:t atPlan:0];
+            [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
 	}
@@ -586,13 +602,13 @@
 		int indexObject = [[[info draggingPasteboard] stringForType:@"PMCObjectType"] intValue];
 		//NSLog(@"acceptDrop:%i row:%i dropOperation:%i",indexObject ,row,operation);
 		if(operation==NSTableViewDropAbove){
-			NSLog(@"Move Row : %i to %i",indexObject , row);
+			NSLog(@"Move Row : %i to %ld",indexObject , row);
 			int finalDest=0;
 			if(indexObject==row) return FALSE; //annule le déplacement si la source et la destintation sont égale
 			if(indexObject>row || row==0)finalDest=row;
 			else finalDest=row-1;
 			id obj = [[_actualPage getObjectAtIndex:indexObject] retain];
-			NSLog(@"retain count : %i",[obj retainCount]);
+			NSLog(@"retain count : %lu",[obj retainCount]);
 			[_actualPage deleteObjectAtIndex:indexObject];
 			[_actualPage addObject:obj atPlan:finalDest];
 			[obj release];
@@ -616,7 +632,7 @@
 	//NSLog(@"writeRowsWithIndexes:%@",rowIndexes);
 	if(aTableView==ol_ObjectTableView){
 		[pboard declareTypes:[NSArray arrayWithObjects:@"PMCObjectType",nil] owner:self];
-		[pboard setString:[NSString stringWithFormat:@"%i",[rowIndexes firstIndex]] forType:@"PMCObjectType"]; 
+		[pboard setString:[NSString stringWithFormat:@"%lu",[rowIndexes firstIndex]] forType:@"PMCObjectType"];
 		return TRUE;
 	}
 	
@@ -639,17 +655,27 @@
 	if(type){
 		id obj = [NSUnarchiver unarchiveObjectWithData:[pb dataForType:@"PMCObject"]];
 		
-		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTrait"])
-			[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:[[PMCTrait alloc] initWithData:obj] atPlan:0];
+		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTrait"]){
+			PMCTrait * t = [[PMCTrait alloc] initWithData:obj];
+            [[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:t atPlan:0];
+            [t release];
+        }
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCRectangle"]){
 			PMCRectangle * r = [[PMCRectangle alloc] initWithData:obj];
 			//NSLog(@"Description : %@",r);
 			[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:r atPlan:0];
+            [r release];
 		}
-		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCText"])
-			[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:[[PMCText alloc] initWithData:obj] atPlan:0];
-		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTableau"])
-			[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:[[PMCTableau alloc] initWithData:obj] atPlan:0];
+		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCText"]){
+            PMCText * t=[[PMCText alloc] initWithData:obj];
+			[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:t atPlan:0];
+            [t release];
+        }
+		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTableau"]){
+            PMCTableau * t = [[PMCTableau alloc] initWithData:obj];
+			[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:t atPlan:0];
+            [t release];
+        }
 		return TRUE;
 	}
 	
@@ -984,11 +1010,12 @@
 	//NSLog(@"name = %@",name);
 	//[NSString stringWithFormat:]
 	PMCTrait * nl = [[PMCTrait alloc] initWithName:name];
+    [name release];
 	[nl setSizeAndPosition:NSMakeRect(100, 100, 150, 10)];
 	[nl setUndoManager:[self undoManager]];
 	
 	[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:nl atPlan:0];
-	
+	[nl release];
 	//[_actualPage addObject:nl atPlan:0];
 	//[_actualPage reDraw];
 	//[ol_ObjectTableView reloadData];
@@ -1001,11 +1028,13 @@
 	NSString *name = [[NSString alloc] initWithFormat:@"%@ %@ %i", NSLocalizedStringFromTable(@"OBJNew",@"Localizable",@"Objects"),NSLocalizedStringFromTable(@"PMCRectangle",@"Localizable",@"Objects"), [_actualPage objCount]+1];
 	//NSLog(@"name = %@",name);
 	PMCRectangle * nl = [[PMCRectangle alloc] initWithName:name];
+    [name release];
 	[nl setSizeAndPosition:NSMakeRect(130, 10, 150, 50)];
 	[nl setUndoManager:[self undoManager]];
 	NSLog(@"New Object [%@] : %@", [nl className], nl);
 	[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:nl atPlan:0];
-	//[_actualPage reDraw];
+	[nl release];
+    //[_actualPage reDraw];
 	//[ol_ObjectTableView reloadData];
 	//[[self windowForSheet] setDocumentEdited:TRUE];
 }
@@ -1017,12 +1046,14 @@
 	PMCText * nl = [[PMCText alloc] initWithName:name];
 	[nl setSizeAndPosition:NSMakeRect(130, 10, 150, 50)];
 	[nl setContent:name];
+    [name release];
 	[nl setTextFontIndex:1];
 	[nl setTextSize:12];
 	[nl setUndoManager:[self undoManager]];
 	
 	[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:nl atPlan:0];
-	//[_actualPage reDraw];
+	[nl release];
+    //[_actualPage reDraw];
 	//[ol_ObjectTableView reloadData];
 	//[[self windowForSheet] setDocumentEdited:TRUE];
 }
@@ -1032,11 +1063,13 @@
 	NSString *name = [[NSString alloc] initWithFormat:@"%@ %@ %i", NSLocalizedStringFromTable(@"OBJNew",@"Localizable",@"Objects"),NSLocalizedStringFromTable(@"PMCTableau",@"Localizable",@"Objects"), [_actualPage objCount]+1];
 	//NSLog(@"name = %@",name);
 	PMCTableau * nl = [[PMCTableau alloc] initWithName:name];
+    [name release];
 	[nl setSizeAndPosition:NSMakeRect(130, 10, 300, 150)];
 	[nl setUndoManager:[self undoManager]];
 	
 	[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:nl atPlan:0];
-	//[_actualPage reDraw];
+	[nl release];
+    //[_actualPage reDraw];
 	//[ol_ObjectTableView reloadData];
 	//[[self windowForSheet] setDocumentEdited:TRUE];
 }
@@ -1085,8 +1118,9 @@
 	//NSString * obj;
 	for(NSString * obj in a) {
 		[export_formatMenu addItemWithTitle:[obj uppercaseString]];
+        [obj release];
 	}
-	
+	[a release];
 	
 	//NSString * proposedName = [[[[[self fileURL] absoluteString] lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"pdf"];
 	
@@ -1118,8 +1152,12 @@
 	[proposedName replaceOccurrencesOfString:@" " withString:@"_" options:NSCaseInsensitiveSearch range:r];
 	// fin nouvelle methode
 	
-	if([sp runModalForDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent] file:proposedName]!=NSOKButton) return;
-	
+	if([sp runModalForDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent] file:proposedName]!=NSOKButton){
+        [proposedName release];
+        return;
+    }
+	[proposedName release];
+    
 	NSString * nameFile = [sp filename];
 	NSString * extFile = [[sp filename] pathExtension];
 	if([export_mode selectedRow]==0){
@@ -1158,34 +1196,31 @@
 	//NSBitmapImageRep * rep1 = [[img representations] objectAtIndex:0];
 	
 	NSData * imageRep;
-	NSArray *representations;
-	representations = [img representations];
-	
+	/*NSArray *representations;
+	representations = [img representations];*/
+	[img release];
 	
 	if(intFormat==0){
-		imageRep = [p dataWithPDFInsideRect:[p bounds]];
-	}
-	if(intFormat==1){
-		imageRep = [rep1 representationUsingType:NSJPEGFileType properties:nil];
+		imageRep = [[p dataWithPDFInsideRect:[p bounds]] retain];
+	} else if(intFormat==1){
+		imageRep = [[rep1 representationUsingType:NSJPEGFileType properties:nil] retain];
 		//imageRep = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:nil];
-	}
-	if(intFormat==2){
-		imageRep = [rep1 representationUsingType:NSPNGFileType properties:nil];
+	} else if(intFormat==2){
+		imageRep = [[rep1 representationUsingType:NSPNGFileType properties:nil] retain];
 		//imageRep = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSPNGFileType properties:nil];
-	}
-	if(intFormat==3){
-		imageRep = [rep1 representationUsingType:NSTIFFFileType properties:nil];
+	}else if(intFormat==3){
+		imageRep = [[rep1 representationUsingType:NSTIFFFileType properties:nil] retain];
 		//imageRep = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSTIFFFileType properties:nil];
-	}
-	if(intFormat==4){
-		imageRep = [rep1 representationUsingType:NSGIFFileType properties:nil];
+	}else if(intFormat==4){
+		imageRep = [[rep1 representationUsingType:NSGIFFileType properties:nil] retain];
 		//imageRep = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSGIFFileType properties:nil];
-	}
-	if(intFormat==5){
-		imageRep = [rep1 representationUsingType:NSBMPFileType properties:nil];
+	}else if(intFormat==5){
+		imageRep = [[rep1 representationUsingType:NSBMPFileType properties:nil] retain];
 		//imageRep = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSBMPFileType properties:nil];
-	}
-	
+	}else imageRep = [[NSData alloc] init];
+	[imageRep autorelease];
+    
+    [rep1 release];
 	//restauration de la page sélectionné !
 	if(pageIdx!=selectedPage) [pagesArrayController setSelectionIndex:selectedPage];
 	return imageRep;
@@ -1242,8 +1277,12 @@
 	
 	
 	//[panel setMessage:@"Please select destination and name for export model :"];
-	if([panel runModalForDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent] file:proposedName]!=NSOKButton) return;
-	
+	if([panel runModalForDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent] file:proposedName]!=NSOKButton){
+        [proposedName release];
+        return;
+    }
+	[proposedName release];
+    
 	NSXMLElement *root = (NSXMLElement *)[NSXMLNode elementWithName:@"xmlpm"];
 	[root addAttribute:[NSXMLNode attributeWithName:@"version" stringValue:@"1.1"]];
     //set up generic XML doc data (<?xml version="1.0" encoding="UTF-8"?>)
@@ -1306,6 +1345,8 @@
 	
 	
 	NSData * data = [xmlDoc XMLDataWithOptions:NSXMLDocumentTidyXML];
+    [xmlDoc release];
+    
 	[data writeToFile:[panel filename] atomically:YES];
 	
 	
@@ -1343,11 +1384,13 @@
 	NSString * contantFile = [[NSString alloc] initWithContentsOfFile:[openP filename]];
 	
 	NSXMLDocument *xmlDoc = [[NSXMLDocument alloc] initWithXMLString:contantFile options:NSXMLNodeOptionsNone error:&error];
+    [contantFile release];
 	if(!xmlDoc){
 		NSLog(@"Erreur : %@", error);
 		return;
 	}
 	NSXMLElement * root = [xmlDoc rootElement];
+    [xmlDoc release];
 	
 	NSXMLElement * infos = [[[root elementsForName:@"infos"] objectEnumerator] nextObject];
 	if(!infos){
@@ -1393,6 +1436,7 @@
     [printInfo setBottomMargin:0.0];
 	
     NSPrintOperation *printOperation = 	[NSPrintOperation printOperationWithView:pagesPrint printInfo:printInfo];
+    [pagesPrint release];
     
     return printOperation;
 	

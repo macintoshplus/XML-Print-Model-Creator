@@ -39,25 +39,25 @@
 
 @property (retain) NSUndoManager * undoManager;
 
-@property (retain) NSString * name;
-@property (retain) NSString * genre;
-@property (assign) int hauteurLigne;
-@property (retain) NSColor * colorBG;
-@property (assign) BOOL backgroundVisible;
-@property (assign) int fontIndex;
-@property (assign) int fontSize;
-@property (retain) NSColor * fontColor;
-@property (assign) BOOL fontBold;
-@property (assign) BOOL fontItalic;
-@property (assign) BOOL fontUnderline;
+@property (readonly,retain) NSString * name;
+@property (readonly,retain) NSString * genre;
+@property (readonly,assign) int hauteurLigne;
+@property (readonly,retain) NSColor * colorBG;
+@property (readonly,assign) BOOL backgroundVisible;
+@property (readonly,assign) int fontIndex;
+@property (readonly,assign) int fontSize;
+@property (readonly,retain) NSColor * fontColor;
+@property (readonly,assign) BOOL fontBold;
+@property (readonly,assign) BOOL fontItalic;
+@property (readonly,assign) BOOL fontUnderline;
 
-@property (assign) BOOL borderTopVisible;
-@property (assign) int borderTopWidth;
-@property (retain) NSColor * borderTopColor;
+@property (readonly,assign) BOOL borderTopVisible;
+@property (readonly,assign) int borderTopWidth;
+@property (readonly,retain) NSColor * borderTopColor;
 
-@property (assign) BOOL borderBottomVisible;
-@property (assign) int borderBottomWidth;
-@property (retain) NSColor * borderBottomColor;
+@property (readonly,assign) BOOL borderBottomVisible;
+@property (readonly,assign) int borderBottomWidth;
+@property (readonly,retain) NSColor * borderBottomColor;
 
 - (id)copyWithZone:(NSZone*)zone;
 - (id)init;
@@ -88,17 +88,17 @@
 }
 
 
-@property (retain) NSString * name;
-@property (retain) NSString * data;
-@property (assign) int colWidth;
-@property (assign) int dataAlign;
+@property (readonly,retain) NSString * name;
+@property (readonly,retain) NSString * data;
+@property (readonly,assign) int colWidth;
+@property (readonly,assign) int dataAlign;
 
-@property (retain) NSString * headerData;
-@property (assign) int headerAlign;
+@property (readonly,retain) NSString * headerData;
+@property (readonly,assign) int headerAlign;
 
-@property (assign) BOOL borderRightVisible;
-@property (assign) int borderRightWidth;
-@property (retain) NSColor * borderRightColor;
+@property (readonly,assign) BOOL borderRightVisible;
+@property (readonly,assign) int borderRightWidth;
+@property (readonly,retain) NSColor * borderRightColor;
 
 @property (retain) NSUndoManager * undoManager;
 
@@ -133,14 +133,14 @@
 @property (retain) NSMutableArray * columnDef;
 @property (retain) NSMutableArray * rowDef;
 
-@property (assign) BOOL showHeader;
-@property (assign) BOOL repeatHeader;
+@property (readonly,assign) BOOL showHeader;
+@property (readonly,assign) BOOL repeatHeader;
 
-@property (assign) BOOL repeatArrayToOtherPage;
-@property (assign) int topOnOtherPage;
-@property (assign) int heightOnOtherPage;
+@property (readonly,assign) BOOL repeatArrayToOtherPage;
+@property (readonly,assign) int topOnOtherPage;
+@property (readonly,assign) int heightOnOtherPage;
 
-@property (retain) NSString * dataSource;
+@property (readonly,retain) NSString * dataSource;
 
 - (id)initWithData:(NSDictionary*)dico;
 - (NSXMLElement*)exportToModel;

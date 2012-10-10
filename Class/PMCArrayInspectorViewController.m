@@ -44,7 +44,7 @@
 	PMCFippedView * v = [[PMCFippedView alloc] initWithFrame:[property_Array_ColView frame]];
 	[v addSubview:property_Array_ColView];
 	[property_Array_ColRowZone setDocumentView:v];
-	
+	[v release];
 	//recharge la liste
 	//[property_Array_ColRowList reloadData];
 	//if([_tmpArrayObjet count]>0) [property_Array_ColRowList selectRow:0 byExtendingSelection:NO];
@@ -72,7 +72,7 @@
 	PMCFippedView * v = [[PMCFippedView alloc] initWithFrame:[property_Array_RowView frame]];
 	[v addSubview:property_Array_RowView];
 	[property_Array_ColRowZone setDocumentView:v];
-	
+	[v release];
 	//recharge la liste
 	//[property_Array_ColRowList reloadData];
 	//if([_tmpArrayObjet count]>0) [property_Array_ColRowList selectRow:0 byExtendingSelection:NO];
@@ -105,13 +105,14 @@
 			[ncol setUndoManager:[doc undoManager]];
 			//NSLog(@"New Col : %@", ncol);
 			[colArrayController addObject:ncol];
+            [ncol release];
 			
 		}else if(_propertyRow_inEdit){
 			PMCTableauRow * nrow = [[PMCTableauRow alloc] init];
 			[nrow setUndoManager:[doc undoManager]];
 			//NSLog(@"New Row : %@", nrow);
 			[rowArrayController addObject:nrow];
-			
+			[nrow release];
 			
 		}
 		

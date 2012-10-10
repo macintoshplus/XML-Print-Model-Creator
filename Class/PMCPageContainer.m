@@ -64,7 +64,7 @@
 	//NSRect myBounds = [self bounds];
 	//NSDrawLightBezel(myBounds,myBounds);
 	
-	NSShadow * s = [[NSShadow alloc] init];
+	NSShadow * s = [[[NSShadow alloc] init] autorelease];
 	[s setShadowColor:[NSColor blackColor]];
 	[s setShadowBlurRadius:20.0];
 	[s setShadowOffset:NSMakeSize(0.0, 0.0)];

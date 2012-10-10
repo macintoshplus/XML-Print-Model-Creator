@@ -18,8 +18,8 @@
 	NSRect correctedFrame;
 }
 
-@property (copy) NSColor * color;
-@property (assign) int style;
+@property (readonly, copy) NSColor * color;
+@property (readonly, assign) int style;
 
 - (id)initWithData:(NSDictionary*)dico;
 - (NSXMLElement*)exportToModel;

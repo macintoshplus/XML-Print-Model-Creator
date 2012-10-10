@@ -98,25 +98,25 @@
 @property (readonly) NSArray * fontList;
 @property (readonly) NSRect frameWidthFormatAndOrientation;
 
-@property (assign) int pageFormat;
-@property (assign) int pageOrientation;
+@property (readonly,assign) int pageFormat;
+@property (readonly,assign) int pageOrientation;
 
-@property (assign) BOOL firstPage;
-@property (assign) BOOL otherPage;
-@property (assign) BOOL lastPage;
+@property (readonly,assign) BOOL firstPage;
+@property (readonly,assign) BOOL otherPage;
+@property (readonly,assign) BOOL lastPage;
 
-@property (copy) NSString * formatPagination;
-@property (assign) int paginationPositionX;
-@property (assign) int paginationPositionY;
-@property (assign) BOOL enabledPagination;
+@property (readonly,copy) NSString * formatPagination;
+@property (readonly,assign) int paginationPositionX;
+@property (readonly,assign) int paginationPositionY;
+@property (readonly,assign) BOOL enabledPagination;
 
-@property (copy) NSColor * textColor;
-@property (assign) int textSize;
-@property (assign) int textAlign;
-@property (assign) int textFontIndex;
-@property (assign) BOOL textBold;
-@property (assign) BOOL textItalic;
-@property (assign) BOOL textUnderline;
+@property (readonly,copy) NSColor * textColor;
+@property (readonly,assign) int textSize;
+@property (readonly,assign) int textAlign;
+@property (readonly,assign) int textFontIndex;
+@property (readonly,assign) BOOL textBold;
+@property (readonly,assign) BOOL textItalic;
+@property (readonly,assign) BOOL textUnderline;
 
 - (void)unselectObjet:(NSTimer*)theTimer;
 

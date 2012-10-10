@@ -55,13 +55,13 @@ typedef struct PMCBorderSetting {
 	NSUndoManager * undoManager;
 }
 
-@property (retain) NSString * name;
-@property (retain) NSUndoManager * undoManager;
-@property (assign) float x;
-@property (assign) float y;
-@property (assign) float width;
-@property (assign) float height;
-@property (assign) BOOL visible;
+@property (readonly,retain) NSString * name;
+@property (readonly,retain) NSUndoManager * undoManager;
+@property (readonly,assign) float x;
+@property (readonly,assign) float y;
+@property (readonly,assign) float width;
+@property (readonly,assign) float height;
+@property (readonly,assign) BOOL visible;
 
 @property (readonly) NSArray * fontList;
 

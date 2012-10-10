@@ -25,6 +25,8 @@
 @property (copy) NSString * title;
 @property (copy) NSMutableArray * _listObject;
 
+- (id)initWithFrame:(NSRect)frame;
+
 - (void)setDelegate:(id)obj;
 - (id)getDelegate;
 

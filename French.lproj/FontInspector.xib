@@ -352,7 +352,7 @@
 							<reference key="NSSupport" ref="26"/>
 							<reference key="NSControlView" ref="186765682"/>
 							<int key="NSButtonFlags">1211912448</int>
-							<int key="NSButtonFlags2">130</int>
+							<int key="NSButtonFlags2">2</int>
 							<object class="NSCustomResource" key="NSNormalImage" id="579966167">
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">NSSwitch</string>
@@ -380,7 +380,7 @@
 							<reference key="NSSupport" ref="26"/>
 							<reference key="NSControlView" ref="574273943"/>
 							<int key="NSButtonFlags">1211912448</int>
-							<int key="NSButtonFlags2">130</int>
+							<int key="NSButtonFlags2">2</int>
 							<reference key="NSNormalImage" ref="579966167"/>
 							<reference key="NSAlternateImage" ref="636119645"/>
 							<string key="NSAlternateContents"/>
@@ -403,7 +403,7 @@
 							<reference key="NSSupport" ref="26"/>
 							<reference key="NSControlView" ref="987333323"/>
 							<int key="NSButtonFlags">1211912448</int>
-							<int key="NSButtonFlags2">130</int>
+							<int key="NSButtonFlags2">2</int>
 							<reference key="NSNormalImage" ref="579966167"/>
 							<reference key="NSAlternateImage" ref="636119645"/>
 							<string key="NSAlternateContents"/>
@@ -1052,9 +1052,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="AlignTextCenter">{128, 128}</string>
-			<string key="AlignTextLeft">{128, 128}</string>
-			<string key="AlignTextRight">{128, 128}</string>
+			<string key="AlignTextCenter">{20, 13}</string>
+			<string key="AlignTextLeft">{20, 13}</string>
+			<string key="AlignTextRight">{20, 13}</string>
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
 			<string key="NSSwitch">{15, 15}</string>

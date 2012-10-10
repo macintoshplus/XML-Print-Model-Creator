@@ -36,26 +36,37 @@
 - (id)copyWithZone:(NSZone*)zone{
 	NSLog(@"PMCTableauRow:copyWithZone:%@",self);
 	id obj = [[PMCTableauRow alloc] init];
-	[obj setName:[name copy]];
-	[obj setGenre:[genre copy]];
+    NSString *sn=[name copy];
+	[obj setName:sn];
+    [sn release];
+    NSString * s = [genre copy];
+	[obj setGenre:s];
+    [s release];
 	[obj setHauteurLigne:hauteurLigne];
-	[obj setColorBG:[colorBG copy]];
+    NSColor * bgC=[colorBG copy];
+	[obj setColorBG:bgC];
+    [bgC release];
 	[obj setBackgroundVisible:backgroundVisible];
 	[obj setFontIndex:fontIndex];
 	[obj setFontSize:fontSize];
-	[obj setFontColor:[fontColor copy]];
+    NSColor* c=[fontColor copy];
+	[obj setFontColor:c];
+    [c release];
 	[obj setFontBold:fontBold];
 	[obj setFontItalic:fontItalic];
 	[obj setFontUnderline:fontUnderline];
 	
 	[obj setBorderTopVisible:borderTopVisible];
 	[obj setBorderTopWidth:borderTopWidth];
-	[obj setBorderTopColor:[borderTopColor copy]];
+    NSColor*c2=[borderTopColor copy];
+	[obj setBorderTopColor:c2];
+    [c2 release];
 	
 	[obj setBorderBottomVisible:borderBottomVisible];
 	[obj setBorderBottomWidth:borderBottomWidth];
-	[obj setBorderBottomColor:[borderBottomColor copy]];
-	
+    NSColor* c3=[borderBottomColor copy];
+	[obj setBorderBottomColor:c3];
+	[c3 release];
 	return obj;
 }
 
@@ -121,8 +132,8 @@
 }
 
 - (NSString*)description{
-	NSString * txt = [[NSString alloc] initWithFormat:@"\n%@ 0x%x {\n\tName\t\t\t\t\t\t: %@\n\tType\t\t\t\t\t\t: %@\n\tRow Height\t\t\t\t\t: %i\n\tBG Color\t\t\t\t\t: %@\n\tBG Visible\t\t\t\t\t: %@\n\tFont Index\t\t\t\t\t: %i\n\tFont size\t\t\t\t\t: %i\n\tFont color\t\t\t\t\t: %@\n\tBorder Top Visible\t\t: %@\n\tBorder Top Width\t\t\t: %i\n\tBorder Top Color\t\t\t: %@\n\tBorder Bottom Visible\t: %@\n\tBorder Bottom Width\t\t: %i\n\tBorder Bottom Color\t\t: %@\n}",
-					  [self className], self, name, genre, hauteurLigne, colorBG, ((backgroundVisible)? @"True":@"False"), fontIndex, fontSize, fontColor, ((borderTopVisible)? @"True":@"False"), borderTopWidth, borderTopColor, ((borderBottomVisible)? @"True":@"False"), borderBottomWidth, borderBottomColor];
+	NSString * txt = [[[NSString alloc] initWithFormat:@"\n%@ 0x%x {\n\tName\t\t\t\t\t\t: %@\n\tType\t\t\t\t\t\t: %@\n\tRow Height\t\t\t\t\t: %i\n\tBG Color\t\t\t\t\t: %@\n\tBG Visible\t\t\t\t\t: %@\n\tFont Index\t\t\t\t\t: %i\n\tFont size\t\t\t\t\t: %i\n\tFont color\t\t\t\t\t: %@\n\tBorder Top Visible\t\t: %@\n\tBorder Top Width\t\t\t: %i\n\tBorder Top Color\t\t\t: %@\n\tBorder Bottom Visible\t: %@\n\tBorder Bottom Width\t\t: %i\n\tBorder Bottom Color\t\t: %@\n}",
+					  [self className], self, name, genre, hauteurLigne, colorBG, ((backgroundVisible)? @"True":@"False"), fontIndex, fontSize, fontColor, ((borderTopVisible)? @"True":@"False"), borderTopWidth, borderTopColor, ((borderBottomVisible)? @"True":@"False"), borderBottomWidth, borderBottomColor] autorelease];
 	
 	return txt;
 }
@@ -423,13 +434,13 @@
 	
 	NSArray * _fontList = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Fonts" ofType:@"plist"]];
 	[myNode addAttribute:[NSXMLNode attributeWithName:@"NomPolice" stringValue:[_fontList objectAtIndex:fontIndex]]];
-	
+	[_fontList release];
 	return myNode;
 }
 
 
 - (NSMutableDictionary*)getDataForSave{
-	NSMutableDictionary * dico = [[NSMutableDictionary alloc] init];
+	NSMutableDictionary * dico = [[[NSMutableDictionary alloc] init] autorelease];
 	[dico setObject:[self className] forKey:@"ObjectClassName"];
 	[dico setObject:[NSNumber numberWithBool:backgroundVisible] forKey:@"RowBackgroundVisible"];
 	[dico setObject:[NSNumber numberWithBool:borderTopVisible] forKey:@"RowBorderTopVisible"];
@@ -475,18 +486,31 @@
 
 - (id)copyWithZone:(NSZone*)zone{
 	NSLog(@"PMCTableauCol:copyWithZone:%@",self);
-	id obj = [[PMCTableauCol alloc] init];
-	[obj setName:[name copy]];
-	[obj setData:[data copy]];
-	[obj setColWidth:colWidth];
+	id obj = [[[PMCTableauCol alloc] init] autorelease];
+    NSString * s = [name copy];
+	[obj setName:s];
+    [s release];
+    
+    NSData *d=[data copy];
+	[obj setData:d];
+    [d release];
+	
+    [obj setColWidth:colWidth];
 	[obj setDataAlign:dataAlign];
-	[obj setHeaderData:[headerData copy]];
-	[obj setHeaderAlign:headerAlign];
+    
+    s=[headerData copy];
+	[obj setHeaderData:s];
+    [s release];
+	
+    [obj setHeaderAlign:headerAlign];
 	[obj setBorderRightVisible:borderRightVisible];
 	[obj setBorderRightWidth:borderRightWidth];
-	[obj setBorderRightColor:[borderRightColor copy]];
+    
+    NSColor *c=[borderRightColor copy];
+	[obj setBorderRightColor:c];
+    [c release];
 	
-	return obj;
+	return [obj retain];
 }
 
 - (id)init{
@@ -532,8 +556,8 @@
 }
 
 - (NSString*)description{
-	NSString * txt = [[NSString alloc] initWithFormat:@"\n%@ 0x%x {\n\tName\t\t\t\t: %@\n\tData\t\t\t\t: %@\n\tColumn Width\t\t: %i\n\tColumn Align\t\t: %i\n\tHeader Data\t\t: %@\n\tHeader Align\t\t: %i\n\tBorder Visible\t: %@\n\tBorder Width\t\t: %i\n\tBorder Color\t\t: %@\n}",
-			[self className], self, name, data, colWidth, dataAlign, headerData, headerAlign, ((borderRightVisible)? @"True":@"False"), borderRightWidth, borderRightColor];
+	NSString * txt = [[[NSString alloc] initWithFormat:@"\n%@ 0x%x {\n\tName\t\t\t\t: %@\n\tData\t\t\t\t: %@\n\tColumn Width\t\t: %i\n\tColumn Align\t\t: %i\n\tHeader Data\t\t: %@\n\tHeader Align\t\t: %i\n\tBorder Visible\t: %@\n\tBorder Width\t\t: %i\n\tBorder Color\t\t: %@\n}",
+			[self className], self, name, data, colWidth, dataAlign, headerData, headerAlign, ((borderRightVisible)? @"True":@"False"), borderRightWidth, borderRightColor] autorelease];
 	
 	return txt;
 }
@@ -698,7 +722,7 @@
 
 
 - (NSMutableDictionary*)getDataForSave{
-	NSMutableDictionary * dico = [[NSMutableDictionary alloc] init];
+	NSMutableDictionary * dico = [[[NSMutableDictionary alloc] init] autorelease];
 	[dico setObject:[self className] forKey:@"ObjectClassName"];
 	[dico setObject:[NSNumber numberWithBool:borderRightVisible] forKey:@"ColBorderRightVisible"];
 	[dico setObject:[NSNumber numberWithInt:colWidth] forKey:@"ColWidth"];
@@ -772,6 +796,7 @@
 		PMCTableauCol * col = [[PMCTableauCol alloc] initWithData:[arCol objectAtIndex:i]];
 		[col setUndoManager:undoManager];
 		[columnDef addObject:col];
+        [col release];
 	}
 	
 	NSArray * arRow = [dico objectForKey:@"ArrayRowDef"];;
@@ -780,14 +805,15 @@
 		PMCTableauRow * row = [[PMCTableauRow alloc] initWithData:[arRow objectAtIndex:i]];
 		[row setUndoManager:undoManager];
 		[rowDef addObject:row];
+        [row release];
 	}
 	
 	return self;
 }
 
 - (NSString*)description{
-	NSString * txt = [[NSString alloc] initWithFormat:@"\n%@ 0x%x {\n\tRow\t\t\t\t\t\t: %@\n\tColumn\t\t\t\t\t: %@\n\tHeader\t\t\t\t\t: %@\n\tRepeat Header\t\t\t: %@\n\tRepeat Array\t\t\t: %@\n\tTop For Repeat\t\t: %i\n\tHeight For Repeat\t\t: %i\n}",
-					  [self className], self, rowDef, columnDef, ((showHeader)? @"True":@"False"), ((repeatHeader)? @"True":@"False"), ((repeatArrayToOtherPage)? @"True":@"False"), topOnOtherPage, heightOnOtherPage];
+	NSString * txt = [[[NSString alloc] initWithFormat:@"\n%@ 0x%x {\n\tRow\t\t\t\t\t\t: %@\n\tColumn\t\t\t\t\t: %@\n\tHeader\t\t\t\t\t: %@\n\tRepeat Header\t\t\t: %@\n\tRepeat Array\t\t\t: %@\n\tTop For Repeat\t\t: %i\n\tHeight For Repeat\t\t: %i\n}",
+					  [self className], self, rowDef, columnDef, ((showHeader)? @"True":@"False"), ((repeatHeader)? @"True":@"False"), ((repeatArrayToOtherPage)? @"True":@"False"), topOnOtherPage, heightOnOtherPage] autorelease];
 	
 	return txt;
 }
@@ -908,8 +934,8 @@ if(![undoManager isUndoing]){
 	
 	[myNode addAttribute:[NSXMLNode attributeWithName:@"heightOnOtherPage" stringValue:[NSString stringWithFormat:@"%i",heightOnOtherPage]]];
 	
-	[myNode addAttribute:[NSXMLNode attributeWithName:@"nbColumn" stringValue:[NSString stringWithFormat:@"%i",[columnDef count]]]];
-	[myNode addAttribute:[NSXMLNode attributeWithName:@"nbRows" stringValue:[NSString stringWithFormat:@"%i",[rowDef count]]]];
+	[myNode addAttribute:[NSXMLNode attributeWithName:@"nbColumn" stringValue:[NSString stringWithFormat:@"%lu",[columnDef count]]]];
+	[myNode addAttribute:[NSXMLNode attributeWithName:@"nbRows" stringValue:[NSString stringWithFormat:@"%lu",[rowDef count]]]];
 	
 	
 	
@@ -919,13 +945,11 @@ if(![undoManager isUndoing]){
 	
 	[myNode addAttribute:[NSXMLNode attributeWithName:@"Donnee" stringValue:dataSource]];
 	
-	int i=0;
+	int i;
 	
 	for(i=0;i<[columnDef count];i++){
 		[myNode addChild:[[columnDef objectAtIndex:i] exportToModel:i+1]];
 	}
-	
-	i=0;
 	
 	for(i=0;i<[rowDef count];i++){
 		[myNode addChild:[[rowDef objectAtIndex:i] exportToModel:i+1]];
@@ -1026,7 +1050,7 @@ if(![undoManager isUndoing]){
 			
 			//NSLog(@"Final Size : w=%f h=%f",finalRect.size.width,finalRect.size.height);
 			[as drawInRect:finalRect];
-			
+			[as release];
 			rightCumul+=(float)[col colWidth];
 		}
 		
@@ -1094,12 +1118,15 @@ if(![undoManager isUndoing]){
 		[arCol addObject:[[columnDef objectAtIndex:i] getDataForSave]];
 	}
 	[dico setObject:arCol forKey:@"ArrayColumnDef"];
+    [arCol release];
+    
 	NSMutableArray * arRow = [[NSMutableArray alloc] init];
 
 	for(i=0;i<[rowDef count];i++){
 		[arRow addObject:[[rowDef objectAtIndex:i] getDataForSave]];
 	}
 	[dico setObject:arRow forKey:@"ArrayRowDef"];
+    [arRow release];
 	//[dico setObject: forKey:@""];
 	
 	return dico;

@@ -43,21 +43,21 @@ NSString *FigureDrawingContentsKey = @"drawingContents";
 }
 
 - (id)initWithName:(NSString*)name{
-	[self init];
+	self=[self init];
 	[self setName:name];
 	
 	return self;
 }
 
 - (id)initWithName:(NSString*)name andSizeAndPosition:(NSRect)rect{
-	[self init];
+	self = [self init];
 	[self setName:name];
 	[self setSizeAndPosition:rect];
 	return self;
 }
 
 - (id)initWithData:(NSDictionary*)dico{
-	[self init];
+	self=[self init];
 	_isVisible = [[dico objectForKey:@"Visible"] boolValue];
 	//_sizeAndPosition = NSMakeRect(, , , );
 	x=[[dico objectForKey:@"X"] floatValue];
@@ -286,14 +286,18 @@ NSString *FigureDrawingContentsKey = @"drawingContents";
 }
 
 - (NSMutableDictionary*)getDataForSave{
-	NSMutableDictionary * dico = [[NSMutableDictionary alloc] init];
-	[dico setObject:[self className] forKey:@"ObjectClassName"];
+	NSMutableDictionary * dico = [[[NSMutableDictionary alloc] init] autorelease];
+    NSString *s=[[self className] copy];
+	[dico setObject:s forKey:@"ObjectClassName"];
+    [s release];
 	[dico setObject:[NSNumber numberWithBool:_isVisible] forKey:@"Visible"];
 	[dico setObject:[NSNumber numberWithFloat:width] forKey:@"Width"];
 	[dico setObject:[NSNumber numberWithFloat:height] forKey:@"Height"];
 	[dico setObject:[NSNumber numberWithFloat:x] forKey:@"X"];
 	[dico setObject:[NSNumber numberWithFloat:y] forKey:@"Y"];
-	[dico setObject:_name forKey:@"Name"];
+    NSString* s2=[_name copy];
+	[dico setObject:s2 forKey:@"Name"];
+    [s2 release];
 	//[dico setObject: forKey:@""];
 	//[dico setObject: forKey:@""];
 	return dico;

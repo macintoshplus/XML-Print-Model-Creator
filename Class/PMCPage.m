@@ -113,7 +113,7 @@
 #pragma mark -
 #pragma mark Other
 - (NSMutableArray*)getDataForSave{
-	NSMutableArray * ar = [[NSMutableArray alloc] init];
+	NSMutableArray * ar = [[[NSMutableArray alloc] init] autorelease];
 	int max=[_listObject count];
 	int i;
 	for(i=0;i<max;i++){

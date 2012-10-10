@@ -233,11 +233,12 @@
 		finalRect = NSMakeRect(x, y+((height/2)-[tF ascender]), width, height);
 	else if(_textAlign==1) //alignement à centre
 		finalRect = NSMakeRect(x+((width/2)-(s.width/2)), y+((height/2)-[tF ascender]), s.width+10, height);
-	else if(_textAlign==2) //alignement à droite
+	else// if(_textAlign==2) //alignement à droite
 		finalRect = NSMakeRect((x+width)-s.width, y+((height/2)-[tF ascender]), s.width, height);
 	
 	
 	[as drawInRect:finalRect];
+    [as release];
 }
 
 - (NSMutableDictionary*)getDataForSave{
