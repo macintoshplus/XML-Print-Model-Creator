@@ -74,8 +74,8 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 		
 		NSDictionary *bindingsData = [[NSDictionary dictionaryWithObjectsAndKeys:
 									  observableObject, NSObservedObjectKey,
-									  observableKeyPath, NSObservedKeyPathKey,
-									  options, NSOptionsKey, nil] retain];
+									  [observableKeyPath copy], NSObservedKeyPathKey,
+									  [options copy], NSOptionsKey, nil] retain];
 		[bindingInfo setObject:bindingsData forKey:FIGURES_BINDING_NAME];
         [bindingsData release];
         
@@ -100,14 +100,14 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 			
 			NSDictionary *bindingsData = [[NSDictionary dictionaryWithObjectsAndKeys:
 										  observableObject, NSObservedObjectKey,
-										  observableKeyPath, NSObservedKeyPathKey,
-										  options, NSOptionsKey, nil] retain];
+										  [observableKeyPath copy], NSObservedKeyPathKey,
+										  [options copy], NSOptionsKey, nil] retain];
 			[bindingInfo setObject:bindingsData forKey:SELECTIONINDEXES_BINDING_NAME];
 			[bindingsData release];
 			
 			[observableObject addObserver:self
 							   forKeyPath:observableKeyPath
-								  options:0
+								  options:NSKeyValueObservingOptionNew
 								  context:&SelectionIndexesObservationContext];
 		}	
 		else
@@ -123,8 +123,8 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 				
 				NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
 											  observableObject, NSObservedObjectKey,
-											  observableKeyPath, NSObservedKeyPathKey,
-											  options, NSOptionsKey, nil];
+											  [observableKeyPath copy], NSObservedKeyPathKey,
+											  [options copy], NSOptionsKey, nil];
 				[bindingInfo setObject:bindingsData forKey:FORMAT_BINDING_NAME];
 				
 				[observableObject addObserver:self
@@ -146,8 +146,8 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 					
 					NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
 												  observableObject, NSObservedObjectKey,
-												  observableKeyPath, NSObservedKeyPathKey,
-												  options, NSOptionsKey, nil];
+												  [observableKeyPath copy], NSObservedKeyPathKey,
+												  [options copy], NSOptionsKey, nil];
 					[bindingInfo setObject:bindingsData forKey:ORIENTATION_BINDING_NAME];
 					
 					[observableObject addObserver:self
@@ -425,6 +425,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 			unsigned int index = [currentSelectionIndexes firstIndex];
 			while (index != NSNotFound)
 			{
+                if([figuresArray count]<index) break;
 				figure = [figuresArray objectAtIndex:index];
 				NSRect graphicDrawingBounds = [figure drawingBounds];
 				if (NSIntersectsRect(rect, graphicDrawingBounds))

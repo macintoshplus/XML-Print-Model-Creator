@@ -137,23 +137,27 @@
 	[toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
 	[toolbar setSizeMode:NSToolbarSizeModeSmall];
 	[toolbar validateVisibleItems];
-    [[self windowForSheet] setToolbar:[toolbar autorelease]];    
-	
+    [[self windowForSheet] setToolbar:toolbar];
+	[toolbar release];
 	
 	[main_SplitVertical replaceSubview:[[main_SplitVertical subviews] objectAtIndex:0] with:main_ObjectListView];
 	//[main_SplitVertical replaceSubview:[[main_SplitVertical subviews] lastObject] with:main_PreView];
 	[main_SplitVertical adjustSubviews];
 	
 	
+    
 	PMCPageView * pView = [[PMCPageView alloc] initWithFrame:[self frameWidthFormatAndOrientation]];
-	
-	[pView bind: @"_listObject" toObject: figuresArrayController
-		   withKeyPath:@"arrangedObjects" options:nil];
-	[pView bind: @"selectionIndexes" toObject: figuresArrayController
-		   withKeyPath:@"selectionIndexes" options:nil];
-	
+	[pView bind: @"_listObject" toObject: figuresArrayController withKeyPath:@"arrangedObjects" options:nil];
 	[pView bind: @"pageFormat" toObject:self withKeyPath:@"pageFormat" options:nil];
+    
 	[pView bind: @"pageOrientation" toObject:self withKeyPath:@"pageOrientation" options:nil];
+    
+    [pView bind: @"selectionIndexes" toObject: figuresArrayController
+		   withKeyPath:@"selectionIndexes" options:nil];
+    
+    /*
+     Commenté le 10/10/2012 pour trouver l'origine du problème de démarage.
+	*/
 	
 	NSRect r = [pView frame];
 	NSSize cr = [main_ScroolView contentSize];
