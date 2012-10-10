@@ -25,14 +25,14 @@
 	
 }
 
-@property (copy) NSString * content;
-@property (copy) NSColor * textColor;
-@property (assign) int textSize;
-@property (assign) int textAlign;
-@property (assign) int textFontIndex;
-@property (assign) BOOL textBold;
-@property (assign) BOOL textItalic;
-@property (assign) BOOL textUnderline;
+@property (readonly,copy) NSString * content;
+@property (readonly,copy) NSColor * textColor;
+@property (readonly,assign) int textSize;
+@property (readonly,assign) int textAlign;
+@property (readonly,assign) int textFontIndex;
+@property (readonly,assign) BOOL textBold;
+@property (readonly,assign) BOOL textItalic;
+@property (readonly,assign) BOOL textUnderline;
 
 
 - (id)initWithData:(NSDictionary*)dico;

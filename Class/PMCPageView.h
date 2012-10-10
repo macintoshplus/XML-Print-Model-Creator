@@ -24,11 +24,13 @@
 	
 }
 
-@property (assign) float zoom;
+@property (readonly,assign) float zoom;
 @property (copy) NSArray *oldFigures;
 
 - (void)startObservingFigures:(NSArray *)figures;
 - (void)stopObservingFigures:(NSArray *)figures;
+
+- (void)setZoom:(float)newZoom;
 
 // bindings-related -- infoForBinding and convenience methods
 
