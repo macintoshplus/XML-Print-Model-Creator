@@ -74,20 +74,16 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.6.3</string>
+	<string>0.6.4</string>
 	<key>CFBundleSignature</key>
 	<string>XPMC</string>
 	<key>CFBundleVersion</key>
-	<string>0.6.3 - Licence CeCILL V2</string>
+	<string>0.6.4 - Licence CeCILL V2</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>SUFeedURL</key>
-	<string>http://extranet.sygeste.com/developer/products/XMLPrintModelCreatorCocoa/PMCAppcast.xml</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2008 - 2012 Jean-Baptiste Nahan (admin@jbnahan.com)</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
 </dict>
 </plist>

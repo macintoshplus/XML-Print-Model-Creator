@@ -1,6 +1,7 @@
 #import "AppController.h"
 #import "AppPrefsWindowController.h"
 
+
 @implementation AppController
 
 + (void)initialize
