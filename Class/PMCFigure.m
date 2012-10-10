@@ -93,13 +93,13 @@ NSString *FigureDrawingContentsKey = @"drawingContents";
 	//La gestion de la visibilité est géré au niveau de la page.
 	
 	NSMutableString *cocoaStr;
-	CFStringRef corestr;
+	CFMutableStringRef corestr;
 	
 	// lecture
 	cocoaStr=[[NSMutableString alloc] initWithString:_name];
 	
 	// cast du NSString* en CFStringRef (magie du tool-free-bridging)
-	corestr=(CFStringRef)cocoaStr;
+	corestr=(CFMutableStringRef)cocoaStr;
 	
 	// converstion de la chaîne de départ  en canonical-unicode
 	// (ça permet de séparer les composants diacritiques des caractères de base)

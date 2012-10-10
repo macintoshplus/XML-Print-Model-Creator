@@ -476,6 +476,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 		unsigned int index = [currentSelectionIndexes firstIndex];
 		while (index != NSNotFound)
 		{
+            if([[self figures] count]<=index) break;
 			[[[self figures] objectAtIndex:index] hotUpdatePositionWithPoint:diff];//
 			index = [currentSelectionIndexes indexGreaterThanIndex:index];
 		}
@@ -503,6 +504,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 		unsigned int index = [currentSelectionIndexes firstIndex];
 		while (index != NSNotFound)
 		{
+            if([[self figures] count]<=index) break;
 			[[[self figures] objectAtIndex:index] fixDragWithPoint:diff];
 			index = [currentSelectionIndexes indexGreaterThanIndex:index];
 		}

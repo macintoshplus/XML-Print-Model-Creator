@@ -1115,6 +1115,7 @@
 	[sp setPrompt:NSLocalizedStringFromTable(@"EXPictureButton",@"Localizable",@"Export")];
 	[sp setNameFieldLabel:NSLocalizedStringFromTable(@"EXPictureTo",@"Localizable",@"Export")];
 	[sp setAccessoryView:export_exportExtentionSelector];
+    [sp setDirectoryURL:[NSURL URLWithString:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent]]];
 	_exportSavePanel=sp;
 	NSArray * a = [[NSArray alloc] initWithObjects:@"pdf", @"jpg", @"png", @"tif", @"gif", @"bmp", nil];
 	[sp setAllowedFileTypes:a];
@@ -1132,13 +1133,13 @@
 	//Nouvelle méhode ajouté le 30/07/2010
 	NSString * nname = [[[self displayName] stringByDeletingPathExtension] stringByAppendingPathExtension:@"pdf"];
 	NSMutableString * proposedName;
-	CFStringRef corestr;
+	CFMutableStringRef corestr;
 	
 	// lecture
 	proposedName=[[NSMutableString alloc] initWithString:nname];
 	
 	// cast du NSString* en CFStringRef (magie du tool-free-bridging)
-	corestr=(CFStringRef)proposedName;
+	corestr=(CFMutableStringRef)proposedName;
 	
 	// converstion de la chaîne de départ  en canonical-unicode
 	// (ça permet de séparer les composants diacritiques des caractères de base)
@@ -1155,25 +1156,25 @@
 	r.length=[proposedName length];
 	[proposedName replaceOccurrencesOfString:@" " withString:@"_" options:NSCaseInsensitiveSearch range:r];
 	// fin nouvelle methode
-	
-	if([sp runModalForDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent] file:proposedName]!=NSOKButton){
-        [proposedName release];
-        return;
-    }
+	[sp setNameFieldStringValue:proposedName];
 	[proposedName release];
     
-	NSString * nameFile = [sp filename];
-	NSString * extFile = [[sp filename] pathExtension];
+	if([sp runModal]!=NSOKButton){
+        return;
+    }
+    
+	NSString * nameFile = [[[sp URL] absoluteString] lastPathComponent];
+	NSString * extFile = [nameFile pathExtension];
 	if([export_mode selectedRow]==0){
 		
 		for(int i=0;i<3;i++){
-			nameFile = [[[[sp filename] stringByDeletingPathExtension] stringByAppendingFormat:@"-%d",i+1] stringByAppendingPathExtension:extFile];
+			nameFile = [[[[[sp URL] absoluteString] stringByDeletingPathExtension] stringByAppendingFormat:@"-%d",i+1] stringByAppendingPathExtension:extFile];
 			
 			if(!([[figuresArrayController arrangedObjects] count]==0 && [export_noExportEmptyPage state]==NSOnState)){
 				
 				NSData * imageRep = [self dataImageForPage:i widthFormat:[export_formatMenu indexOfSelectedItem]];
 				
-				if(imageRep) [imageRep writeToFile:nameFile atomically:NO];
+				if(imageRep) [imageRep writeToURL:[NSURL URLWithString:nameFile] atomically:NO];
 			}
 		}
 	}
@@ -1181,7 +1182,7 @@
 		NSData * imageRep = [self dataImageForPage:[pagesArrayController selectionIndex] widthFormat:[export_formatMenu indexOfSelectedItem]];
 		
 		
-		if(imageRep) [imageRep writeToFile:nameFile atomically:NO];
+		if(imageRep) [imageRep writeToURL:[NSURL URLWithString:nameFile] atomically:NO];
 	}
 	
 }
@@ -1233,7 +1234,7 @@
 
 - (IBAction)export_extensionsChange:(id)sender{
 	//Change l'extension du fichier selon la sélection
-	[_exportSavePanel setRequiredFileType:[[sender title] lowercaseString]];
+	[_exportSavePanel setAllowedFileTypes:[NSArray arrayWithObject:[[sender title] lowercaseString]]];
 }
 
 - (IBAction)exportToModel:(id)sender{
@@ -1243,7 +1244,7 @@
 	[panel setTitle:NSLocalizedStringFromTable(@"EXModelTitle",@"Localizable",@"Export")];
 	[panel setPrompt:NSLocalizedStringFromTable(@"EXModelButton",@"Localizable",@"Export")];
 	[panel setNameFieldLabel:NSLocalizedStringFromTable(@"EXModelTo",@"Localizable",@"Export")];
-	[panel setRequiredFileType:@"xmlpm"];
+	[panel setAllowedFileTypes:[NSArray arrayWithObject:@"xmlpm"]];
 	[panel setCanSelectHiddenExtension:YES];
 	NSArray * ar = [NSArray arrayWithObjects:@"xmlpm", nil];
 	[panel setAllowedFileTypes:ar];
@@ -1255,13 +1256,13 @@
 	//Nouvelle méhode ajouté le 29/07/2010
 	NSString * nname = [[[self displayName] stringByDeletingPathExtension] stringByAppendingPathExtension:@"xmlpm"];
 	NSMutableString * proposedName;
-	CFStringRef corestr;
+	CFMutableStringRef corestr;
 	
 	// lecture
 	proposedName=[[NSMutableString alloc] initWithString:nname];
 	
 	// cast du NSString* en CFStringRef (magie du tool-free-bridging)
-	corestr=(CFStringRef)proposedName;
+	corestr=(CFMutableStringRef)proposedName;
 	
 	// converstion de la chaîne de départ  en canonical-unicode
 	// (ça permet de séparer les composants diacritiques des caractères de base)
@@ -1278,14 +1279,14 @@
 	r.length=[proposedName length];
 	[proposedName replaceOccurrencesOfString:@" " withString:@"_" options:NSCaseInsensitiveSearch range:r];
 	
+	[panel setNameFieldStringValue:proposedName];
+    [panel setDirectoryURL:[NSURL URLWithString:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent]]];
 	
-	
+    [proposedName release];
 	//[panel setMessage:@"Please select destination and name for export model :"];
-	if([panel runModalForDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent] file:proposedName]!=NSOKButton){
-        [proposedName release];
+	if([panel runModal]!=NSOKButton){
         return;
     }
-	[proposedName release];
     
 	NSXMLElement *root = (NSXMLElement *)[NSXMLNode elementWithName:@"xmlpm"];
 	[root addAttribute:[NSXMLNode attributeWithName:@"version" stringValue:@"1.1"]];
@@ -1351,7 +1352,7 @@
 	NSData * data = [xmlDoc XMLDataWithOptions:NSXMLDocumentTidyXML];
     [xmlDoc release];
     
-	[data writeToFile:[panel filename] atomically:YES];
+	[data writeToURL:[panel URL] atomically:YES];
 	
 	
 	//NSLog(@"%@", [NSString stringWithCString:[data bytes] encoding:NSUTF8StringEncoding]);
@@ -1379,13 +1380,13 @@
 	[openP setTitle:NSLocalizedStringFromTable(@"IMPanelTitle",@"Localizable",@"Import")];
 	//[openP setRequiredFileType:@"xmlpms"];
 	NSArray * ar = [NSArray arrayWithObjects:@"xmlpms", @"xmlpms1", nil];
-	//[openP setAllowedFileTypes:ar];
-	if([openP runModalForTypes:ar]!=NSOKButton) return;
-	NSLog(@"Fichier : %@",[openP filename]);
+	[openP setAllowedFileTypes:ar];
+	if([openP runModal]!=NSOKButton) return;
+	NSLog(@"Fichier : %@",[openP URL]);
 	
 	NSError *error = nil;
 	
-	NSString * contantFile = [[NSString alloc] initWithContentsOfFile:[openP filename]];
+	NSString * contantFile = [[NSString alloc] initWithContentsOfURL:[openP URL] encoding:NSUTF16StringEncoding error:nil];
 	
 	NSXMLDocument *xmlDoc = [[NSXMLDocument alloc] initWithXMLString:contantFile options:NSXMLNodeOptionsNone error:&error];
     [contantFile release];

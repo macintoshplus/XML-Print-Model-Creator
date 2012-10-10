@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "PMCFigure.h"
+
 @class PMCModelEditor;
 
 @interface PMCPage : NSObject {

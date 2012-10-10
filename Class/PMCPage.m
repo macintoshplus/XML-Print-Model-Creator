@@ -146,7 +146,7 @@
 	int max=[_listObject count];
 	
 	for (i=0; i<max; i++) {
-		if([[_listObject objectAtIndex:max-i-1] isVisible]) [node addChild:[[_listObject objectAtIndex:max-i-1] exportToModel]];
+		if([[_listObject objectAtIndex:max-i-1] isVisible]) [node addChild:[(PMCFigure*)[_listObject objectAtIndex:max-i-1] exportToModel]];
 	}
 	
 }
