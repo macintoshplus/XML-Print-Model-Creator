@@ -281,7 +281,8 @@
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{507, 435}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
-				<bool key="NSWindowIsRestorable">YES</bool>
+				<int key="NSWindowCollectionBehavior">128</int>
+				<bool key="NSWindowIsRestorable">NO</bool>
 			</object>
 			<object class="NSCustomObject" id="796877042">
 				<string key="NSClassName">NSApplication</string>
@@ -941,7 +942,7 @@
 								<int key="NSTag">1</int>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">0</int>
-								<object class="NSCustomResource" key="NSNormalImage" id="738618817">
+								<object class="NSCustomResource" key="NSNormalImage" id="656271843">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSRadioButton</string>
 								</object>
@@ -961,7 +962,7 @@
 								<reference key="NSControlView" ref="507767028"/>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">0</int>
-								<reference key="NSNormalImage" ref="738618817"/>
+								<reference key="NSNormalImage" ref="656271843"/>
 								<reference key="NSAlternateImage" ref="276860166"/>
 								<string key="NSAlternateContents"/>
 								<int key="NSPeriodicDelay">400</int>
@@ -979,7 +980,7 @@
 							<reference key="NSSupport" ref="209454588"/>
 							<int key="NSButtonFlags">1211912448</int>
 							<int key="NSButtonFlags2">0</int>
-							<reference key="NSNormalImage" ref="738618817"/>
+							<reference key="NSNormalImage" ref="656271843"/>
 							<reference key="NSAlternateImage" ref="276860166"/>
 							<string key="NSAlternateContents"/>
 							<int key="NSPeriodicDelay">400</int>
