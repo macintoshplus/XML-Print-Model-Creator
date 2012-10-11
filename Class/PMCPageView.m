@@ -532,7 +532,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 				break;
 			}
 		}
-		
+		//NSLog(@"Object : %@",[aGraphic className]);
 		/*
 		 if no graphic hit, then if extending selection do nothing else set selection to nil
 		 */
@@ -553,7 +553,25 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 		
 		NSMenu * m = [[[NSMenu alloc] init] autorelease];
 		[m setAutoenablesItems:FALSE];
-		NSMenuItem * i1=[[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"deleteTool",@"Localizable",@"Tools") action:@selector(tool_deleteSelectedObject:) keyEquivalent:@"e"];
+		NSMenuItem * i1;
+        //PMCTableau
+        if([[aGraphic className] isEqualToString:@"PMCTableau"]){
+            
+            i1=[[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"editRow",@"Localizable",@"Tools") action:@selector(sendNotificationOpenRowSheet:) keyEquivalent:@""];
+            [i1 setTarget:self];
+            [i1 setEnabled:(graphicIndex>=0)];
+            [m addItem:i1];
+            [i1 release];
+            
+            i1=[[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"editCol",@"Localizable",@"Tools") action:@selector(sendNotificationOpenColSheet:) keyEquivalent:@""];
+            [i1 setTarget:self];
+            [i1 setEnabled:(graphicIndex>=0)];
+            [m addItem:i1];
+            [i1 release];
+            
+            [m addItem:[NSMenuItem separatorItem]];
+        }
+        i1=[[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"deleteTool",@"Localizable",@"Tools") action:@selector(tool_deleteSelectedObject:) keyEquivalent:@"e"];
 		[i1 setTarget:doc];
 		[i1 setEnabled:(graphicIndex>=0)];
 		[m addItem:i1];
@@ -780,6 +798,18 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 
 
 #pragma mark -
+
+- (void)sendNotificationOpenRowSheet:(id)sender{
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSheetNotification:) name:@"openRowSheet" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"openRowSheet" object:self];
+    NSLog(@"Emet : openRowSheet");
+}
+
+- (void)sendNotificationOpenColSheet:(id)sender{
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSheetNotification:) name:@"openColSheet" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"openColSheet" object:self];
+    NSLog(@"Emet : openColSheet");
+}
 
 /*
  If view is moved to another superview, unbind all bindings

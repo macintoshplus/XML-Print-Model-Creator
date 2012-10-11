@@ -62,6 +62,10 @@
 	
 }
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+
+- (void) openSheetNotification:(NSNotification *)notification;
+
 - (IBAction)openSheetColSetting:(id)sender;
 - (IBAction)openSheetRowSetting:(id)sender;
 - (IBAction)propertySheetColRowClose:(id)sender;
