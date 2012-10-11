@@ -802,13 +802,13 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 - (void)sendNotificationOpenRowSheet:(id)sender{
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSheetNotification:) name:@"openRowSheet" object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"openRowSheet" object:self];
-    NSLog(@"Emet : openRowSheet");
+    //NSLog(@"Emet : openRowSheet");
 }
 
 - (void)sendNotificationOpenColSheet:(id)sender{
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSheetNotification:) name:@"openColSheet" object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"openColSheet" object:self];
-    NSLog(@"Emet : openColSheet");
+    //NSLog(@"Emet : openColSheet");
 }
 
 /*

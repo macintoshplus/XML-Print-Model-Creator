@@ -9,12 +9,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSheetNotification:) name:@"openColSheet" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openSheetNotification:) name:@"openRowSheet" object:nil];
-    NSLog(@"INIT : PMCArrayInspectorViewController");
+    //NSLog(@"INIT : PMCArrayInspectorViewController");
     return self;
 }
 
 - (void) openSheetNotification:(NSNotification *)notification{
-    NSLog(@"Notification : %@",notification);
+    //NSLog(@"Notification : %@",notification);
     if([[notification name] isEqualToString:@"openColSheet"]){
         [self openSheetColSetting:self];
     }
