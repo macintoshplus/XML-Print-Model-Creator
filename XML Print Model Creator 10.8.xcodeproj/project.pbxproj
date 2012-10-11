@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
+		290B121A0F4179F9007B9473 /* PMCFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 290B12190F4179F9007B9473 /* PMCFigure.m */; };
+		290B134A0F41ABF0007B9473 /* OutilRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B13470F41ABF0007B9473 /* OutilRectangle.png */; };
+		290B134B0F41ABF0007B9473 /* OutilTexte.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B13480F41ABF0007B9473 /* OutilTexte.png */; };
+		290B134C0F41ABF0007B9473 /* OutilTrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 290B13490F41ABF0007B9473 /* OutilTrait.png */; };
+		290B15500F42DFE6007B9473 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */; };
+		290B15EE0F431F56007B9473 /* Properties.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290B15EC0F431F56007B9473 /* Properties.xib */; };
+		290B16360F4329CE007B9473 /* control.icns in Resources */ = {isa = PBXBuildFile; fileRef = 290B16340F4329CE007B9473 /* control.icns */; };
+		290B16370F4329CE007B9473 /* genericobject.icns in Resources */ = {isa = PBXBuildFile; fileRef = 290B16350F4329CE007B9473 /* genericobject.icns */; };
+		290B16D60F441EFA007B9473 /* PMCPropertiesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290B16D50F441EFA007B9473 /* PMCPropertiesView.m */; };
+		290B182E0F457C76007B9473 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 290B182D0F457C76007B9473 /* Localizable.strings */; };
+		290B182F0F457CAC007B9473 /* PageFormat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 290B17FD0F4579F7007B9473 /* PageFormat.plist */; };
+		290B187A0F458177007B9473 /* Fonts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 290B18790F458177007B9473 /* Fonts.plist */; };
+		290CB3570F5FE8C4002060EB /* Delete.icns in Resources */ = {isa = PBXBuildFile; fileRef = 290CB3560F5FE8C4002060EB /* Delete.icns */; };
+		290CB3620F5FFD27002060EB /* OrderDoubleDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 290CB35E0F5FFD27002060EB /* OrderDoubleDown.png */; };
+		290CB3630F5FFD27002060EB /* OrderDoubleUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 290CB35F0F5FFD27002060EB /* OrderDoubleUp.png */; };
+		290CB3640F5FFD27002060EB /* OrderDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 290CB3600F5FFD27002060EB /* OrderDown.png */; };
+		290CB3650F5FFD27002060EB /* OrderUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 290CB3610F5FFD27002060EB /* OrderUp.png */; };
+		290CB3C30F600B64002060EB /* PMCPageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 290CB3C20F600B64002060EB /* PMCPageContainer.m */; };
+		2970C81F0F53E3DE00BBA394 /* PMCTableau.m in Sources */ = {isa = PBXBuildFile; fileRef = 2970C81E0F53E3DE00BBA394 /* PMCTableau.m */; };
+		29D30081113FFA29003A2153 /* LineInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D3007F113FFA29003A2153 /* LineInspector.xib */; };
+		29D30087113FFB50003A2153 /* PMCPaletteInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D30086113FFB50003A2153 /* PMCPaletteInspectorViewController.m */; };
+		29D3011511400062003A2153 /* DocumentInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D3011311400062003A2153 /* DocumentInspector.xib */; };
+		29D3015A11400C50003A2153 /* BorderBackgroundInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D3015811400C50003A2153 /* BorderBackgroundInspector.xib */; };
+		29D301B1114016C4003A2153 /* RectangleInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D301AF114016C4003A2153 /* RectangleInspector.xib */; };
+		29D301C011401868003A2153 /* TextInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D301BE11401868003A2153 /* TextInspector.xib */; };
+		29D302301140F9E6003A2153 /* ArrayInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D3022E1140F9E6003A2153 /* ArrayInspector.xib */; };
+		29D302331140F9F6003A2153 /* PMCArrayInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D302321140F9F6003A2153 /* PMCArrayInspectorViewController.m */; };
+		29D303B411413AB1003A2153 /* PMCPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D303B311413AB1003A2153 /* PMCPageView.m */; };
+		29D3FFC6113FE4D8003A2153 /* SizeInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D3FFC4113FE4D8003A2153 /* SizeInspector.xib */; };
+		29D3FFEC113FE814003A2153 /* PMCInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D3FFEB113FE814003A2153 /* PMCInspectorViewController.m */; };
+		29DB39EE0F566F9A00195F2B /* PMCFippedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DB39ED0F566F9A00195F2B /* PMCFippedView.m */; };
+		29DB3A240F5676E600195F2B /* OutilTableau.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DB3A230F5676E600195F2B /* OutilTableau.png */; };
+		29DB3A5A0F56970100195F2B /* Printer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 29DB3A590F56970100195F2B /* Printer.icns */; };
+		29FD0E8511402EB700BD461D /* FontInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29FD0E8311402EB700BD461D /* FontInspector.xib */; };
+		2EBA154C1626A1F300BBE970 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15421626A1EA00BBE970 /* Delete.png */; };
+		2EBA155F1626A51C00BBE970 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15561626A51600BBE970 /* Delete@2x.png */; };
+		2EBA15601626A51C00BBE970 /* OrderDoubleDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */; };
+		2EBA15611626A51C00BBE970 /* OrderDoubleUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15581626A51700BBE970 /* OrderDoubleUp@2x.png */; };
+		2EBA15621626A51C00BBE970 /* OrderDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15591626A51800BBE970 /* OrderDown@2x.png */; };
+		2EBA15631626A51C00BBE970 /* OrderUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA155A1626A51900BBE970 /* OrderUp@2x.png */; };
+		2EBA15641626A51C00BBE970 /* OutilRectangle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA155B1626A51900BBE970 /* OutilRectangle@2x.png */; };
+		2EBA15651626A51C00BBE970 /* OutilTableau@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA155C1626A51A00BBE970 /* OutilTableau@2x.png */; };
+		2EBA15661626A51C00BBE970 /* OutilTexte@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA155D1626A51B00BBE970 /* OutilTexte@2x.png */; };
+		2EBA15671626A51C00BBE970 /* OutilTrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA155E1626A51B00BBE970 /* OutilTrait@2x.png */; };
+		5C052CD60F3F206B00087191 /* PMCBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C052CD50F3F206B00087191 /* PMCBook.m */; };
+		5C052CDA0F3F207A00087191 /* Book.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C052CD80F3F207A00087191 /* Book.xib */; };
+		5C052CE10F3F214D00087191 /* PMCRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C052CE00F3F214D00087191 /* PMCRectangle.m */; };
+		5C052CE40F3F216400087191 /* PMCTrait.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C052CE30F3F216400087191 /* PMCTrait.m */; };
+		5C052CE70F3F217700087191 /* PMCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C052CE60F3F217700087191 /* PMCText.m */; };
+		5C052D590F3F2F3800087191 /* PMCPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C052D580F3F2F3800087191 /* PMCPage.m */; };
+		5C1D9D4C1143E66C003E7E1C /* PMCPageViewPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1D9D4B1143E66C003E7E1C /* PMCPageViewPrint.m */; };
+		5C1F7769114252320074F760 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F7768114252320074F760 /* AppController.m */; };
+		5C1F776E114252BE0074F760 /* AppPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F776B114252BE0074F760 /* AppPrefsWindowController.m */; };
+		5C1F776F114252BE0074F760 /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1F776D114252BE0074F760 /* DBPrefsWindowController.m */; };
+		5C1F7774114253370074F760 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F7772114253370074F760 /* Preferences.xib */; };
+		5C1F77A6114259920074F760 /* Updates.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1F77A4114259920074F760 /* Updates.png */; };
+		5C473F790F45E3850080D8A3 /* AlignTextCenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C473F760F45E3850080D8A3 /* AlignTextCenter.png */; };
+		5C473F7A0F45E3850080D8A3 /* AlignTextLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C473F770F45E3850080D8A3 /* AlignTextLeft.png */; };
+		5C473F7B0F45E3850080D8A3 /* AlignTextRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C473F780F45E3850080D8A3 /* AlignTextRight.png */; };
+		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
+		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C1F77A21142563F0074F760 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD582B0DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		290B12180F4179F9007B9473 /* PMCFigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCFigure.h; path = Class/PMCFigure.h; sourceTree = "<group>"; };
+		290B12190F4179F9007B9473 /* PMCFigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCFigure.m; path = Class/PMCFigure.m; sourceTree = "<group>"; };
+		290B13470F41ABF0007B9473 /* OutilRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OutilRectangle.png; path = Images/OutilRectangle.png; sourceTree = "<group>"; };
+		290B13480F41ABF0007B9473 /* OutilTexte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OutilTexte.png; path = Images/OutilTexte.png; sourceTree = "<group>"; };
+		290B13490F41ABF0007B9473 /* OutilTrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OutilTrait.png; path = Images/OutilTrait.png; sourceTree = "<group>"; };
+		290B15E90F431E46007B9473 /* PropertyWindowsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertyWindowsController.h; path = Class/PropertyWindowsController.h; sourceTree = "<group>"; };
+		290B15EA0F431E46007B9473 /* PropertyWindowsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyWindowsController.m; path = Class/PropertyWindowsController.m; sourceTree = "<group>"; };
+		290B15ED0F431F56007B9473 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Properties.xib; sourceTree = "<group>"; };
+		290B16340F4329CE007B9473 /* control.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = control.icns; path = Images/control.icns; sourceTree = "<group>"; };
+		290B16350F4329CE007B9473 /* genericobject.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = genericobject.icns; path = Images/genericobject.icns; sourceTree = "<group>"; };
+		290B16D40F441EFA007B9473 /* PMCPropertiesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPropertiesView.h; path = Class/PMCPropertiesView.h; sourceTree = "<group>"; };
+		290B16D50F441EFA007B9473 /* PMCPropertiesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPropertiesView.m; path = Class/PMCPropertiesView.m; sourceTree = "<group>"; };
+		290B17FD0F4579F7007B9473 /* PageFormat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PageFormat.plist; path = OtherData/PageFormat.plist; sourceTree = "<group>"; };
+		290B18790F458177007B9473 /* Fonts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Fonts.plist; path = OtherData/Fonts.plist; sourceTree = "<group>"; };
+		290CB3560F5FE8C4002060EB /* Delete.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Delete.icns; path = Images/Delete.icns; sourceTree = "<group>"; };
+		290CB35E0F5FFD27002060EB /* OrderDoubleDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrderDoubleDown.png; path = Images/OrderDoubleDown.png; sourceTree = "<group>"; };
+		290CB35F0F5FFD27002060EB /* OrderDoubleUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrderDoubleUp.png; path = Images/OrderDoubleUp.png; sourceTree = "<group>"; };
+		290CB3600F5FFD27002060EB /* OrderDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrderDown.png; path = Images/OrderDown.png; sourceTree = "<group>"; };
+		290CB3610F5FFD27002060EB /* OrderUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrderUp.png; path = Images/OrderUp.png; sourceTree = "<group>"; };
+		290CB3C10F600B64002060EB /* PMCPageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPageContainer.h; path = Class/PMCPageContainer.h; sourceTree = "<group>"; };
+		290CB3C20F600B64002060EB /* PMCPageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPageContainer.m; path = Class/PMCPageContainer.m; sourceTree = "<group>"; };
+		294C206F114646A80010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		294C20A0114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/ArrayInspector.xib; sourceTree = "<group>"; };
+		294C20A1114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Book.xib; sourceTree = "<group>"; };
+		294C20A2114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/BorderBackgroundInspector.xib; sourceTree = "<group>"; };
+		294C20A3114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/DocumentInspector.xib; sourceTree = "<group>"; };
+		294C20A4114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/FontInspector.xib; sourceTree = "<group>"; };
+		294C20A5114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/LineInspector.xib; sourceTree = "<group>"; };
+		294C20A6114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/Preferences.xib; sourceTree = "<group>"; };
+		294C20A7114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/RectangleInspector.xib; sourceTree = "<group>"; };
+		294C20A8114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/SizeInspector.xib; sourceTree = "<group>"; };
+		294C20A9114661D50010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/TextInspector.xib; sourceTree = "<group>"; };
+		294C20CC114663F60010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		294C20CD114664660010A782 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = French; path = French.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2970C81D0F53E3DE00BBA394 /* PMCTableau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCTableau.h; path = Class/PMCTableau.h; sourceTree = "<group>"; };
+		2970C81E0F53E3DE00BBA394 /* PMCTableau.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCTableau.m; path = Class/PMCTableau.m; sourceTree = "<group>"; };
+		29D30080113FFA29003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/LineInspector.xib; sourceTree = "<group>"; };
+		29D30085113FFB50003A2153 /* PMCPaletteInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPaletteInspectorViewController.h; path = Class/PMCPaletteInspectorViewController.h; sourceTree = "<group>"; };
+		29D30086113FFB50003A2153 /* PMCPaletteInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPaletteInspectorViewController.m; path = Class/PMCPaletteInspectorViewController.m; sourceTree = "<group>"; };
+		29D3011411400062003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DocumentInspector.xib; sourceTree = "<group>"; };
+		29D3015911400C50003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/BorderBackgroundInspector.xib; sourceTree = "<group>"; };
+		29D301B0114016C4003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/RectangleInspector.xib; sourceTree = "<group>"; };
+		29D301BF11401868003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TextInspector.xib; sourceTree = "<group>"; };
+		29D3022F1140F9E6003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ArrayInspector.xib; sourceTree = "<group>"; };
+		29D302311140F9F6003A2153 /* PMCArrayInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCArrayInspectorViewController.h; path = Class/PMCArrayInspectorViewController.h; sourceTree = "<group>"; };
+		29D302321140F9F6003A2153 /* PMCArrayInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCArrayInspectorViewController.m; path = Class/PMCArrayInspectorViewController.m; sourceTree = "<group>"; };
+		29D303B211413AB1003A2153 /* PMCPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPageView.h; path = Class/PMCPageView.h; sourceTree = "<group>"; };
+		29D303B311413AB1003A2153 /* PMCPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPageView.m; path = Class/PMCPageView.m; sourceTree = "<group>"; };
+		29D3FFC5113FE4D8003A2153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/SizeInspector.xib; sourceTree = "<group>"; };
+		29D3FFEA113FE814003A2153 /* PMCInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCInspectorViewController.h; path = Class/PMCInspectorViewController.h; sourceTree = "<group>"; };
+		29D3FFEB113FE814003A2153 /* PMCInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCInspectorViewController.m; path = Class/PMCInspectorViewController.m; sourceTree = "<group>"; };
+		29DB39EC0F566F9A00195F2B /* PMCFippedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCFippedView.h; path = Class/PMCFippedView.h; sourceTree = "<group>"; };
+		29DB39ED0F566F9A00195F2B /* PMCFippedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCFippedView.m; path = Class/PMCFippedView.m; sourceTree = "<group>"; };
+		29DB3A230F5676E600195F2B /* OutilTableau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OutilTableau.png; path = Images/OutilTableau.png; sourceTree = "<group>"; };
+		29DB3A590F56970100195F2B /* Printer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Printer.icns; sourceTree = "<group>"; };
+		29FD0E8411402EB700BD461D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/FontInspector.xib; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2EBA15421626A1EA00BBE970 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Delete.png; path = Images/Delete.png; sourceTree = "<group>"; };
+		2EBA15561626A51600BBE970 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
+		2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrderDoubleDown@2x.png"; path = "Images/OrderDoubleDown@2x.png"; sourceTree = "<group>"; };
+		2EBA15581626A51700BBE970 /* OrderDoubleUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrderDoubleUp@2x.png"; path = "Images/OrderDoubleUp@2x.png"; sourceTree = "<group>"; };
+		2EBA15591626A51800BBE970 /* OrderDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrderDown@2x.png"; path = "Images/OrderDown@2x.png"; sourceTree = "<group>"; };
+		2EBA155A1626A51900BBE970 /* OrderUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrderUp@2x.png"; path = "Images/OrderUp@2x.png"; sourceTree = "<group>"; };
+		2EBA155B1626A51900BBE970 /* OutilRectangle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OutilRectangle@2x.png"; path = "Images/OutilRectangle@2x.png"; sourceTree = "<group>"; };
+		2EBA155C1626A51A00BBE970 /* OutilTableau@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OutilTableau@2x.png"; path = "Images/OutilTableau@2x.png"; sourceTree = "<group>"; };
+		2EBA155D1626A51B00BBE970 /* OutilTexte@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OutilTexte@2x.png"; path = "Images/OutilTexte@2x.png"; sourceTree = "<group>"; };
+		2EBA155E1626A51B00BBE970 /* OutilTrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OutilTrait@2x.png"; path = "Images/OutilTrait@2x.png"; sourceTree = "<group>"; };
+		32DBCF750370BD2300C91783 /* XML Print Model Creator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XML Print Model Creator_Prefix.pch"; sourceTree = "<group>"; };
+		5C052CD40F3F206B00087191 /* PMCBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCBook.h; path = Class/PMCBook.h; sourceTree = "<group>"; };
+		5C052CD50F3F206B00087191 /* PMCBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCBook.m; path = Class/PMCBook.m; sourceTree = "<group>"; };
+		5C052CD90F3F207A00087191 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Book.xib; sourceTree = "<group>"; };
+		5C052CDF0F3F214D00087191 /* PMCRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCRectangle.h; path = Class/PMCRectangle.h; sourceTree = "<group>"; };
+		5C052CE00F3F214D00087191 /* PMCRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCRectangle.m; path = Class/PMCRectangle.m; sourceTree = "<group>"; };
+		5C052CE20F3F216400087191 /* PMCTrait.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCTrait.h; path = Class/PMCTrait.h; sourceTree = "<group>"; };
+		5C052CE30F3F216400087191 /* PMCTrait.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCTrait.m; path = Class/PMCTrait.m; sourceTree = "<group>"; };
+		5C052CE50F3F217700087191 /* PMCText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCText.h; path = Class/PMCText.h; sourceTree = "<group>"; };
+		5C052CE60F3F217700087191 /* PMCText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCText.m; path = Class/PMCText.m; sourceTree = "<group>"; };
+		5C052D570F3F2F3800087191 /* PMCPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPage.h; path = Class/PMCPage.h; sourceTree = "<group>"; };
+		5C052D580F3F2F3800087191 /* PMCPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPage.m; path = Class/PMCPage.m; sourceTree = "<group>"; };
+		5C052D6F0F3F35C900087191 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5C1D9D4A1143E66C003E7E1C /* PMCPageViewPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPageViewPrint.h; path = Class/PMCPageViewPrint.h; sourceTree = "<group>"; };
+		5C1D9D4B1143E66C003E7E1C /* PMCPageViewPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPageViewPrint.m; path = Class/PMCPageViewPrint.m; sourceTree = "<group>"; };
+		5C1F7767114252320074F760 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = Class/AppController.h; sourceTree = "<group>"; };
+		5C1F7768114252320074F760 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Class/AppController.m; sourceTree = "<group>"; };
+		5C1F776A114252BE0074F760 /* AppPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppPrefsWindowController.h; path = Class/AppPrefsWindowController.h; sourceTree = "<group>"; };
+		5C1F776B114252BE0074F760 /* AppPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppPrefsWindowController.m; path = Class/AppPrefsWindowController.m; sourceTree = "<group>"; };
+		5C1F776C114252BE0074F760 /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBPrefsWindowController.h; path = Class/DBPrefsWindowController.h; sourceTree = "<group>"; };
+		5C1F776D114252BE0074F760 /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBPrefsWindowController.m; path = Class/DBPrefsWindowController.m; sourceTree = "<group>"; };
+		5C1F7773114253370074F760 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
+		5C1F77A4114259920074F760 /* Updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Updates.png; path = Images/Updates.png; sourceTree = "<group>"; };
+		5C473F760F45E3850080D8A3 /* AlignTextCenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlignTextCenter.png; path = Images/AlignTextCenter.png; sourceTree = "<group>"; };
+		5C473F770F45E3850080D8A3 /* AlignTextLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlignTextLeft.png; path = Images/AlignTextLeft.png; sourceTree = "<group>"; };
+		5C473F780F45E3850080D8A3 /* AlignTextRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlignTextRight.png; path = Images/AlignTextRight.png; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* XML Print Model Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XML Print Model Creator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				290B15500F42DFE6007B9473 /* AppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* XML Print Model Creator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		290B12A80F4185D3007B9473 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				5C052CDF0F3F214D00087191 /* PMCRectangle.h */,
+				5C052CE00F3F214D00087191 /* PMCRectangle.m */,
+				5C052CE20F3F216400087191 /* PMCTrait.h */,
+				5C052CE30F3F216400087191 /* PMCTrait.m */,
+				5C052CE50F3F217700087191 /* PMCText.h */,
+				5C052CE60F3F217700087191 /* PMCText.m */,
+				2970C81D0F53E3DE00BBA394 /* PMCTableau.h */,
+				2970C81E0F53E3DE00BBA394 /* PMCTableau.m */,
+				290B12180F4179F9007B9473 /* PMCFigure.h */,
+				290B12190F4179F9007B9473 /* PMCFigure.m */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		290B13460F41ABDE007B9473 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA15561626A51600BBE970 /* Delete@2x.png */,
+				2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */,
+				2EBA15581626A51700BBE970 /* OrderDoubleUp@2x.png */,
+				2EBA15591626A51800BBE970 /* OrderDown@2x.png */,
+				2EBA155A1626A51900BBE970 /* OrderUp@2x.png */,
+				2EBA155B1626A51900BBE970 /* OutilRectangle@2x.png */,
+				2EBA155C1626A51A00BBE970 /* OutilTableau@2x.png */,
+				2EBA155D1626A51B00BBE970 /* OutilTexte@2x.png */,
+				2EBA155E1626A51B00BBE970 /* OutilTrait@2x.png */,
+				2EBA15421626A1EA00BBE970 /* Delete.png */,
+				5C1F77A4114259920074F760 /* Updates.png */,
+				290CB35E0F5FFD27002060EB /* OrderDoubleDown.png */,
+				290CB35F0F5FFD27002060EB /* OrderDoubleUp.png */,
+				290CB3600F5FFD27002060EB /* OrderDown.png */,
+				290CB3610F5FFD27002060EB /* OrderUp.png */,
+				290CB3560F5FE8C4002060EB /* Delete.icns */,
+				5C473F760F45E3850080D8A3 /* AlignTextCenter.png */,
+				5C473F770F45E3850080D8A3 /* AlignTextLeft.png */,
+				5C473F780F45E3850080D8A3 /* AlignTextRight.png */,
+				290B16340F4329CE007B9473 /* control.icns */,
+				290B16350F4329CE007B9473 /* genericobject.icns */,
+				29DB3A230F5676E600195F2B /* OutilTableau.png */,
+				290B13470F41ABF0007B9473 /* OutilRectangle.png */,
+				290B13480F41ABF0007B9473 /* OutilTexte.png */,
+				290B13490F41ABF0007B9473 /* OutilTrait.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+			tabWidth = 4;
+		};
+		29D3FFCD113FE501003A2153 /* InspectorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29D302311140F9F6003A2153 /* PMCArrayInspectorViewController.h */,
+				29D302321140F9F6003A2153 /* PMCArrayInspectorViewController.m */,
+				29D30085113FFB50003A2153 /* PMCPaletteInspectorViewController.h */,
+				29D30086113FFB50003A2153 /* PMCPaletteInspectorViewController.m */,
+				29D3FFEA113FE814003A2153 /* PMCInspectorViewController.h */,
+				29D3FFEB113FE814003A2153 /* PMCInspectorViewController.m */,
+			);
+			name = InspectorViewController;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* XML Print Model Creator */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = "XML Print Model Creator";
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F7765114251A70074F760 /* Tiers */,
+				29D3FFCD113FE501003A2153 /* InspectorViewController */,
+				290B12A80F4185D3007B9473 /* Object */,
+				5C052CD40F3F206B00087191 /* PMCBook.h */,
+				5C052CD50F3F206B00087191 /* PMCBook.m */,
+				5C052D570F3F2F3800087191 /* PMCPage.h */,
+				5C052D580F3F2F3800087191 /* PMCPage.m */,
+				290B16D40F441EFA007B9473 /* PMCPropertiesView.h */,
+				290B16D50F441EFA007B9473 /* PMCPropertiesView.m */,
+				290CB3C10F600B64002060EB /* PMCPageContainer.h */,
+				290CB3C20F600B64002060EB /* PMCPageContainer.m */,
+				29D303B211413AB1003A2153 /* PMCPageView.h */,
+				29D303B311413AB1003A2153 /* PMCPageView.m */,
+				5C1D9D4A1143E66C003E7E1C /* PMCPageViewPrint.h */,
+				5C1D9D4B1143E66C003E7E1C /* PMCPageViewPrint.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F7767114252320074F760 /* AppController.h */,
+				5C1F7768114252320074F760 /* AppController.m */,
+				32DBCF750370BD2300C91783 /* XML Print Model Creator_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+				290B15E90F431E46007B9473 /* PropertyWindowsController.h */,
+				290B15EA0F431E46007B9473 /* PropertyWindowsController.m */,
+				29DB39EC0F566F9A00195F2B /* PMCFippedView.h */,
+				29DB39ED0F566F9A00195F2B /* PMCFippedView.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F7772114253370074F760 /* Preferences.xib */,
+				29D3022E1140F9E6003A2153 /* ArrayInspector.xib */,
+				29FD0E8311402EB700BD461D /* FontInspector.xib */,
+				29D301BE11401868003A2153 /* TextInspector.xib */,
+				29D301AF114016C4003A2153 /* RectangleInspector.xib */,
+				29D3015811400C50003A2153 /* BorderBackgroundInspector.xib */,
+				29D3011311400062003A2153 /* DocumentInspector.xib */,
+				29D3007F113FFA29003A2153 /* LineInspector.xib */,
+				29D3FFC4113FE4D8003A2153 /* SizeInspector.xib */,
+				290B15EC0F431F56007B9473 /* Properties.xib */,
+				29DB3A590F56970100195F2B /* Printer.icns */,
+				290B13460F41ABDE007B9473 /* Images */,
+				290B17FD0F4579F7007B9473 /* PageFormat.plist */,
+				5C052CD80F3F207A00087191 /* Book.xib */,
+				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+				1DDD582A0DA1D0D100B32029 /* MainMenu.xib */,
+				290B182D0F457C76007B9473 /* Localizable.strings */,
+				290B18790F458177007B9473 /* Fonts.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C1F7765114251A70074F760 /* Tiers */ = {
+			isa = PBXGroup;
+			children = (
+				5C1F776A114252BE0074F760 /* AppPrefsWindowController.h */,
+				5C1F776B114252BE0074F760 /* AppPrefsWindowController.m */,
+				5C1F776C114252BE0074F760 /* DBPrefsWindowController.h */,
+				5C1F776D114252BE0074F760 /* DBPrefsWindowController.m */,
+			);
+			name = Tiers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* XML Print Model Creator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "XML Print Model Creator" */;
+			buildPhases = (
+				294C2078114646C10010A782 /* Traduction Auto */,
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+				5C1F77A21142563F0074F760 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XML Print Model Creator";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "XML Print Model Creator";
+			productReference = 8D15AC370486D014006FF6A4 /* XML Print Model Creator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Jean-Baptiste Nahan";
+			};
+			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "XML Print Model Creator 10.8" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* XML Print Model Creator */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* XML Print Model Creator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
+				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
+				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
+				5C052CDA0F3F207A00087191 /* Book.xib in Resources */,
+				290B182E0F457C76007B9473 /* Localizable.strings in Resources */,
+				290B134A0F41ABF0007B9473 /* OutilRectangle.png in Resources */,
+				290B134B0F41ABF0007B9473 /* OutilTexte.png in Resources */,
+				290B134C0F41ABF0007B9473 /* OutilTrait.png in Resources */,
+				290B15EE0F431F56007B9473 /* Properties.xib in Resources */,
+				290B16360F4329CE007B9473 /* control.icns in Resources */,
+				290B16370F4329CE007B9473 /* genericobject.icns in Resources */,
+				290B182F0F457CAC007B9473 /* PageFormat.plist in Resources */,
+				290B187A0F458177007B9473 /* Fonts.plist in Resources */,
+				5C473F790F45E3850080D8A3 /* AlignTextCenter.png in Resources */,
+				5C473F7A0F45E3850080D8A3 /* AlignTextLeft.png in Resources */,
+				5C473F7B0F45E3850080D8A3 /* AlignTextRight.png in Resources */,
+				29DB3A240F5676E600195F2B /* OutilTableau.png in Resources */,
+				29DB3A5A0F56970100195F2B /* Printer.icns in Resources */,
+				290CB3570F5FE8C4002060EB /* Delete.icns in Resources */,
+				290CB3620F5FFD27002060EB /* OrderDoubleDown.png in Resources */,
+				290CB3630F5FFD27002060EB /* OrderDoubleUp.png in Resources */,
+				290CB3640F5FFD27002060EB /* OrderDown.png in Resources */,
+				290CB3650F5FFD27002060EB /* OrderUp.png in Resources */,
+				29D3FFC6113FE4D8003A2153 /* SizeInspector.xib in Resources */,
+				29D30081113FFA29003A2153 /* LineInspector.xib in Resources */,
+				29D3011511400062003A2153 /* DocumentInspector.xib in Resources */,
+				29D3015A11400C50003A2153 /* BorderBackgroundInspector.xib in Resources */,
+				29D301B1114016C4003A2153 /* RectangleInspector.xib in Resources */,
+				29D301C011401868003A2153 /* TextInspector.xib in Resources */,
+				29FD0E8511402EB700BD461D /* FontInspector.xib in Resources */,
+				29D302301140F9E6003A2153 /* ArrayInspector.xib in Resources */,
+				5C1F7774114253370074F760 /* Preferences.xib in Resources */,
+				5C1F77A6114259920074F760 /* Updates.png in Resources */,
+				2EBA154C1626A1F300BBE970 /* Delete.png in Resources */,
+				2EBA155F1626A51C00BBE970 /* Delete@2x.png in Resources */,
+				2EBA15601626A51C00BBE970 /* OrderDoubleDown@2x.png in Resources */,
+				2EBA15611626A51C00BBE970 /* OrderDoubleUp@2x.png in Resources */,
+				2EBA15621626A51C00BBE970 /* OrderDown@2x.png in Resources */,
+				2EBA15631626A51C00BBE970 /* OrderUp@2x.png in Resources */,
+				2EBA15641626A51C00BBE970 /* OutilRectangle@2x.png in Resources */,
+				2EBA15651626A51C00BBE970 /* OutilTableau@2x.png in Resources */,
+				2EBA15661626A51C00BBE970 /* OutilTexte@2x.png in Resources */,
+				2EBA15671626A51C00BBE970 /* OutilTrait@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		294C2078114646C10010A782 /* Traduction Auto */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Traduction Auto";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\nibtool --generate-strings-file English.lproj/MainMenu.strings English.lproj/MainMenu.xib\nibtool --generate-strings-file English.lproj/Book.strings English.lproj/Book.xib\nibtool --generate-strings-file English.lproj/SizeInspector.strings English.lproj/SizeInspector.xib\nibtool --generate-strings-file English.lproj/LineInspector.strings English.lproj/LineInspector.xib\nibtool --generate-strings-file English.lproj/DocumentInspector.strings English.lproj/DocumentInspector.xib\nibtool --generate-strings-file English.lproj/BorderBackgroundInspector.strings English.lproj/BorderBackgroundInspector.xib\nibtool --generate-strings-file English.lproj/RectangleInspector.strings English.lproj/RectangleInspector.xib\nibtool --generate-strings-file English.lproj/TextInspector.strings English.lproj/TextInspector.xib\nibtool --generate-strings-file English.lproj/FontInspector.strings English.lproj/FontInspector.xib\nibtool --generate-strings-file English.lproj/ArrayInspector.strings English.lproj/ArrayInspector.xib\nibtool --generate-strings-file English.lproj/Preferences.strings English.lproj/Preferences.xib\n# Generate French interface\nibtool --strings-file French.lproj/MainMenu.strings --write French.lproj/MainMenu.xib English.lproj/MainMenu.xib\nibtool --strings-file French.lproj/Book.strings --write French.lproj/Book.xib English.lproj/Book.xib\nibtool --strings-file French.lproj/SizeInspector.strings --write French.lproj/SizeInspector.xib English.lproj/SizeInspector.xib\nibtool --strings-file French.lproj/LineInspector.strings --write French.lproj/LineInspector.xib English.lproj/LineInspector.xib\nibtool --strings-file French.lproj/DocumentInspector.strings --write French.lproj/DocumentInspector.xib English.lproj/DocumentInspector.xib\nibtool --strings-file French.lproj/BorderBackgroundInspector.strings --write French.lproj/BorderBackgroundInspector.xib English.lproj/BorderBackgroundInspector.xib\nibtool --strings-file French.lproj/RectangleInspector.strings --write French.lproj/RectangleInspector.xib English.lproj/RectangleInspector.xib\nibtool --strings-file French.lproj/TextInspector.strings --write French.lproj/TextInspector.xib English.lproj/TextInspector.xib\nibtool --strings-file French.lproj/FontInspector.strings --write French.lproj/FontInspector.xib English.lproj/FontInspector.xib\nibtool --strings-file French.lproj/ArrayInspector.strings --write French.lproj/ArrayInspector.xib English.lproj/ArrayInspector.xib\nibtool --strings-file French.lproj/Preferences.strings --write French.lproj/Preferences.xib English.lproj/Preferences.xib\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				5C052CD60F3F206B00087191 /* PMCBook.m in Sources */,
+				5C052CE10F3F214D00087191 /* PMCRectangle.m in Sources */,
+				5C052CE40F3F216400087191 /* PMCTrait.m in Sources */,
+				5C052CE70F3F217700087191 /* PMCText.m in Sources */,
+				5C052D590F3F2F3800087191 /* PMCPage.m in Sources */,
+				290B121A0F4179F9007B9473 /* PMCFigure.m in Sources */,
+				290B16D60F441EFA007B9473 /* PMCPropertiesView.m in Sources */,
+				2970C81F0F53E3DE00BBA394 /* PMCTableau.m in Sources */,
+				29DB39EE0F566F9A00195F2B /* PMCFippedView.m in Sources */,
+				290CB3C30F600B64002060EB /* PMCPageContainer.m in Sources */,
+				29D3FFEC113FE814003A2153 /* PMCInspectorViewController.m in Sources */,
+				29D30087113FFB50003A2153 /* PMCPaletteInspectorViewController.m in Sources */,
+				29D302331140F9F6003A2153 /* PMCArrayInspectorViewController.m in Sources */,
+				29D303B411413AB1003A2153 /* PMCPageView.m in Sources */,
+				5C1F7769114252320074F760 /* AppController.m in Sources */,
+				5C1F776E114252BE0074F760 /* AppPrefsWindowController.m in Sources */,
+				5C1F776F114252BE0074F760 /* DBPrefsWindowController.m in Sources */,
+				5C1D9D4C1143E66C003E7E1C /* PMCPageViewPrint.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD582A0DA1D0D100B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD582B0DA1D0D100B32029 /* English */,
+				294C206F114646A80010A782 /* French */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		290B15EC0F431F56007B9473 /* Properties.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				290B15ED0F431F56007B9473 /* English */,
+			);
+			name = Properties.xib;
+			sourceTree = "<group>";
+		};
+		290B182D0F457C76007B9473 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C052D6F0F3F35C900087191 /* English */,
+				294C20CC114663F60010A782 /* French */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		29D3007F113FFA29003A2153 /* LineInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D30080113FFA29003A2153 /* English */,
+				294C20A5114661D50010A782 /* French */,
+			);
+			name = LineInspector.xib;
+			sourceTree = "<group>";
+		};
+		29D3011311400062003A2153 /* DocumentInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D3011411400062003A2153 /* English */,
+				294C20A3114661D50010A782 /* French */,
+			);
+			name = DocumentInspector.xib;
+			sourceTree = "<group>";
+		};
+		29D3015811400C50003A2153 /* BorderBackgroundInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D3015911400C50003A2153 /* English */,
+				294C20A2114661D50010A782 /* French */,
+			);
+			name = BorderBackgroundInspector.xib;
+			sourceTree = "<group>";
+		};
+		29D301AF114016C4003A2153 /* RectangleInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D301B0114016C4003A2153 /* English */,
+				294C20A7114661D50010A782 /* French */,
+			);
+			name = RectangleInspector.xib;
+			sourceTree = "<group>";
+		};
+		29D301BE11401868003A2153 /* TextInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D301BF11401868003A2153 /* English */,
+				294C20A9114661D50010A782 /* French */,
+			);
+			name = TextInspector.xib;
+			sourceTree = "<group>";
+		};
+		29D3022E1140F9E6003A2153 /* ArrayInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D3022F1140F9E6003A2153 /* English */,
+				294C20A0114661D50010A782 /* French */,
+			);
+			name = ArrayInspector.xib;
+			sourceTree = "<group>";
+		};
+		29D3FFC4113FE4D8003A2153 /* SizeInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D3FFC5113FE4D8003A2153 /* English */,
+				294C20A8114661D50010A782 /* French */,
+			);
+			name = SizeInspector.xib;
+			sourceTree = "<group>";
+		};
+		29FD0E8311402EB700BD461D /* FontInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29FD0E8411402EB700BD461D /* English */,
+				294C20A4114661D50010A782 /* French */,
+			);
+			name = FontInspector.xib;
+			sourceTree = "<group>";
+		};
+		2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4BAFDCFA73011CA2CEA /* English */,
+				294C20CD114664660010A782 /* French */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5C052CD80F3F207A00087191 /* Book.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C052CD90F3F207A00087191 /* English */,
+				294C20A1114661D50010A782 /* French */,
+			);
+			name = Book.xib;
+			sourceTree = "<group>";
+		};
+		5C1F7772114253370074F760 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C1F7773114253370074F760 /* English */,
+				294C20A6114661D50010A782 /* French */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C05733C808A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Jean-Baptiste Nahan";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XML Print Model Creator_Prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "XML Print Model Creator";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		C05733C908A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Jean-Baptiste Nahan";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XML Print Model Creator_Prefix.pch";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "XML Print Model Creator";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		C05733CC08A9546B00998B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C05733CD08A9546B00998B17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "XML Print Model Creator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733C808A9546B00998B17 /* Debug */,
+				C05733C908A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "XML Print Model Creator 10.8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C05733CC08A9546B00998B17 /* Debug */,
+				C05733CD08A9546B00998B17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}
