@@ -138,6 +138,8 @@
 "orderDoubleUpTool" = "Send To Front";
 "orderDownTool" = "Send Backward";
 "orderDoubleDownTool" = "Send To Back";
+"editRow" = "Edit Rows";
+"editCol" = "Edit Columns";
 
 /* Objects */
 "OBJNew" = "New";
