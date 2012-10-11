@@ -358,7 +358,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 
 - (void)drawRect:(NSRect)rect
 {
-	if(![[NSGraphicsContext currentContext] isDrawingToScreen]) NSLog(@"Impression sur l'imprimante !");
+	//if(![[NSGraphicsContext currentContext] isDrawingToScreen]) NSLog(@"Impression sur l'imprimante !");
 	[NSGraphicsContext saveGraphicsState];
 	
 	NSAffineTransform* xform = [NSAffineTransform transform];
@@ -411,7 +411,9 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 			
         }
     }
-	
+    
+    
+    
 	/*
 	 Draw a red box around items in the current selection.
 	 Selection should be handled by the graphic, but this is a shortcut simply for display.
