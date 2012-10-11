@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12B19</string>
 		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187</string>
+		<string key="IBDocument.HIToolboxVersion">624.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">2843</string>
@@ -205,13 +205,13 @@
 										<object class="NSCustomView" id="838545841">
 											<reference key="NSNextResponder" ref="890405284"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{271, 579}</string>
+											<string key="NSFrameSize">{260, 579}</string>
 											<reference key="NSSuperview" ref="890405284"/>
 											<reference key="NSNextKeyView" ref="212630536"/>
 											<string key="NSClassName">NSView</string>
 										</object>
 									</array>
-									<string key="NSFrameSize">{271, 579}</string>
+									<string key="NSFrameSize">{260, 579}</string>
 									<reference key="NSSuperview" ref="530766406"/>
 									<reference key="NSNextKeyView" ref="838545841"/>
 									<reference key="NSDocView" ref="838545841"/>
@@ -229,7 +229,7 @@
 								<object class="NSScroller" id="707902885">
 									<reference key="NSNextResponder" ref="530766406"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{257, 0}, {14, 579}}</string>
+									<string key="NSFrame">{{260, 0}, {11, 579}}</string>
 									<reference key="NSSuperview" ref="530766406"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<int key="NSsFlags">256</int>
@@ -451,10 +451,11 @@
 											<reference key="NSNextKeyView" ref="709534689"/>
 											<reference key="NSTableView" ref="844322950"/>
 										</object>
-										<object class="_NSCornerView" key="NSCornerView">
-											<nil key="NSNextResponder"/>
+										<object class="_NSCornerView" key="NSCornerView" id="128630510">
+											<reference key="NSNextResponder" ref="562301470"/>
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{-26, 0}, {16, 17}}</string>
+											<reference key="NSSuperview" ref="562301470"/>
 										</object>
 										<array class="NSMutableArray" key="NSTableColumns">
 											<object class="NSTableColumn" id="967132665">
@@ -594,6 +595,7 @@
 								<reference key="NSBGColor" ref="859613855"/>
 								<int key="NScvFlags">4</int>
 							</object>
+							<reference ref="128630510"/>
 						</array>
 						<string key="NSFrameSize">{271, 442}</string>
 						<reference key="NSSuperview" ref="181955734"/>
@@ -963,7 +965,7 @@
 								<int key="NSTag">1</int>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">0</int>
-								<object class="NSCustomResource" key="NSNormalImage" id="864045637">
+								<object class="NSCustomResource" key="NSNormalImage" id="990218225">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSRadioButton</string>
 								</object>
@@ -983,7 +985,7 @@
 								<reference key="NSControlView" ref="507767028"/>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">0</int>
-								<reference key="NSNormalImage" ref="864045637"/>
+								<reference key="NSNormalImage" ref="990218225"/>
 								<reference key="NSAlternateImage" ref="276860166"/>
 								<string key="NSAlternateContents"/>
 								<int key="NSPeriodicDelay">400</int>
@@ -1001,7 +1003,7 @@
 							<reference key="NSSupport" ref="209454588"/>
 							<int key="NSButtonFlags">1211912448</int>
 							<int key="NSButtonFlags2">0</int>
-							<reference key="NSNormalImage" ref="864045637"/>
+							<reference key="NSNormalImage" ref="990218225"/>
 							<reference key="NSAlternateImage" ref="276860166"/>
 							<string key="NSAlternateContents"/>
 							<int key="NSPeriodicDelay">400</int>
