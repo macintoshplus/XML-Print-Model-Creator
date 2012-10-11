@@ -27,6 +27,9 @@
 @property (readonly,assign) float zoom;
 @property (copy) NSArray *oldFigures;
 
+- (void)sendNotificationOpenRowSheet:(id)sender;
+- (void)sendNotificationOpenColSheet:(id)sender;
+
 - (void)startObservingFigures:(NSArray *)figures;
 - (void)stopObservingFigures:(NSArray *)figures;
 
