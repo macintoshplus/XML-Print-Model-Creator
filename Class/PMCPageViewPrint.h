@@ -3,7 +3,7 @@
 //  XML Print Model Creator
 //
 //  Created by Jean-Baptiste Nahan on 07/03/10.
-//  Copyright 2010 In Extenso. All rights reserved.
+//  Copyright 2010 Jean-Baptiste Nahan. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

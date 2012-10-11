@@ -66,7 +66,7 @@
 	
 	NSShadow * s = [[[NSShadow alloc] init] autorelease];
 	[s setShadowColor:[NSColor blackColor]];
-	[s setShadowBlurRadius:20.0];
+	[s setShadowBlurRadius:5.0];
 	[s setShadowOffset:NSMakeSize(0.0, 0.0)];
 	[s set];
 	

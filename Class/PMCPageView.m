@@ -3,7 +3,7 @@
 //  XML Print Model Creator
 //
 //  Created by Jean Baptiste Nahan on 05/03/10.
-//  Copyright 2010 In Extenso. All rights reserved.
+//  Copyright 2010 Jean-Baptiste Nahan. All rights reserved.
 //
 
 #import "PMCPageView.h"
@@ -696,6 +696,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 	unsigned int index = [selection firstIndex];
 	while (index != NSNotFound)
 	{
+        if([[self figures] count]<=index) break;
 		[[[self figures] objectAtIndex:index] savePosition];
 		index = [selection indexGreaterThanIndex:index];
 	}
