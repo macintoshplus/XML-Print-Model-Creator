@@ -74,16 +74,16 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.7.0 Alpha 1</string>
+	<string>0.7.0 Alpha 2</string>
 	<key>CFBundleSignature</key>
 	<string>XPMC</string>
 	<key>CFBundleVersion</key>
-	<string>0.7.0 Alpha 1 - Licence CeCILL V2</string>
+	<string>0.7.0 Alpha 2 - Licence CeCILL V2</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2008 - 2012 Jean-Baptiste Nahan (admin@jbnahan.com)</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>© 2008 - 2012 Jean-Baptiste Nahan (admin@jbnahan.com)</string>
 </dict>
 </plist>
