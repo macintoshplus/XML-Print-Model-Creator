@@ -101,7 +101,7 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 									  [observableKeyPath copy], NSObservedKeyPathKey,
 									  [options copy], NSOptionsKey, nil] retain];
 		[bindingInfo setObject:bindingsData forKey:FIGURES_BINDING_NAME];
-        [bindingsData release];
+        //[bindingsData release];
         
 		[observableObject addObserver:self
 						   forKeyPath:observableKeyPath
@@ -127,7 +127,7 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 										  [observableKeyPath copy], NSObservedKeyPathKey,
 										  [options copy], NSOptionsKey, nil] retain];
 			[bindingInfo setObject:bindingsData forKey:SELECTIONINDEXES_BINDING_NAME];
-			[bindingsData release];
+			//[bindingsData release];
 			
 			[observableObject addObserver:self
 							   forKeyPath:observableKeyPath
@@ -150,7 +150,7 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 											  [observableKeyPath copy], NSObservedKeyPathKey,
 											  [options copy], NSOptionsKey, nil];
 				[bindingInfo setObject:bindingsData forKey:FORMAT_BINDING_NAME];
-                [bindingsData release];
+                //[bindingsData release];
 				
 				[observableObject addObserver:self
 								   forKeyPath:observableKeyPath
@@ -174,7 +174,7 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 												  [observableKeyPath copy], NSObservedKeyPathKey,
 												  [options copy], NSOptionsKey, nil];
 					[bindingInfo setObject:bindingsData forKey:ORIENTATION_BINDING_NAME];
-                    [bindingsData release];
+                    //[bindingsData release];
 					
 					[observableObject addObserver:self
 									   forKeyPath:observableKeyPath
@@ -220,7 +220,7 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
                                                   [observableKeyPath copy], NSObservedKeyPathKey,
                                                   [options copy], NSOptionsKey, nil];
                     [bindingInfo setObject:bindingsData forKey:bindingName];
-                    [bindingsData release];
+                    //[bindingsData release];
                     
                     [observableObject addObserver:self
                                        forKeyPath:observableKeyPath
@@ -244,65 +244,36 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 - (void)unbind:(NSString *)bindingName
 {
 	
-    if ([bindingName isEqualToString:FIGURES_BINDING_NAME])
-	{
-		id figuresContainer = [self figuresContainer];
-		NSString *figuresKeyPath = [self figuresKeyPath];
-		
-		[figuresContainer removeObserver:self forKeyPath:figuresKeyPath];
-		[bindingInfo removeObjectForKey:FIGURES_BINDING_NAME];
- 		[self setOldFigures:nil];
-	}
-	else
-		if ([bindingName isEqualToString:SELECTIONINDEXES_BINDING_NAME])
-		{
-			id selectionIndexesContainer = [self selectionIndexesContainer];
-			NSString *selectionIndexesKeyPath = [self selectionIndexesKeyPath];
-			
-			[selectionIndexesContainer removeObserver:self forKeyPath:selectionIndexesKeyPath];
-			[bindingInfo removeObjectForKey:SELECTIONINDEXES_BINDING_NAME];
-		}
-		else
-			if ([bindingName isEqualToString:FORMAT_BINDING_NAME])
-			{
-				id formatContainer = [self formatContainer];
-				NSString *formatKeyPath = [self formatKeyPath];
-				
-				[formatContainer removeObserver:self forKeyPath:formatKeyPath];
-				[bindingInfo removeObjectForKey:FORMAT_BINDING_NAME];
-			}
-			else
-				if ([bindingName isEqualToString:ORIENTATION_BINDING_NAME])
-				{
-					id orientationContainer = [self orientationContainer];
-					NSString *orientationKeyPath = [self orientationKeyPath];
-					
-					[orientationContainer removeObserver:self forKeyPath:orientationKeyPath];
-					[bindingInfo removeObjectForKey:ORIENTATION_BINDING_NAME];
-				}
-                else
-                    if ([bindingName isEqualToString:PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:FORMAT_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:POSITION_X_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:POSITION_Y_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:COLOR_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:SIZE_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:ALIGN_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:FONT_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:BOLD_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:ITALIC_PAGINATION_BINDING_NAME] ||
-                        [bindingName isEqualToString:UNDERLINE_PAGINATION_BINDING_NAME])
-                    {
-                        id paginationContainer = [[bindingInfo objectForKey:bindingName] objectForKey:NSObservedObjectKey];
-                        NSString *paginationKeyPath = [[bindingInfo objectForKey:bindingName] objectForKey:NSObservedKeyPathKey];
-                        
-                        [paginationContainer removeObserver:self forKeyPath:paginationKeyPath];
-                        [bindingInfo removeObjectForKey:bindingName];
-                    }
-		else
-		{
-			[super unbind:bindingName];
-		}
+    
+    if ([bindingName isEqualToString:FIGURES_BINDING_NAME] ||
+        [bindingName isEqualToString:SELECTIONINDEXES_BINDING_NAME] ||
+        [bindingName isEqualToString:FORMAT_BINDING_NAME] ||
+        [bindingName isEqualToString:ORIENTATION_BINDING_NAME] ||
+        [bindingName isEqualToString:PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:FORMAT_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:POSITION_X_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:POSITION_Y_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:COLOR_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:SIZE_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:ALIGN_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:FONT_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:BOLD_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:ITALIC_PAGINATION_BINDING_NAME] ||
+        [bindingName isEqualToString:UNDERLINE_PAGINATION_BINDING_NAME])
+    {
+        NSDictionary * dico= [self infoForBinding:bindingName];
+        id paginationContainer = [dico objectForKey:NSObservedObjectKey];
+        NSString *paginationKeyPath = [dico objectForKey:NSObservedKeyPathKey];
+        
+        [paginationContainer removeObserver:self forKeyPath:paginationKeyPath];
+        [bindingInfo removeObjectForKey:bindingName];
+        
+        if ([bindingName isEqualToString:FIGURES_BINDING_NAME]) [self setOldFigures:nil];
+    }
+    else
+    {
+        [super unbind:bindingName];
+    }
     [self setNeedsDisplay:YES];
 }
 
@@ -749,6 +720,11 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 		[i1 setEnabled:TRUE];
 		[m addItem:i1];
 		[i1 release];
+		i1=[[NSMenuItem alloc] initWithTitle:NSLocalizedStringFromTable(@"NPicture",@"Localizable",@"CM") action:@selector(tool_NewPicture:) keyEquivalent:@"i"];
+		[i1 setTarget:doc];
+		[i1 setEnabled:TRUE];
+		[m addItem:i1];
+		[i1 release];
 		
 		
 		return m;
@@ -934,6 +910,17 @@ NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 		[self unbind:FORMAT_BINDING_NAME];
 		[self unbind:FIGURES_BINDING_NAME];
 		[self unbind:SELECTIONINDEXES_BINDING_NAME];
+		[self unbind:PAGINATION_BINDING_NAME];
+		[self unbind:FORMAT_PAGINATION_BINDING_NAME];
+		[self unbind:POSITION_X_PAGINATION_BINDING_NAME];
+		[self unbind:POSITION_Y_PAGINATION_BINDING_NAME];
+		[self unbind:COLOR_PAGINATION_BINDING_NAME];
+		[self unbind:SIZE_PAGINATION_BINDING_NAME];
+		[self unbind:ALIGN_PAGINATION_BINDING_NAME];
+		[self unbind:FONT_PAGINATION_BINDING_NAME];
+		[self unbind:BOLD_PAGINATION_BINDING_NAME];
+		[self unbind:ITALIC_PAGINATION_BINDING_NAME];
+		[self unbind:UNDERLINE_PAGINATION_BINDING_NAME];
 	}
 }
 

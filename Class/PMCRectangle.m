@@ -214,7 +214,14 @@
 
 - (void)setBgroundColor:(NSColor*)newBGColor
 {
-	[self willChangeValueForKey:FigureDrawingContentsKey];
+	/*
+     A Activer
+     [[undoManager prepareWithInvocationTarget:self] setBackgroundVisibility:_backgroundVisible];
+     if(![undoManager isUndoing]){
+     [undoManager setActionName:NSLocalizedStringFromTable(@"UMBgVisibility",@"Localizable",@"Undo Manager Action")];
+     }
+     */
+    [self willChangeValueForKey:FigureDrawingContentsKey];
 	//NSLog(@"New color : %@",newBGColor);
 	[_backgroundColor release];
 	_backgroundColor=[[self changeColorSpaceNameToRVB:newBGColor] copy];

@@ -55,7 +55,7 @@
 @property (readonly) id paginationContainer;
 @property (readonly) NSString *paginationKeyPath;
 
-
+/*
 @property (readonly) NSString * formatPaginationKeyPath;
 @property (readonly) NSString * paginationPositionXKeyPath;
 @property (readonly) NSString * paginationPositionYKeyPath;
@@ -81,7 +81,7 @@
 @property (readonly) id textFontIndexContainer;
 @property (readonly) id textBoldContainer;
 @property (readonly) id textItalicContainer;
-@property (readonly) id textUnderlineContainer;
+@property (readonly) id textUnderlineContainer;*/
 
 
 @property (readonly) NSArray *figures;
