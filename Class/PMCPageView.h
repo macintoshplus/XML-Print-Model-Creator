@@ -8,7 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "PMCBook.h"
+
 @class PMCFigure;
+@class PMCBook;
 
 @interface PMCPageView : NSView {
 	
@@ -22,6 +25,8 @@
 	
 	NSPoint _startDrag;
 	
+    PMCBook * book;
+    
 }
 
 @property (readonly,assign) float zoom;
@@ -49,6 +54,7 @@
 @property (readonly) NSString *orientationKeyPath;
 @property (readonly) NSArray *figures;
 @property (readonly) NSIndexSet *selectionIndexes;
+@property (retain) PMCBook * book;
 
 
 @end

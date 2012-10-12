@@ -155,9 +155,7 @@
     [pView bind: @"selectionIndexes" toObject: figuresArrayController
 		   withKeyPath:@"selectionIndexes" options:nil];
     
-    /*
-     Commenté le 10/10/2012 pour trouver l'origine du problème de démarage.
-	*/
+    [pView setBook:self];
 	
 	NSRect r = [pView frame];
 	NSSize cr = [main_ScroolView contentSize];

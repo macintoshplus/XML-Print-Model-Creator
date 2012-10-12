@@ -25,6 +25,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 
 @synthesize zoom=_zoom;
 @synthesize oldFigures;
+@synthesize book;
 
 /*
  Since the view is not put on an IB palette, it's not really necessary to expose the bindings
@@ -411,9 +412,26 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 			
         }
     }
-    
-    
-    
+    /*
+     Gestion de la pagination
+     */
+    if([[self book] enabledPagination]){
+        PMCText * pagination = [[PMCText alloc] init];
+        [pagination setContent:[[self book] formatPagination]];
+        [pagination setSizeAndPosition:NSMakeRect([[self book] paginationPositionX], [[self book] paginationPositionY], [self frame].size.width-[[self book] paginationPositionX]-1, 20.)];
+        [pagination setTextAlign:[[self book] textAlign]];
+        [pagination setTextBold:[[self book] textBold]];
+        [pagination setTextItalic:[[self book] textItalic]];
+        [pagination setTextUnderline:[[self book] textUnderline]];
+        [pagination setTextSize:[[self book] textSize]];
+        [pagination setTextFontIndex:[[self book] textFontIndex]];
+        [pagination setTextColor:[[self book] textColor]];
+        [pagination setBorderBottomVisibility:NO];
+        [pagination setBorderLeftVisibility:NO];
+        [pagination setBorderRightVisibility:NO];
+        [pagination setBorderTopVisibility:NO];
+        [pagination draw];
+    }
 	/*
 	 Draw a red box around items in the current selection.
 	 Selection should be handled by the graphic, but this is a shortcut simply for display.
