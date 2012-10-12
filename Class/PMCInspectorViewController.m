@@ -43,6 +43,9 @@ NSString* SelectionContext = @"selection";
 		_arrayInspectorViewController = [[PMCArrayInspectorViewController alloc] initWithNibName:@"ArrayInspector" bundle:[NSBundle mainBundle]];
 		[_arrayInspectorViewController loadView];
 		
+        _pictureInspectorViewController = [[PMCArrayInspectorViewController alloc] initWithNibName:@"PictureInspector" bundle:[NSBundle mainBundle]];
+		[_pictureInspectorViewController loadView];
+        
 		
 	}
 	
@@ -106,6 +109,11 @@ NSString* SelectionContext = @"selection";
 			[_textInspectorViewController setRepresentedObject:nil];
 			[_textInspectorViewController removeView];
 		}
+		if([_pictureInspectorViewController viewVisible])
+		{
+			[_pictureInspectorViewController setRepresentedObject:nil];
+			[_pictureInspectorViewController removeView];
+		}
 		
 		
 		// Ajout des palettes
@@ -147,6 +155,16 @@ NSString* SelectionContext = @"selection";
 			
 			[_borderBackgroundInspectorViewController setRepresentedObject:figuresArrayController];
 			[_borderBackgroundInspectorViewController insertViewInSuperview:pv];
+			
+			[_sizeInspectorViewController setRepresentedObject:figuresArrayController];
+			[_sizeInspectorViewController insertViewInSuperview:pv];
+		}else if([[objectsClass className] isEqualToString:@"PMCPicture"]){
+			//Proptiété d'un rectangle
+			[_pictureInspectorViewController setRepresentedObject:figuresArrayController];
+			[_pictureInspectorViewController insertViewInSuperview:pv];
+			
+			/*[_borderBackgroundInspectorViewController setRepresentedObject:figuresArrayController];
+			[_borderBackgroundInspectorViewController insertViewInSuperview:pv];*/
 			
 			[_sizeInspectorViewController setRepresentedObject:figuresArrayController];
 			[_sizeInspectorViewController insertViewInSuperview:pv];

@@ -24,6 +24,7 @@
 	PMCPaletteInspectorViewController * _rectangleInspectorViewController;
 	PMCPaletteInspectorViewController * _textInspectorViewController;
 	PMCPaletteInspectorViewController * _fontInspectorViewController;
+	PMCPaletteInspectorViewController * _pictureInspectorViewController;
 	PMCArrayInspectorViewController * _arrayInspectorViewController;
 }
 
