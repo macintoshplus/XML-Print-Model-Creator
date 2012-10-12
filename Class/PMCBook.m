@@ -362,6 +362,13 @@
             [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
+		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCPicture"]){
+			PMCPicture * t = [[PMCPicture alloc] initWithData:obj];
+			[t setUndoManager:[self undoManager]];
+			[_page1 addObject:t atPlan:0];
+            [t release];
+			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
+		}
 		
 		/*
 		*/
@@ -405,6 +412,13 @@
             [t release];
 			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
 		}
+		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCPicture"]){
+			PMCPicture * t = [[PMCPicture alloc] initWithData:obj];
+			[t setUndoManager:[self undoManager]];
+			[_page2 addObject:t atPlan:0];
+            [t release];
+			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
+		}
 	}
 	
 	
@@ -439,6 +453,13 @@
 		}
 		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCTableau"]){
 			PMCTableau * t = [[PMCTableau alloc] initWithData:obj];
+			[t setUndoManager:[self undoManager]];
+			[_page3 addObject:t atPlan:0];
+            [t release];
+			//NSLog(@"Obj '%@' add in page : '%@'",[t name],[_page1 title]);
+		}
+		if([[obj objectForKey:@"ObjectClassName"] isEqualToString:@"PMCPicture"]){
+			PMCPicture * t = [[PMCPicture alloc] initWithData:obj];
 			[t setUndoManager:[self undoManager]];
 			[_page3 addObject:t atPlan:0];
             [t release];
@@ -1096,6 +1117,19 @@
     //[_actualPage reDraw];
 	//[ol_ObjectTableView reloadData];
 	//[[self windowForSheet] setDocumentEdited:TRUE];
+}
+
+- (IBAction)tool_NewPicture:(id)sender
+{
+	NSString *name = [[NSString alloc] initWithFormat:@"%@ %@ %i", NSLocalizedStringFromTable(@"OBJNew",@"Localizable",@"Objects"),NSLocalizedStringFromTable(@"PMCPicture",@"Localizable",@"Objects"), [_actualPage objCount]+1];
+	//NSLog(@"name = %@",name);
+	PMCPicture * nl = [[PMCPicture alloc] initWithName:name];
+    [name release];
+	[nl setSizeAndPosition:NSMakeRect(130, 10, 50, 50)];
+	[nl setUndoManager:[self undoManager]];
+	NSLog(@"New Object [%@] : %@", [nl className], nl);
+	[[[pagesArrayController arrangedObjects] objectAtIndex:[pagesArrayController selectionIndex]] addObject:nl atPlan:0];
+	[nl release];
 }
 
 

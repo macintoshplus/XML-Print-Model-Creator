@@ -20,6 +20,7 @@
 #import "PMCTableau.h"
 #import "PMCFippedView.h"
 #import "PMCPageView.h"
+#import "PMCPicture.h"
 
 
 @interface PMCBook : NSDocument <NSToolbarDelegate>
@@ -133,6 +134,7 @@
 - (IBAction)tool_NewRect:(id)sender;
 - (IBAction)tool_NewText:(id)sender;
 - (IBAction)tool_NewArray:(id)sender;
+- (IBAction)tool_NewPicture:(id)sender;
 - (IBAction)tool_deleteSelectedObject:(id)sender;
 - (IBAction)tool_orderUpSelectedObject:(id)sender;
 - (IBAction)tool_orderDoubleUpSelectedObject:(id)sender;
