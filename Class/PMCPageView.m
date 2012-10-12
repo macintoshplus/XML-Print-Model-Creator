@@ -20,6 +20,18 @@ NSString *FIGURES_BINDING_NAME = @"_listObject";
 NSString *FORMAT_BINDING_NAME = @"pageFormat";
 NSString *ORIENTATION_BINDING_NAME = @"pageOrientation";
 NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
+NSString *PAGINATION_BINDING_NAME = @"enabledPagination";
+
+NSString *FORMAT_PAGINATION_BINDING_NAME = @"formatPagination";
+NSString *POSITION_X_PAGINATION_BINDING_NAME = @"paginationPositionX";
+NSString *POSITION_Y_PAGINATION_BINDING_NAME = @"paginationPositionY";
+NSString *COLOR_PAGINATION_BINDING_NAME = @"textColor";
+NSString *SIZE_PAGINATION_BINDING_NAME = @"textSize";
+NSString *ALIGN_PAGINATION_BINDING_NAME = @"textAlign";
+NSString *FONT_PAGINATION_BINDING_NAME = @"textFontIndex";
+NSString *BOLD_PAGINATION_BINDING_NAME = @"textBold";
+NSString *ITALIC_PAGINATION_BINDING_NAME = @"textItalic";
+NSString *UNDERLINE_PAGINATION_BINDING_NAME = @"textUnderline";
 
 @implementation PMCPageView
 
@@ -36,6 +48,17 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 	[self exposeBinding:ORIENTATION_BINDING_NAME];
 	[self exposeBinding:FIGURES_BINDING_NAME];
 	[self exposeBinding:SELECTIONINDEXES_BINDING_NAME];
+	[self exposeBinding:PAGINATION_BINDING_NAME];
+	[self exposeBinding:FORMAT_PAGINATION_BINDING_NAME];
+	[self exposeBinding:POSITION_X_PAGINATION_BINDING_NAME];
+	[self exposeBinding:POSITION_Y_PAGINATION_BINDING_NAME];
+	[self exposeBinding:COLOR_PAGINATION_BINDING_NAME];
+	[self exposeBinding:SIZE_PAGINATION_BINDING_NAME];
+	[self exposeBinding:ALIGN_PAGINATION_BINDING_NAME];
+	[self exposeBinding:FONT_PAGINATION_BINDING_NAME];
+	[self exposeBinding:BOLD_PAGINATION_BINDING_NAME];
+	[self exposeBinding:ITALIC_PAGINATION_BINDING_NAME];
+	[self exposeBinding:UNDERLINE_PAGINATION_BINDING_NAME];
 }
 
 
@@ -127,6 +150,7 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 											  [observableKeyPath copy], NSObservedKeyPathKey,
 											  [options copy], NSOptionsKey, nil];
 				[bindingInfo setObject:bindingsData forKey:FORMAT_BINDING_NAME];
+                [bindingsData release];
 				
 				[observableObject addObserver:self
 								   forKeyPath:observableKeyPath
@@ -150,13 +174,60 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 												  [observableKeyPath copy], NSObservedKeyPathKey,
 												  [options copy], NSOptionsKey, nil];
 					[bindingInfo setObject:bindingsData forKey:ORIENTATION_BINDING_NAME];
+                    [bindingsData release];
 					
 					[observableObject addObserver:self
 									   forKeyPath:observableKeyPath
 										  options:(NSKeyValueObservingOptionNew |
 												   NSKeyValueObservingOptionOld)
 										  context:&SizeObservationContext];
-				}
+            }
+            else
+                if ([bindingName isEqualToString:PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:FORMAT_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:POSITION_X_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:POSITION_Y_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:COLOR_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:SIZE_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:ALIGN_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:FONT_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:BOLD_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:ITALIC_PAGINATION_BINDING_NAME] ||
+                    [bindingName isEqualToString:UNDERLINE_PAGINATION_BINDING_NAME])
+                {
+                    
+                    /*[self exposeBinding:FORMAT_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:POSITION_X_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:POSITION_Y_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:COLOR_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:SIZE_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:ALIGN_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:FONT_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:BOLD_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:ITALIC_PAGINATION_BINDING_NAME];
+                    [self exposeBinding:UNDERLINE_PAGINATION_BINDING_NAME];*/
+                    
+                    if ([bindingInfo objectForKey:bindingName] != nil)
+                    {
+                        [self unbind:bindingName];
+                    }
+                    /*
+                     observe the controller for changes -- note, pass binding identifier as the context, so we get that back in observeValueForKeyPath:... -- that way we can determine what needs to be updated
+                     */
+                    
+                    NSDictionary *bindingsData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                  observableObject, NSObservedObjectKey,
+                                                  [observableKeyPath copy], NSObservedKeyPathKey,
+                                                  [options copy], NSOptionsKey, nil];
+                    [bindingInfo setObject:bindingsData forKey:bindingName];
+                    [bindingsData release];
+                    
+                    [observableObject addObserver:self
+                                       forKeyPath:observableKeyPath
+                                          options:(NSKeyValueObservingOptionNew |
+                                                   NSKeyValueObservingOptionOld)
+                                          context:&SelectionIndexesObservationContext];
+                }
 			else 
 			{
 				[super bind:bindingName toObject:observableObject withKeyPath:observableKeyPath options:options];
@@ -209,6 +280,25 @@ NSString *SELECTIONINDEXES_BINDING_NAME = @"selectionIndexes";
 					[orientationContainer removeObserver:self forKeyPath:orientationKeyPath];
 					[bindingInfo removeObjectForKey:ORIENTATION_BINDING_NAME];
 				}
+                else
+                    if ([bindingName isEqualToString:PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:FORMAT_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:POSITION_X_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:POSITION_Y_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:COLOR_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:SIZE_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:ALIGN_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:FONT_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:BOLD_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:ITALIC_PAGINATION_BINDING_NAME] ||
+                        [bindingName isEqualToString:UNDERLINE_PAGINATION_BINDING_NAME])
+                    {
+                        id paginationContainer = [[bindingInfo objectForKey:bindingName] objectForKey:NSObservedObjectKey];
+                        NSString *paginationKeyPath = [[bindingInfo objectForKey:bindingName] objectForKey:NSObservedKeyPathKey];
+                        
+                        [paginationContainer removeObserver:self forKeyPath:paginationKeyPath];
+                        [bindingInfo removeObjectForKey:bindingName];
+                    }
 		else
 		{
 			[super unbind:bindingName];

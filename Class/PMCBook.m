@@ -148,12 +148,34 @@
     
 	PMCPageView * pView = [[PMCPageView alloc] initWithFrame:[self frameWidthFormatAndOrientation]];
 	[pView bind: @"_listObject" toObject: figuresArrayController withKeyPath:@"arrangedObjects" options:nil];
+    
 	[pView bind: @"pageFormat" toObject:self withKeyPath:@"pageFormat" options:nil];
     
 	[pView bind: @"pageOrientation" toObject:self withKeyPath:@"pageOrientation" options:nil];
     
-    [pView bind: @"selectionIndexes" toObject: figuresArrayController
-		   withKeyPath:@"selectionIndexes" options:nil];
+    [pView bind: @"selectionIndexes" toObject:figuresArrayController withKeyPath:@"selectionIndexes" options:nil];
+    
+    [pView bind: @"enabledPagination" toObject:self withKeyPath:@"enabledPagination" options:nil];
+    
+    [pView bind: @"formatPagination" toObject:self withKeyPath:@"formatPagination" options:nil];
+    
+    [pView bind: @"paginationPositionX" toObject:self withKeyPath:@"paginationPositionX" options:nil];
+    
+    [pView bind: @"paginationPositionY" toObject:self withKeyPath:@"paginationPositionY" options:nil];
+    
+    [pView bind: @"textColor" toObject:self withKeyPath:@"textColor" options:nil];
+    
+    [pView bind: @"textSize" toObject:self withKeyPath:@"textSize" options:nil];
+    
+    [pView bind: @"textAlign" toObject:self withKeyPath:@"textAlign" options:nil];
+    
+    [pView bind: @"textFontIndex" toObject:self withKeyPath:@"textFontIndex" options:nil];
+    
+    [pView bind: @"textBold" toObject:self withKeyPath:@"textBold" options:nil];
+    
+    [pView bind: @"textItalic" toObject:self withKeyPath:@"textItalic" options:nil];
+    
+    [pView bind: @"textUnderline" toObject:self withKeyPath:@"textUnderline" options:nil];
     
     [pView setBook:self];
 	

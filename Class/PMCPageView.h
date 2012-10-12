@@ -52,6 +52,38 @@
 @property (readonly) NSString *formatKeyPath;
 @property (readonly) id orientationContainer;
 @property (readonly) NSString *orientationKeyPath;
+@property (readonly) id paginationContainer;
+@property (readonly) NSString *paginationKeyPath;
+
+
+@property (readonly) NSString * formatPaginationKeyPath;
+@property (readonly) NSString * paginationPositionXKeyPath;
+@property (readonly) NSString * paginationPositionYKeyPath;
+@property (readonly) NSString * enabledPaginationKeyPath;
+
+@property (readonly) NSString * textColorKeyPath;
+@property (readonly) NSString * textSizeKeyPath;
+@property (readonly) NSString * textAlignKeyPath;
+@property (readonly) NSString * textFontIndexKeyPath;
+@property (readonly) NSString * textBoldKeyPath;
+@property (readonly) NSString * textItalicKeyPath;
+@property (readonly) NSString * textUnderlineKeyPath;
+
+
+@property (readonly) id formatPaginationContainer;
+@property (readonly) id paginationPositionXContainer;
+@property (readonly) id paginationPositionYContainer;
+@property (readonly) id enabledPaginationContainer;
+
+@property (readonly) id textColorContainer;
+@property (readonly) id textSizeContainer;
+@property (readonly) id textAlignContainer;
+@property (readonly) id textFontIndexContainer;
+@property (readonly) id textBoldContainer;
+@property (readonly) id textItalicContainer;
+@property (readonly) id textUnderlineContainer;
+
+
 @property (readonly) NSArray *figures;
 @property (readonly) NSIndexSet *selectionIndexes;
 @property (retain) PMCBook * book;
