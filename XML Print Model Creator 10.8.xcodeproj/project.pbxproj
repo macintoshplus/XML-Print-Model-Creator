@@ -42,6 +42,8 @@
 		29DB3A240F5676E600195F2B /* OutilTableau.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DB3A230F5676E600195F2B /* OutilTableau.png */; };
 		29DB3A5A0F56970100195F2B /* Printer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 29DB3A590F56970100195F2B /* Printer.icns */; };
 		29FD0E8511402EB700BD461D /* FontInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29FD0E8311402EB700BD461D /* FontInspector.xib */; };
+		2EA5B9231628AE7E00090D19 /* PMCPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5B9221628AE7D00090D19 /* PMCPicture.m */; };
+		2EA5B9261628B26E00090D19 /* PictureInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5B9241628B26E00090D19 /* PictureInspector.xib */; };
 		2EBA154C1626A1F300BBE970 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15421626A1EA00BBE970 /* Delete.png */; };
 		2EBA155F1626A51C00BBE970 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15561626A51600BBE970 /* Delete@2x.png */; };
 		2EBA15601626A51C00BBE970 /* OrderDoubleDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */; };
@@ -151,6 +153,9 @@
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2EA5B9211628AE7D00090D19 /* PMCPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPicture.h; path = Class/PMCPicture.h; sourceTree = "<group>"; };
+		2EA5B9221628AE7D00090D19 /* PMCPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPicture.m; path = Class/PMCPicture.m; sourceTree = "<group>"; };
+		2EA5B9251628B26E00090D19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PictureInspector.xib; sourceTree = "<group>"; };
 		2EBA15421626A1EA00BBE970 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Delete.png; path = Images/Delete.png; sourceTree = "<group>"; };
 		2EBA15561626A51600BBE970 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
 		2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrderDoubleDown@2x.png"; path = "Images/OrderDoubleDown@2x.png"; sourceTree = "<group>"; };
@@ -243,6 +248,8 @@
 				2970C81E0F53E3DE00BBA394 /* PMCTableau.m */,
 				290B12180F4179F9007B9473 /* PMCFigure.h */,
 				290B12190F4179F9007B9473 /* PMCFigure.m */,
+				2EA5B9211628AE7D00090D19 /* PMCPicture.h */,
+				2EA5B9221628AE7D00090D19 /* PMCPicture.m */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -345,6 +352,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2EA5B9241628B26E00090D19 /* PictureInspector.xib */,
 				5C1F7772114253370074F760 /* Preferences.xib */,
 				29D3022E1140F9E6003A2153 /* ArrayInspector.xib */,
 				29FD0E8311402EB700BD461D /* FontInspector.xib */,
@@ -488,6 +496,7 @@
 				2EBA15651626A51C00BBE970 /* OutilTableau@2x.png in Resources */,
 				2EBA15661626A51C00BBE970 /* OutilTexte@2x.png in Resources */,
 				2EBA15671626A51C00BBE970 /* OutilTrait@2x.png in Resources */,
+				2EA5B9261628B26E00090D19 /* PictureInspector.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +515,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\nibtool --generate-strings-file English.lproj/MainMenu.strings English.lproj/MainMenu.xib\nibtool --generate-strings-file English.lproj/Book.strings English.lproj/Book.xib\nibtool --generate-strings-file English.lproj/SizeInspector.strings English.lproj/SizeInspector.xib\nibtool --generate-strings-file English.lproj/LineInspector.strings English.lproj/LineInspector.xib\nibtool --generate-strings-file English.lproj/DocumentInspector.strings English.lproj/DocumentInspector.xib\nibtool --generate-strings-file English.lproj/BorderBackgroundInspector.strings English.lproj/BorderBackgroundInspector.xib\nibtool --generate-strings-file English.lproj/RectangleInspector.strings English.lproj/RectangleInspector.xib\nibtool --generate-strings-file English.lproj/TextInspector.strings English.lproj/TextInspector.xib\nibtool --generate-strings-file English.lproj/FontInspector.strings English.lproj/FontInspector.xib\nibtool --generate-strings-file English.lproj/ArrayInspector.strings English.lproj/ArrayInspector.xib\nibtool --generate-strings-file English.lproj/Preferences.strings English.lproj/Preferences.xib\n# Generate French interface\nibtool --strings-file French.lproj/MainMenu.strings --write French.lproj/MainMenu.xib English.lproj/MainMenu.xib\nibtool --strings-file French.lproj/Book.strings --write French.lproj/Book.xib English.lproj/Book.xib\nibtool --strings-file French.lproj/SizeInspector.strings --write French.lproj/SizeInspector.xib English.lproj/SizeInspector.xib\nibtool --strings-file French.lproj/LineInspector.strings --write French.lproj/LineInspector.xib English.lproj/LineInspector.xib\nibtool --strings-file French.lproj/DocumentInspector.strings --write French.lproj/DocumentInspector.xib English.lproj/DocumentInspector.xib\nibtool --strings-file French.lproj/BorderBackgroundInspector.strings --write French.lproj/BorderBackgroundInspector.xib English.lproj/BorderBackgroundInspector.xib\nibtool --strings-file French.lproj/RectangleInspector.strings --write French.lproj/RectangleInspector.xib English.lproj/RectangleInspector.xib\nibtool --strings-file French.lproj/TextInspector.strings --write French.lproj/TextInspector.xib English.lproj/TextInspector.xib\nibtool --strings-file French.lproj/FontInspector.strings --write French.lproj/FontInspector.xib English.lproj/FontInspector.xib\nibtool --strings-file French.lproj/ArrayInspector.strings --write French.lproj/ArrayInspector.xib English.lproj/ArrayInspector.xib\nibtool --strings-file French.lproj/Preferences.strings --write French.lproj/Preferences.xib English.lproj/Preferences.xib\n";
+			shellScript = "# Extract English strings (use this to check if you added new strings to your nibs)\nibtool --generate-strings-file English.lproj/MainMenu.strings English.lproj/MainMenu.xib\nibtool --generate-strings-file English.lproj/Book.strings English.lproj/Book.xib\nibtool --generate-strings-file English.lproj/SizeInspector.strings English.lproj/SizeInspector.xib\nibtool --generate-strings-file English.lproj/LineInspector.strings English.lproj/LineInspector.xib\nibtool --generate-strings-file English.lproj/DocumentInspector.strings English.lproj/DocumentInspector.xib\nibtool --generate-strings-file English.lproj/BorderBackgroundInspector.strings English.lproj/BorderBackgroundInspector.xib\nibtool --generate-strings-file English.lproj/RectangleInspector.strings English.lproj/RectangleInspector.xib\nibtool --generate-strings-file English.lproj/TextInspector.strings English.lproj/TextInspector.xib\nibtool --generate-strings-file English.lproj/FontInspector.strings English.lproj/FontInspector.xib\nibtool --generate-strings-file English.lproj/ArrayInspector.strings English.lproj/ArrayInspector.xib\nibtool --generate-strings-file English.lproj/PictureInspector.strings English.lproj/PictureInspector.xib\nibtool --generate-strings-file English.lproj/Preferences.strings English.lproj/Preferences.xib\n# Generate French interface\nibtool --strings-file French.lproj/MainMenu.strings --write French.lproj/MainMenu.xib English.lproj/MainMenu.xib\nibtool --strings-file French.lproj/Book.strings --write French.lproj/Book.xib English.lproj/Book.xib\nibtool --strings-file French.lproj/SizeInspector.strings --write French.lproj/SizeInspector.xib English.lproj/SizeInspector.xib\nibtool --strings-file French.lproj/LineInspector.strings --write French.lproj/LineInspector.xib English.lproj/LineInspector.xib\nibtool --strings-file French.lproj/DocumentInspector.strings --write French.lproj/DocumentInspector.xib English.lproj/DocumentInspector.xib\nibtool --strings-file French.lproj/BorderBackgroundInspector.strings --write French.lproj/BorderBackgroundInspector.xib English.lproj/BorderBackgroundInspector.xib\nibtool --strings-file French.lproj/RectangleInspector.strings --write French.lproj/RectangleInspector.xib English.lproj/RectangleInspector.xib\nibtool --strings-file French.lproj/TextInspector.strings --write French.lproj/TextInspector.xib English.lproj/TextInspector.xib\nibtool --strings-file French.lproj/FontInspector.strings --write French.lproj/FontInspector.xib English.lproj/FontInspector.xib\nibtool --strings-file French.lproj/ArrayInspector.strings --write French.lproj/ArrayInspector.xib English.lproj/ArrayInspector.xib\nibtool --strings-file French.lproj/Preferences.strings --write French.lproj/Preferences.xib English.lproj/Preferences.xib\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -534,6 +543,7 @@
 				5C1F776E114252BE0074F760 /* AppPrefsWindowController.m in Sources */,
 				5C1F776F114252BE0074F760 /* DBPrefsWindowController.m in Sources */,
 				5C1D9D4C1143E66C003E7E1C /* PMCPageViewPrint.m in Sources */,
+				2EA5B9231628AE7E00090D19 /* PMCPicture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +663,14 @@
 				294C20CD114664660010A782 /* French */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2EA5B9241628B26E00090D19 /* PictureInspector.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EA5B9251628B26E00090D19 /* English */,
+			);
+			name = PictureInspector.xib;
 			sourceTree = "<group>";
 		};
 		5C052CD80F3F207A00087191 /* Book.xib */ = {
