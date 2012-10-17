@@ -139,6 +139,7 @@
 "lineTool" = "Line";
 "rectTool" = "Rect";
 "textTool" = "Text";
+"imageTool" = "Picture";
 "deleteTool" = "Delete";
 "arrayTool" = "Array";
 "orderUpTool" = "Send Forward";
