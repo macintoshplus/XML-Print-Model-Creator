@@ -145,6 +145,7 @@
 - (IBAction)export_extensionsChange:(id)sender;
 - (NSData*)dataImageForPage:(int)pageIdx widthFormat:(int)intFormat;
 - (IBAction)exportToModel:(id)sender;
+- (IBAction)exportToSVG:(id)sender;
 
 - (IBAction)importOldXMLSources:(id)sender;
 

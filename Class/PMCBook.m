@@ -1413,6 +1413,13 @@
 	
 }
 
+- (IBAction)exportToSVG:(id)sender{
+    NSAlert * a = [NSAlert alertWithMessageText:NSLocalizedStringFromTable(@"EXSVGAlertTitle",@"Localizable",@"Export")  defaultButton:NSLocalizedStringFromTable(@"EXSVGAlertDefault",@"Localizable",@"Export") alternateButton:NSLocalizedStringFromTable(@"EXSVGAlertAlternate",@"Localizable",@"Export") otherButton:@"" informativeTextWithFormat:NSLocalizedStringFromTable(@"EXSVGAlertText",@"Localizable",@"Export")];
+    if([a runModal]==NSAlertAlternateReturn){
+        return;
+    }
+}
+
 
 
 #pragma mark -
