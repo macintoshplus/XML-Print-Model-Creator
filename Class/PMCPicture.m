@@ -11,6 +11,7 @@
 @implementation PMCPicture
 
 @synthesize image = _image;
+@synthesize selectFile = _selectFile;
 
 - (id)init {
     self = [super init];
@@ -142,6 +143,10 @@
 	if(_image!=nil)[_image release];
 	_image=[image copy];
 	[self didChangeValueForKey:FigureDrawingContentsKey];
+}
+
+- (void)setSelectFile:(NSString*)sender{
+    NSLog(@"Select file !!!");
 }
 
 @end
