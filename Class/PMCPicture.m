@@ -152,6 +152,7 @@
 - (NSMutableDictionary*)getDataForSave{
 	NSMutableDictionary * dico = [super getDataForSave];
 	[dico setObject:[self className] forKey:@"ObjectClassName"];
+    if(_image!=nil)
 	[dico setObject:[_image TIFFRepresentation] forKey:@"Img"];
 	
 	

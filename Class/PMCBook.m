@@ -51,6 +51,9 @@
 		
 		_format=1;
 		_orientation=0;
+        _title=@"";
+        _author=@"";
+        _description=@"";
 		
 		_firstPage=TRUE;
 		_otherPage=FALSE;
@@ -319,9 +322,12 @@
 	_italicFontPagination= [[dico objectForKey:@"DocItalicFontPagination"] boolValue];
 	_underlineFontPagination= [[dico objectForKey:@"DocUnderlineFontPagination"] boolValue];
 	_formatPagination= [[dico objectForKey:@"DocFormatPagination"] copy];
-	_title= [[dico objectForKey:@"DocTitle"] copy];
-	_author= [[dico objectForKey:@"DocAuthor"] copy];
-	_description= [[dico objectForKey:@"DocDescription"] copy];
+	if([dico objectForKey:@"DocTitle"]) _title= [[dico objectForKey:@"DocTitle"] copy];
+    else _title=@"";
+	if([dico objectForKey:@"DocAuthor"]) _author= [[dico objectForKey:@"DocAuthor"] copy];
+    else _title=@"";
+	if([dico objectForKey:@"DocDescription"]) _description= [[dico objectForKey:@"DocDescription"] copy];
+    else _title=@"";
 	_colorFontPagination= [[dico objectForKey:@"DocColorFontPagination"] copy];
 	
 	
