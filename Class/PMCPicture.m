@@ -8,9 +8,13 @@
 
 #import "PMCPicture.h"
 
+//#define degreesToRadians( degrees ) ( ( degrees ) / 180.0 * M_PI )
+
 @implementation PMCPicture
 
 @synthesize image = _image;
+@synthesize sizeInfo = _sizeInfo;
+
 
 - (id)init {
     self = [super init];
@@ -19,6 +23,7 @@
         [self setBgroundColor:[NSColor orangeColor]];
 		_borderProperty.borderSize=1;
         _image=nil;
+        [self actualizeSizeInfo];
 		[self setBorderColor:[NSColor blackColor]];
 		
     }
@@ -29,7 +34,8 @@
 - (id)initWithData:(NSDictionary*)dico{
 	//NSLog(@"Dico %@ = %@", [self className],dico);
 	self = [super initWithData:dico];
-	_image= [[NSImage alloc] initWithData:[[dico objectForKey:@"Img"] data]];
+	_image= [[NSImage alloc] initWithData:[dico objectForKey:@"Img"]];
+    [self actualizeSizeInfo];
 	/*_backgroundColor= [[dico objectForKey:@"BackgroundColor"] copy];
 	_borderProperty.topVisible= [[dico objectForKey:@"BorderTopVisible"] boolValue];
 	_borderProperty.topColor= [[dico objectForKey:@"BorderTopColor"] copy];
@@ -54,6 +60,29 @@
 - (void)draw {
     //Dessinner le rectangle
     [super draw];
+    /*CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+    if (context==nil)
+        return;*/
+    if (_image!=nil) {
+        /*CGImageSourceRef source = CGImageSourceCreateWithData((CFDataRef)[_image TIFFRepresentation], NULL);
+        NSDictionary* options = nil;
+        options = [NSDictionary dictionaryWithObjectsAndKeys:
+                       (id)kCFBooleanTrue, (id)kCGImageSourceShouldCache,
+                       (id)kCFBooleanTrue, (id)kCGImageSourceShouldAllowFloat,
+                       nil];
+        CGAffineTransform rotation;
+        rotation = CGAffineTransformRotate(rotation,degreesToRadians(90.0));
+        
+        CGImageRef img = CGImageSourceCreateImageAtIndex(source, 0, (CFDictionaryRef)options);
+        CIImage * mCIImage = [CIImage imageWithCGImage:img];
+        mCIImage = [mCIImage imageByApplyingTransform:rotation];
+        CIContext* cicontext = [CIContext contextWithCGContext: context options: nil];
+        [cicontext drawImage:mCIImage inRect:NSMakeRect(x, y, width, height) fromRect:NSMakeRect(0, 0, [_image size].width, [_image size].height)];
+        */
+        //CGContextDrawImage(context, NSMakeRect(x, y, width, height), img);
+        [_image setFlipped:YES];
+        [_image  drawInRect:NSMakeRect(x, y, width, height) fromRect:NSMakeRect(0, 0, [_image size].width, [_image size].height) operation:NSCompositeSourceOver fraction:1.0];
+    }
     
     //Dessinner une croix signifiant la présence de l'image.
     NSBezierPath * bp = [[NSBezierPath alloc] init];
@@ -141,16 +170,32 @@
 	//NSLog(@"New color : %@",newBGColor);
 	if(_image!=nil)[_image release];
 	_image=[image copy];
+    [self actualizeSizeInfo];
 	[self didChangeValueForKey:FigureDrawingContentsKey];
 }
 
 - (void)selectFile{
-    NSLog(@"Select file !!!");
+    //NSLog(@"Select file !!!");
+    NSOpenPanel * p = [NSOpenPanel openPanel];
+    [p setAllowsMultipleSelection:FALSE];
+    [p setAllowedFileTypes:[NSArray arrayWithObjects:@"jpg", @"gif", @"tiff", @"png", nil]];
+    [p setTitle:NSLocalizedStringFromTable(@"selectImage",@"Localizable",@"Tools")];
     
-    
-    
-    
+    if([p runModal]==NSOKButton){
+        NSImage * image= [[NSImage alloc] initWithContentsOfURL:[p URL]];
+        [self setImage:image];
+        [image release];
+    }
 }
 
+- (void)actualizeSizeInfo{
+    [_sizeInfo release];
+    if(_image==nil){
+        _sizeInfo=[[NSString alloc] initWithString:@"-"];
+        return;
+    }
+    _sizeInfo=[[NSString alloc] initWithFormat:@"%0.0f x %0.0f px", _image.size.width, _image.size.height];
+        
+}
 
 @end

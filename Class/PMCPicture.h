@@ -7,14 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 #import "PMCRectangle.h"
 
 @interface PMCPicture : PMCRectangle {
 
     NSImage * _image;
+    NSString * _sizeInfo;
 }
 
 @property (readonly, retain) NSImage * image;
+@property (readonly) NSString* sizeInfo;
 
 - (id)init;
 - (id)initWithData:(NSDictionary*)dico;
@@ -25,5 +28,7 @@
 - (void)draw;
 
 - (void)selectFile;
+
+- (void)actualizeSizeInfo;
 
 @end
