@@ -374,7 +374,7 @@
 		*/
 	}
 	
-	NSLog(@"count : %i",[_page1 objCount]);
+	//NSLog(@"count : %i",[_page1 objCount]);
 	
 	ar = [doc objectForKey:@"Page2"];
 	max=[ar count]-1;
@@ -560,6 +560,13 @@
 		[item setImage:[NSImage imageNamed:@"OutilTrait"]];
 		[item setTarget:self];
 		[item setAction:@selector(tool_NewLine:)];
+    } else if ( [itemIdentifier isEqualToString:@"imageTool"] ) {
+		[item setLabel:NSLocalizedStringFromTable(@"imageTool",@"Localizable",@"Tools")];
+		[item setToolTip:[item label]];
+		[item setPaletteLabel:[item label]];
+		[item setImage:[NSImage imageNamed:@"OutilPicture"]];
+		[item setTarget:self];
+		[item setAction:@selector(tool_NewPicture:)];
     } else if ( [itemIdentifier isEqualToString:@"zoomSelector"] ) {
 		NSRect fRect = [tool_ZoomView frame];
 		
@@ -588,12 +595,12 @@
 			NSToolbarFlexibleSpaceItemIdentifier,
 			NSToolbarCustomizeToolbarItemIdentifier,
 			NSToolbarPrintItemIdentifier,
-			@"zoomSelector", @"lineTool", @"rectTool", @"textTool", @"arrayTool", @"deleteTool", @"orderUpTool", @"orderDoubleUpTool", @"orderDownTool", @"orderDoubleDownTool", nil];
+			@"zoomSelector", @"lineTool", @"rectTool", @"textTool", @"arrayTool", @"imageTool", @"deleteTool", @"orderUpTool", @"orderDoubleUpTool", @"orderDownTool", @"orderDoubleDownTool", nil];
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
-    return [NSArray arrayWithObjects:@"lineTool", @"rectTool", @"textTool", @"arrayTool", NSToolbarFlexibleSpaceItemIdentifier, @"deleteTool", NSToolbarSeparatorItemIdentifier, @"orderDoubleUpTool", @"orderUpTool", @"orderDownTool", @"orderDoubleDownTool", NSToolbarFlexibleSpaceItemIdentifier,
+    return [NSArray arrayWithObjects:@"lineTool", @"rectTool", @"textTool", @"arrayTool", @"imageTool", NSToolbarFlexibleSpaceItemIdentifier, @"deleteTool", NSToolbarSeparatorItemIdentifier, @"orderDoubleUpTool", @"orderUpTool", @"orderDownTool", @"orderDoubleDownTool", NSToolbarFlexibleSpaceItemIdentifier,
 			@"zoomSelector", nil];
 }
 
