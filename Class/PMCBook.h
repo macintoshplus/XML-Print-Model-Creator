@@ -63,6 +63,9 @@
 	
 	int _format;
 	int _orientation;
+    NSString * _title;
+    NSString * _author;
+    NSString * _description;
 	
 	BOOL _firstPage;
 	BOOL _otherPage;
@@ -101,6 +104,9 @@
 
 @property (readonly,assign) int pageFormat;
 @property (readonly,assign) int pageOrientation;
+@property (readonly,copy) NSString * title;
+@property (readonly,copy) NSString * author;
+@property (readonly,copy) NSString * description;
 
 @property (readonly,assign) BOOL firstPage;
 @property (readonly,assign) BOOL otherPage;

@@ -19,6 +19,10 @@
 @synthesize pageFormat=_format;
 @synthesize pageOrientation=_orientation;
 
+@synthesize title=_title;
+@synthesize author=_author;
+@synthesize description=_description;
+
 @synthesize firstPage=_firstPage;
 @synthesize otherPage=_otherPage;
 @synthesize lastPage=_lastPage;
@@ -802,6 +806,44 @@
 	else rect = NSMakeRect(0, 0, [[[_pageFormat objectAtIndex:_format] objectForKey:@"height"] intValue], [[[_pageFormat objectAtIndex:_format] objectForKey:@"width"] intValue]);
 	
 	return rect;
+}
+
+- (void)setTitle:(NSString*)val{
+	if(_title==val) return;
+	NSUndoManager * undo = [self undoManager];
+	[[undo prepareWithInvocationTarget:self] setFormatPagination:_title];
+	if(![undo isUndoing]){
+		[undo setActionName:NSLocalizedStringFromTable(@"UMDocTitle",@"Localizable",@"Undo Manager Action")];
+	}
+	[_title release];
+	_title=[val retain];
+	
+}
+
+
+- (void)setAuthor:(NSString *)val{
+	if(_author==val) return;
+	NSUndoManager * undo = [self undoManager];
+	[[undo prepareWithInvocationTarget:self] setFormatPagination:_author];
+	if(![undo isUndoing]){
+		[undo setActionName:NSLocalizedStringFromTable(@"UMDocAuthor",@"Localizable",@"Undo Manager Action")];
+	}
+	[_author release];
+	_author=[val retain];
+	
+}
+
+
+- (void)setDescription:(NSString*)val{
+	if(_description==val) return;
+	NSUndoManager * undo = [self undoManager];
+	[[undo prepareWithInvocationTarget:self] setFormatPagination:_description];
+	if(![undo isUndoing]){
+		[undo setActionName:NSLocalizedStringFromTable(@"UMDocDescription",@"Localizable",@"Undo Manager Action")];
+	}
+	[_description release];
+	_description=[val retain];
+	
 }
 
 - (void)setFirstPage:(BOOL)val{

@@ -110,7 +110,9 @@
 "UMRowBorderBottomColor" = "Row Border Bottom Color";
 
 "UMImageSet" = "Image Set";
-"" = "";
+"UMDocTitle" = "Document Title";
+"UMDocAuthor" = "Document Author";
+"UMDocDescription" = "Document Description";
 "" = "";
 
 /* Export */
