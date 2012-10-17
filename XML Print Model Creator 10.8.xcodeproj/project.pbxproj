@@ -45,6 +45,7 @@
 		2E66A9C6162E9CA800B51746 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E66A9C5162E9CA800B51746 /* Quartz.framework */; };
 		2EA5B9231628AE7E00090D19 /* PMCPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5B9221628AE7D00090D19 /* PMCPicture.m */; };
 		2EA5B9261628B26E00090D19 /* PictureInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5B9241628B26E00090D19 /* PictureInspector.xib */; };
+		2EA8CC67162ED2F700EC0231 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA8CC66162ED2F700EC0231 /* CoreFoundation.framework */; };
 		2EBA154C1626A1F300BBE970 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15421626A1EA00BBE970 /* Delete.png */; };
 		2EBA155F1626A51C00BBE970 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15561626A51600BBE970 /* Delete@2x.png */; };
 		2EBA15601626A51C00BBE970 /* OrderDoubleDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */; };
@@ -158,6 +159,7 @@
 		2EA5B9211628AE7D00090D19 /* PMCPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPicture.h; path = Class/PMCPicture.h; sourceTree = "<group>"; };
 		2EA5B9221628AE7D00090D19 /* PMCPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPicture.m; path = Class/PMCPicture.m; sourceTree = "<group>"; };
 		2EA5B9251628B26E00090D19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PictureInspector.xib; sourceTree = "<group>"; };
+		2EA8CC66162ED2F700EC0231 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2EBA15421626A1EA00BBE970 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Delete.png; path = Images/Delete.png; sourceTree = "<group>"; };
 		2EBA15561626A51600BBE970 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
 		2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OrderDoubleDown@2x.png"; path = "Images/OrderDoubleDown@2x.png"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA8CC67162ED2F700EC0231 /* CoreFoundation.framework in Frameworks */,
 				2E66A9C6162E9CA800B51746 /* Quartz.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				290B15500F42DFE6007B9473 /* AppKit.framework in Frameworks */,
@@ -215,6 +218,8 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EA8CC66162ED2F700EC0231 /* CoreFoundation.framework */,
+				2E66A9C5162E9CA800B51746 /* Quartz.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -306,7 +311,6 @@
 		2A37F4AAFDCFA73011CA2CEA /* XML Print Model Creator */ = {
 			isa = PBXGroup;
 			children = (
-				2E66A9C5162E9CA800B51746 /* Quartz.framework */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
