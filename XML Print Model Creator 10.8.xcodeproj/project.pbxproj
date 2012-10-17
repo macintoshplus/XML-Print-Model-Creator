@@ -42,6 +42,7 @@
 		29DB3A240F5676E600195F2B /* OutilTableau.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DB3A230F5676E600195F2B /* OutilTableau.png */; };
 		29DB3A5A0F56970100195F2B /* Printer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 29DB3A590F56970100195F2B /* Printer.icns */; };
 		29FD0E8511402EB700BD461D /* FontInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29FD0E8311402EB700BD461D /* FontInspector.xib */; };
+		2E66A9C6162E9CA800B51746 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E66A9C5162E9CA800B51746 /* Quartz.framework */; };
 		2EA5B9231628AE7E00090D19 /* PMCPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5B9221628AE7D00090D19 /* PMCPicture.m */; };
 		2EA5B9261628B26E00090D19 /* PictureInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5B9241628B26E00090D19 /* PictureInspector.xib */; };
 		2EBA154C1626A1F300BBE970 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15421626A1EA00BBE970 /* Delete.png */; };
@@ -153,6 +154,7 @@
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2E66A9C5162E9CA800B51746 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		2EA5B9211628AE7D00090D19 /* PMCPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPicture.h; path = Class/PMCPicture.h; sourceTree = "<group>"; };
 		2EA5B9221628AE7D00090D19 /* PMCPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPicture.m; path = Class/PMCPicture.m; sourceTree = "<group>"; };
 		2EA5B9251628B26E00090D19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PictureInspector.xib; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E66A9C6162E9CA800B51746 /* Quartz.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				290B15500F42DFE6007B9473 /* AppKit.framework in Frameworks */,
 			);
@@ -303,6 +306,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* XML Print Model Creator */ = {
 			isa = PBXGroup;
 			children = (
+				2E66A9C5162E9CA800B51746 /* Quartz.framework */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
@@ -713,7 +717,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "XML Print Model Creator";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -734,7 +737,6 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "XML Print Model Creator";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
