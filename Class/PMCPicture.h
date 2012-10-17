@@ -12,11 +12,9 @@
 @interface PMCPicture : PMCRectangle {
 
     NSImage * _image;
-    NSString * _selectFile;
 }
 
 @property (readonly, retain) NSImage * image;
-@property (readonly, retain) NSString * selectFile;
 
 - (id)init;
 - (id)initWithData:(NSDictionary*)dico;
@@ -26,6 +24,6 @@
 
 - (void)draw;
 
-- (void)setSelectFile:(NSString*)sender;
+- (void)selectFile;
 
 @end
