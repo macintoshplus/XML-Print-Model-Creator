@@ -260,6 +260,9 @@
 	[dico setObject:[NSNumber numberWithBool:_italicFontPagination] forKey:@"DocItalicFontPagination"];
 	[dico setObject:[NSNumber numberWithBool:_underlineFontPagination] forKey:@"DocUnderlineFontPagination"];
 	[dico setObject:_formatPagination forKey:@"DocFormatPagination"];
+	[dico setObject:_title forKey:@"DocTitle"];
+	[dico setObject:_author forKey:@"DocAuthor"];
+	[dico setObject:_description forKey:@"DocDescription"];
 	[dico setObject:_colorFontPagination forKey:@"DocColorFontPagination"];
 	
 	
@@ -316,6 +319,9 @@
 	_italicFontPagination= [[dico objectForKey:@"DocItalicFontPagination"] boolValue];
 	_underlineFontPagination= [[dico objectForKey:@"DocUnderlineFontPagination"] boolValue];
 	_formatPagination= [[dico objectForKey:@"DocFormatPagination"] copy];
+	_title= [[dico objectForKey:@"DocTitle"] copy];
+	_author= [[dico objectForKey:@"DocAuthor"] copy];
+	_description= [[dico objectForKey:@"DocDescription"] copy];
 	_colorFontPagination= [[dico objectForKey:@"DocColorFontPagination"] copy];
 	
 	
