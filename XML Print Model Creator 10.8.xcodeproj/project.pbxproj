@@ -45,6 +45,8 @@
 		2E66A9C6162E9CA800B51746 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E66A9C5162E9CA800B51746 /* Quartz.framework */; };
 		2EA5B9231628AE7E00090D19 /* PMCPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5B9221628AE7D00090D19 /* PMCPicture.m */; };
 		2EA5B9261628B26E00090D19 /* PictureInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5B9241628B26E00090D19 /* PictureInspector.xib */; };
+		2EA5B92D162F00A600090D19 /* OutilPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5B92B162F00A600090D19 /* OutilPicture.png */; };
+		2EA5B92E162F00A600090D19 /* OutilPicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA5B92C162F00A600090D19 /* OutilPicture@2x.png */; };
 		2EA8CC67162ED2F700EC0231 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA8CC66162ED2F700EC0231 /* CoreFoundation.framework */; };
 		2EBA154C1626A1F300BBE970 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15421626A1EA00BBE970 /* Delete.png */; };
 		2EBA155F1626A51C00BBE970 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA15561626A51600BBE970 /* Delete@2x.png */; };
@@ -159,6 +161,8 @@
 		2EA5B9211628AE7D00090D19 /* PMCPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMCPicture.h; path = Class/PMCPicture.h; sourceTree = "<group>"; };
 		2EA5B9221628AE7D00090D19 /* PMCPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMCPicture.m; path = Class/PMCPicture.m; sourceTree = "<group>"; };
 		2EA5B9251628B26E00090D19 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/PictureInspector.xib; sourceTree = "<group>"; };
+		2EA5B92B162F00A600090D19 /* OutilPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OutilPicture.png; path = Images/OutilPicture.png; sourceTree = "<group>"; };
+		2EA5B92C162F00A600090D19 /* OutilPicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OutilPicture@2x.png"; path = "Images/OutilPicture@2x.png"; sourceTree = "<group>"; };
 		2EA8CC66162ED2F700EC0231 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		2EBA15421626A1EA00BBE970 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Delete.png; path = Images/Delete.png; sourceTree = "<group>"; };
 		2EBA15561626A51600BBE970 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete@2x.png"; path = "Images/Delete@2x.png"; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 		290B13460F41ABDE007B9473 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2EA5B92B162F00A600090D19 /* OutilPicture.png */,
+				2EA5B92C162F00A600090D19 /* OutilPicture@2x.png */,
 				2EBA15561626A51600BBE970 /* Delete@2x.png */,
 				2EBA15571626A51700BBE970 /* OrderDoubleDown@2x.png */,
 				2EBA15581626A51700BBE970 /* OrderDoubleUp@2x.png */,
@@ -505,6 +511,8 @@
 				2EBA15661626A51C00BBE970 /* OutilTexte@2x.png in Resources */,
 				2EBA15671626A51C00BBE970 /* OutilTrait@2x.png in Resources */,
 				2EA5B9261628B26E00090D19 /* PictureInspector.xib in Resources */,
+				2EA5B92D162F00A600090D19 /* OutilPicture.png in Resources */,
+				2EA5B92E162F00A600090D19 /* OutilPicture@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
