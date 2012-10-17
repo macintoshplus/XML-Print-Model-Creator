@@ -22,6 +22,7 @@
 "NRect" = "Add Rectangle";
 "NText" = "Add Text";
 "NArray" = "Add Array";
+"NPicture" = "Add Picture";
 
 /* Undo Manager Action */
 "UMEnable" = "Enable";
@@ -107,7 +108,8 @@
 "UMRowBorderBottomVisibility" = "Row Border Bottom Visibility";
 "UMRowBorderBottomWidth" = "Row Border Bottom Width";
 "UMRowBorderBottomColor" = "Row Border Bottom Color";
-"" = "";
+
+"UMImageSet" = "Image Set";
 "" = "";
 "" = "";
 
@@ -119,10 +121,11 @@
 "EXModelTitle" = "Export...";
 "EXModelTo" = "Export to :";
 "EXModelButton" = "Export";
-"EXSVGAlertTitle" = "";
+"EXSVGAlertTitle" = "Support partiel du format SVG";
 "EXSVGAlertText" = "Le format SVG ne supporte pas la totalité des fonctionalités des modèles d'édition. En continuant, vous risquez de perdre certains réglages. Par exemple, il faut un fichier par page. Etes-vous sûr de vouloir continuer ?";
 "EXSVGAlertDefault" = "Continue";
 "EXSVGAlertAlternate" = "Cancel";
+
 
 /* Import */
 
@@ -144,6 +147,7 @@
 "orderDoubleDownTool" = "Send To Back";
 "editRow" = "Edit Rows";
 "editCol" = "Edit Columns";
+"selectImage" = "Select a image";
 
 /* Objects */
 "OBJNew" = "New";
@@ -151,3 +155,4 @@
 "PMCRectangle" = "Rect";
 "PMCText" = "Text";
 "PMCTableau" = "Array";
+"PMCPicture" = "Picture";

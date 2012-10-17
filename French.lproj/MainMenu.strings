@@ -353,11 +353,32 @@
 /* Class = "NSMenuItem"; title = "Export Model..."; ObjectID = "469"; */
 "469.title" = "Exporter le modèle...";
 
-/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "474"; */
-"474.title" = "Vérifier les mise à jour...";
-
 /* Class = "NSMenuItem"; title = "Export to Picture..."; ObjectID = "476"; */
 "476.title" = "Exporter en image...";
 
 /* Class = "NSMenuItem"; title = "Import old XML Source..."; ObjectID = "487"; */
 "487.title" = "Importer un ancien fichier source...";
+
+/* Class = "NSMenuItem"; title = "Insert a variable"; ObjectID = "489"; */
+"489.title" = "Insérer une variable";
+
+/* Class = "NSMenu"; title = "Insert a variable"; ObjectID = "490"; */
+"490.title" = "Insérer une variable";
+
+/* Class = "NSMenuItem"; title = "{PAGE}"; ObjectID = "491"; */
+"491.title" = "{PAGE}";
+
+/* Class = "NSMenuItem"; title = "{TOTALPAGE}"; ObjectID = "492"; */
+"492.title" = "{TOTALPAGE}";
+
+/* Class = "NSMenuItem"; title = "{DATE}"; ObjectID = "493"; */
+"493.title" = "{DATE}";
+
+/* Class = "NSMenuItem"; title = "{TIME}"; ObjectID = "495"; */
+"495.title" = "{TIME}";
+
+/* Class = "NSMenuItem"; title = "Add Picture"; ObjectID = "496"; */
+"496.title" = "Ajouter une image";
+
+/* Class = "NSMenuItem"; title = "Export to SVG..."; ObjectID = "498"; */
+"498.title" = "Exporter en SVG...";
