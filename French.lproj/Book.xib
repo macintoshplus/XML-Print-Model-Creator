@@ -205,13 +205,13 @@
 										<object class="NSCustomView" id="838545841">
 											<reference key="NSNextResponder" ref="890405284"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{271, 579}</string>
+											<string key="NSFrameSize">{260, 579}</string>
 											<reference key="NSSuperview" ref="890405284"/>
 											<reference key="NSNextKeyView" ref="212630536"/>
 											<string key="NSClassName">NSView</string>
 										</object>
 									</array>
-									<string key="NSFrameSize">{271, 579}</string>
+									<string key="NSFrameSize">{260, 579}</string>
 									<reference key="NSSuperview" ref="530766406"/>
 									<reference key="NSNextKeyView" ref="838545841"/>
 									<reference key="NSDocView" ref="838545841"/>
@@ -229,7 +229,7 @@
 								<object class="NSScroller" id="707902885">
 									<reference key="NSNextResponder" ref="530766406"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{257, 0}, {14, 579}}</string>
+									<string key="NSFrame">{{260, 0}, {11, 579}}</string>
 									<reference key="NSSuperview" ref="530766406"/>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<int key="NSsFlags">256</int>
@@ -289,7 +289,7 @@
 					<string key="NSFrameSize">{937, 599}</string>
 					<reference key="NSNextKeyView" ref="49920099"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 900}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1680, 1050}}</string>
 				<string key="NSMinSize">{507, 435}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<int key="NSWindowCollectionBehavior">128</int>
@@ -451,10 +451,11 @@
 											<reference key="NSNextKeyView" ref="709534689"/>
 											<reference key="NSTableView" ref="844322950"/>
 										</object>
-										<object class="_NSCornerView" key="NSCornerView">
-											<nil key="NSNextResponder"/>
+										<object class="_NSCornerView" key="NSCornerView" id="557429051">
+											<reference key="NSNextResponder" ref="562301470"/>
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{-26, 0}, {16, 17}}</string>
+											<reference key="NSSuperview" ref="562301470"/>
 										</object>
 										<array class="NSMutableArray" key="NSTableColumns">
 											<object class="NSTableColumn" id="967132665">
@@ -594,6 +595,7 @@
 								<reference key="NSBGColor" ref="859613855"/>
 								<int key="NScvFlags">4</int>
 							</object>
+							<reference ref="557429051"/>
 						</array>
 						<string key="NSFrameSize">{271, 442}</string>
 						<reference key="NSSuperview" ref="181955734"/>
@@ -963,7 +965,7 @@
 								<int key="NSTag">1</int>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">0</int>
-								<object class="NSCustomResource" key="NSNormalImage" id="602880987">
+								<object class="NSCustomResource" key="NSNormalImage" id="813989219">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">NSRadioButton</string>
 								</object>
@@ -983,7 +985,7 @@
 								<reference key="NSControlView" ref="507767028"/>
 								<int key="NSButtonFlags">1211912448</int>
 								<int key="NSButtonFlags2">0</int>
-								<reference key="NSNormalImage" ref="602880987"/>
+								<reference key="NSNormalImage" ref="813989219"/>
 								<reference key="NSAlternateImage" ref="276860166"/>
 								<string key="NSAlternateContents"/>
 								<int key="NSPeriodicDelay">400</int>
@@ -1001,7 +1003,7 @@
 							<reference key="NSSupport" ref="209454588"/>
 							<int key="NSButtonFlags">1211912448</int>
 							<int key="NSButtonFlags2">0</int>
-							<reference key="NSNormalImage" ref="602880987"/>
+							<reference key="NSNormalImage" ref="813989219"/>
 							<reference key="NSAlternateImage" ref="276860166"/>
 							<string key="NSAlternateContents"/>
 							<int key="NSPeriodicDelay">400</int>
@@ -1956,11 +1958,13 @@
 						<string key="delete:">id</string>
 						<string key="exportToModel:">id</string>
 						<string key="exportToPicture:">id</string>
+						<string key="exportToSVG:">id</string>
 						<string key="export_extensionsChange:">id</string>
 						<string key="importOldXMLSources:">id</string>
 						<string key="paste:">id</string>
 						<string key="tool_NewArray:">id</string>
 						<string key="tool_NewLine:">id</string>
+						<string key="tool_NewPicture:">id</string>
 						<string key="tool_NewRect:">id</string>
 						<string key="tool_NewText:">id</string>
 						<string key="tool_ZoomChange:">id</string>
@@ -1991,6 +1995,10 @@
 							<string key="name">exportToPicture:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="exportToSVG:">
+							<string key="name">exportToSVG:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="export_extensionsChange:">
 							<string key="name">export_extensionsChange:</string>
 							<string key="candidateClassName">id</string>
@@ -2009,6 +2017,10 @@
 						</object>
 						<object class="IBActionInfo" key="tool_NewLine:">
 							<string key="name">tool_NewLine:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tool_NewPicture:">
+							<string key="name">tool_NewPicture:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="tool_NewRect:">

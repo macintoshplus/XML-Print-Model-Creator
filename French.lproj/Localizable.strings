@@ -119,6 +119,10 @@
 "EXModelTitle" = "Export...";
 "EXModelTo" = "Export to :";
 "EXModelButton" = "Export";
+"EXSVGAlertTitle" = "";
+"EXSVGAlertText" = "Le format SVG ne supporte pas la totalité des fonctionalités des modèles d'édition. En continuant, vous risquez de perdre certains réglages. Etes-vous sûr de vouloir continuer ?";
+"EXSVGAlertDefault" = "Continue";
+"EXSVGAlertAlternate" = "Cancel";
 
 /* Import */
 
