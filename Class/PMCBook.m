@@ -1479,6 +1479,77 @@
     if([a runModal]==NSAlertAlternateReturn){
         return;
     }
+    
+    NSSavePanel * panel = [NSSavePanel savePanel];
+	[panel setCanCreateDirectories:YES];
+	[panel setTitle:NSLocalizedStringFromTable(@"EXSVGTitle",@"Localizable",@"Export")];
+	[panel setPrompt:NSLocalizedStringFromTable(@"EXSVGButton",@"Localizable",@"Export")];
+	[panel setNameFieldLabel:NSLocalizedStringFromTable(@"EXSVGTo",@"Localizable",@"Export")];
+	[panel setAllowedFileTypes:[NSArray arrayWithObject:@"svg"]];
+	[panel setCanSelectHiddenExtension:YES];
+	//[panel setDirectory:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent]];
+	
+	//Ancienne methode pour changer l'extension
+	//NSString * proposedName = [[[[[self fileURL] absoluteString] lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"xmlpm"];
+	
+	//Nouvelle méhode ajouté le 29/07/2010
+	NSString * nname = [[[self displayName] stringByDeletingPathExtension] stringByAppendingPathExtension:@"svg"];
+	
+	[panel setNameFieldStringValue:nname];
+    [panel setDirectoryURL:[NSURL URLWithString:[[[self fileURL] absoluteString] stringByDeletingLastPathComponent]]];
+    
+	//[panel setMessage:@"Please select destination and name for export model :"];
+	if([panel runModal]!=NSOKButton){
+        return;
+    }
+    
+	NSXMLElement *root = (NSXMLElement *)[NSXMLNode elementWithName:@"svg"];
+	[root addAttribute:[NSXMLNode attributeWithName:@"version" stringValue:@"1.0"]];
+    [root addAttribute:[NSXMLNode attributeWithName:@"xmlns" stringValue:@"http://www.w3.org/2000/svg"]];
+    
+    int width=[[[_pageFormat objectAtIndex:_format] objectForKey:@"width"] intValue];
+    int height=[[[_pageFormat objectAtIndex:_format] objectForKey:@"height"] intValue];
+	
+	if(_orientation!=0){
+        int att=width;
+        width=height;
+        height=att;
+    }
+    
+	[root addAttribute:[NSXMLNode attributeWithName:@"width" stringValue:[NSString stringWithFormat:@"%ipx",width]]];
+	[root addAttribute:[NSXMLNode attributeWithName:@"height" stringValue:[NSString stringWithFormat:@"%ipx",height]]];
+    
+    //set up generic XML doc data (<?xml version="1.0" encoding="UTF-8"?>)
+    NSXMLDocument *xmlDoc = [[NSXMLDocument alloc] initWithRootElement:root];
+    [xmlDoc setVersion:@"1.0"];
+    [xmlDoc setCharacterEncoding:@"UTF-8"];
+    [xmlDoc setStandalone:NO];
+    
+    NSXMLDTD *dtd = [[NSXMLNode alloc] initWithKind:NSXMLDTDKind];
+    [dtd setName:@"svg"];
+    [dtd setPublicID:@"-//W3C//DTD SVG 20010904//EN"];
+    [dtd setSystemID:@"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"];
+    //NSXMLDTD * dtd= [NSXMLDTD DTDNodeWithXMLString:@"<!DOCTYPE svg PUBLIC \"" \"\">"];
+    
+    
+    [xmlDoc setDTD:dtd];
+    //[xmlDoc addChild:dtd];
+	
+	//Ajout des enfants pour le document
+	/*NSXMLElement *marginNode = [NSXMLNode elementWithName:@"margin"];
+	[root addChild:marginNode];
+	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Top" stringValue:@"20"]];
+	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Bottom" stringValue:@"20"]];
+	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Right" stringValue:@"20"]];
+	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Left" stringValue:@"20"]];*/
+	
+    
+	NSData * data = [xmlDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
+    [xmlDoc release];
+    
+	[data writeToURL:[panel URL] atomically:YES];
+    
+    
 }
 
 
