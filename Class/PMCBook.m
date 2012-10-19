@@ -1571,41 +1571,6 @@
         [bagNode addChild:authorNode];
         
 	}
-    
-    /*
-     
-     <metadata>
-     <rdf:RDF
-     xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc = "http://purl.org/dc/elements/1.1/" >
-     <rdf:Description about="http://exemple.org/montruc"
-     dc:title="Rapport financier sur montruc"
-     dc:description="$three $bar $thousands $dollars $from 1998 $through 2000"
-     dc:publisher="Organisation Exemple"
-     dc:date="2000-04-11"
-     dc:format=""
-     dc:language="fr" >
-     <dc:creator>
-     <rdf:Bag>
-     <rdf:li>Irving BIRD</rdf:li>
-     <rdf:li>Mary LAMBERT</rdf:li>
-     </rdf:Bag>
-     </dc:creator>
-     </rdf:Description>
-     </rdf:RDF>
-     </metadata>
-     
-     */
-    
-    
-	//Ajout des enfants pour le document
-	/*NSXMLElement *marginNode = [NSXMLNode elementWithName:@"margin"];
-	[root addChild:marginNode];
-	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Top" stringValue:@"20"]];
-	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Bottom" stringValue:@"20"]];
-	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Right" stringValue:@"20"]];
-	[marginNode addAttribute:[NSXMLNode attributeWithName:@"Left" stringValue:@"20"]];*/
 	
     
 	NSData * data = [xmlDoc XMLDataWithOptions:NSXMLNodePrettyPrint];
