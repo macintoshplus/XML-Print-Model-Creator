@@ -1525,16 +1525,80 @@
     [xmlDoc setCharacterEncoding:@"UTF-8"];
     [xmlDoc setStandalone:NO];
     
-    NSXMLDTD *dtd = [[NSXMLNode alloc] initWithKind:NSXMLDTDKind];
+    NSXMLDTD *dtd = (NSXMLDTD*)[[NSXMLNode alloc] initWithKind:NSXMLDTDKind];
     [dtd setName:@"svg"];
     [dtd setPublicID:@"-//W3C//DTD SVG 20010904//EN"];
     [dtd setSystemID:@"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"];
-    //NSXMLDTD * dtd= [NSXMLDTD DTDNodeWithXMLString:@"<!DOCTYPE svg PUBLIC \"" \"\">"];
-    
-    
     [xmlDoc setDTD:dtd];
-    //[xmlDoc addChild:dtd];
-	
+    
+    if(_description!=nil && ![_description isEqualToString:@""]){
+        NSXMLElement *descNode = [NSXMLNode elementWithName:@"desc"];
+        [root addChild:descNode];
+        [descNode setStringValue:_description];
+	}
+    if(_title!=nil && ![_title isEqualToString:@""]){
+        NSXMLElement *descNode = [NSXMLNode elementWithName:@"title"];
+        [root addChild:descNode];
+        [descNode setStringValue:_title];
+	}
+    NSXMLElement *metaNode = [NSXMLNode elementWithName:@"metadata"];
+        [root addChild:metaNode];
+        NSXMLElement *rdfNode = [NSXMLNode elementWithName:@"rdf:RDF"];
+        //[rdfNode setNamespaces:[NSArray arrayWithObjects:@"rdf", nil]];
+        [rdfNode addAttribute:[NSXMLNode attributeWithName:@"xmlns:rdf" stringValue:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#"]];
+        [rdfNode addAttribute:[NSXMLNode attributeWithName:@"xmlns:rdfs" stringValue:@"http://www.w3.org/2000/01/rdf-schema#"]];
+        [rdfNode addAttribute:[NSXMLNode attributeWithName:@"xmlns:dc" stringValue:@"http://purl.org/dc/elements/1.1/"]];
+        [metaNode addChild:rdfNode];
+        
+        
+        NSXMLElement *descNode = [NSXMLNode elementWithName:@"rdf:Description"];
+        //[descNode setNamespaces:[NSArray arrayWithObjects:@"rdf", nil]];
+        [descNode addAttribute:[NSXMLNode attributeWithName:@"about" stringValue:@"http://jbnahan.fr/model"]];
+        if(_author!=nil) [descNode addAttribute:[NSXMLNode attributeWithName:@"dc:title" stringValue:_title]];
+        if(_description!=nil) [descNode addAttribute:[NSXMLNode attributeWithName:@"dc:description" stringValue:_description]];
+        [descNode addAttribute:[NSXMLNode attributeWithName:@"dc:publisher" stringValue:@"XML Print Model Creator"]];
+        [descNode addAttribute:[NSXMLNode attributeWithName:@"dc:date" stringValue:[[NSDate date] descriptionWithCalendarFormat:@"%Y-%m-%d" timeZone:nil locale:[NSLocale currentLocale]]]];
+        [descNode addAttribute:[NSXMLNode attributeWithName:@"dc:format" stringValue:@"image/svg+xml"]];
+        [descNode addAttribute:[NSXMLNode attributeWithName:@"dc:language" stringValue:@"en"]];
+        [rdfNode addChild:descNode];
+    if(_author!=nil && ![_author isEqualToString:@""]){
+        NSXMLElement *dcNode = [NSXMLNode elementWithName:@"dc:creator"];
+        [rdfNode addChild:dcNode];
+        NSXMLElement *bagNode = [NSXMLNode elementWithName:@"rdf:Bag"];
+        [dcNode addChild:bagNode];
+        NSXMLElement *authorNode = [NSXMLNode elementWithName:@"rdf:li"];
+        [authorNode setStringValue:_author];
+        [bagNode addChild:authorNode];
+        
+	}
+    
+    /*
+     
+     <metadata>
+     <rdf:RDF
+     xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc = "http://purl.org/dc/elements/1.1/" >
+     <rdf:Description about="http://exemple.org/montruc"
+     dc:title="Rapport financier sur montruc"
+     dc:description="$three $bar $thousands $dollars $from 1998 $through 2000"
+     dc:publisher="Organisation Exemple"
+     dc:date="2000-04-11"
+     dc:format=""
+     dc:language="fr" >
+     <dc:creator>
+     <rdf:Bag>
+     <rdf:li>Irving BIRD</rdf:li>
+     <rdf:li>Mary LAMBERT</rdf:li>
+     </rdf:Bag>
+     </dc:creator>
+     </rdf:Description>
+     </rdf:RDF>
+     </metadata>
+     
+     */
+    
+    
 	//Ajout des enfants pour le document
 	/*NSXMLElement *marginNode = [NSXMLNode elementWithName:@"margin"];
 	[root addChild:marginNode];
