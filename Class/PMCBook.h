@@ -32,6 +32,7 @@
     IBOutlet NSScrollView *main_ScroolView;
     IBOutlet NSScrollView *main_ScroolPropertyView;
 	IBOutlet NSView * tool_ZoomView;
+	IBOutlet NSView * tool_PagesView;
 	IBOutlet NSPopUpButton * tool_ZoomMenu;
 	IBOutlet NSPopUpButton * ol_PageSelector;
 	IBOutlet NSTableView * ol_ObjectTableView;

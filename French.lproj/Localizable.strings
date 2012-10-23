@@ -142,6 +142,7 @@
 
 /* Tools */
 "zoomSelectorTitle" = "Zoom";
+"pagesSelectorTitle" = "Current page";
 "lineTool" = "Line";
 "rectTool" = "Rect";
 "textTool" = "Text";

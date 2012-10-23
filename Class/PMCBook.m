@@ -591,7 +591,16 @@
 		[item setPaletteLabel:[item label]];
 		[item setView:tool_ZoomView];
 		[item setMinSize:fRect.size];
-		[item setMaxSize:fRect.size];	
+		[item setMaxSize:fRect.size];
+    } else if ( [itemIdentifier isEqualToString:@"pagesSelector"] ) {
+		NSRect fRect = [tool_PagesView frame];
+		
+		[item setLabel:NSLocalizedStringFromTable(@"pagesSelectorTitle",@"Localizable",@"Tools")];
+		[item setToolTip:[item label]];
+		[item setPaletteLabel:[item label]];
+		[item setView:tool_PagesView];
+		[item setMinSize:fRect.size];
+		[item setMaxSize:fRect.size];
     }/* else if ( [itemIdentifier isEqualToString:@"ProgrammerDeviceItem"] ) {
 		NSRect fRect = [tool_ProgrammerView frame];
 		
@@ -611,12 +620,12 @@
 			NSToolbarFlexibleSpaceItemIdentifier,
 			NSToolbarCustomizeToolbarItemIdentifier,
 			NSToolbarPrintItemIdentifier,
-			@"zoomSelector", @"lineTool", @"rectTool", @"textTool", @"arrayTool", @"imageTool", @"deleteTool", @"orderUpTool", @"orderDoubleUpTool", @"orderDownTool", @"orderDoubleDownTool", nil];
+			@"zoomSelector",@"pagesSelector", @"lineTool", @"rectTool", @"textTool", @"arrayTool", @"imageTool", @"deleteTool", @"orderUpTool", @"orderDoubleUpTool", @"orderDownTool", @"orderDoubleDownTool", nil];
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar
 {
-    return [NSArray arrayWithObjects:@"lineTool", @"rectTool", @"textTool", @"arrayTool", @"imageTool", NSToolbarFlexibleSpaceItemIdentifier, @"deleteTool", NSToolbarSeparatorItemIdentifier, @"orderDoubleUpTool", @"orderUpTool", @"orderDownTool", @"orderDoubleDownTool", NSToolbarFlexibleSpaceItemIdentifier,
+    return [NSArray arrayWithObjects:@"lineTool", @"rectTool", @"textTool", @"arrayTool", @"imageTool", NSToolbarFlexibleSpaceItemIdentifier,@"pagesSelector", NSToolbarFlexibleSpaceItemIdentifier, @"deleteTool", NSToolbarSeparatorItemIdentifier, @"orderDoubleUpTool", @"orderUpTool", @"orderDownTool", @"orderDoubleDownTool", NSToolbarFlexibleSpaceItemIdentifier,
 			@"zoomSelector", nil];
 }
 
@@ -775,7 +784,7 @@
 }
 
 - (CGFloat)splitView:(NSSplitView *)sender constrainSplitPosition:(CGFloat)proposedPosition ofSubviewAt:(NSInteger)offset{
-	//NSLog(@"---- position : %f ; subview at : %i", proposedPosition, offset);
+	NSLog(@"---- position : %f ; subview at : %li", proposedPosition, offset);
 	/*
 	if(sender==main_SplitVertical){
 		//NSLog(@"new position : %f ; subview at : %i", proposedPosition, offset);
@@ -788,26 +797,40 @@
 
 - (CGFloat)splitView:(NSSplitView *)sender constrainMinCoordinate:(CGFloat)proposedCoord ofSubviewAt:(NSInteger)offset
 {
-	if(sender==main_SplitVertical){
-		if (offset == 0)
-			return 217.;
-		else 
-			return proposedCoord;
+	NSLog(@"constrainMinCoordinate %li %f", offset, proposedCoord);
+    if(sender==main_SplitVertical){
+        if (offset == 0){ //premier split
+            NSLog(@"217");
+            return 217.;
+        }
 	}
+    NSLog(@"proposed");
 	return proposedCoord;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
 - (CGFloat)splitView:(NSSplitView *)sender constrainMaxCoordinate:(CGFloat)proposedCoord ofSubviewAt:(NSInteger)offset
 {
+    NSLog(@"constrainMaxCoordinate %li %f", offset, proposedCoord);
+
 	if(sender==main_SplitVertical){
-		if (offset == 0)
+		if (offset == 0){ //premier split
+            NSLog(@"300");
+            [sender setNeedsDisplay:true];
 			return 300.;
-		else 
-			return proposedCoord;
+		}
 	}
+    NSLog(@"proposed");
 	return proposedCoord;
 }
+
+- (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize{
+    NSLog(@"resize...");
+    
+    [main_SplitVertical adjustSubviews];
+    return frameSize;
+}
+
 
 #pragma mark -
 #pragma mark Setter Getter
