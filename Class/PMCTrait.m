@@ -117,7 +117,6 @@
 - (void)draw {
 	//NSLog(@"Draw Trait de l'objet : %@",_name);
     // Drawing code here.
-	//[_vectorPath release];
 	_vectorPath = [[NSMutableArray alloc] init];
 	//NSRect sensitiveRect;
 	if(width>height){ //largeur supérieur à la longeur: ligne horizontale
@@ -127,14 +126,7 @@
 		correctedFrame = NSMakeRect(x-(float)(width/2.0), y, width, height);
 		_width=width;
 	}
-	//correctedFrame=sensitiveRect;
-	/*
-	 if(_sizeAndPosition.size.width>_sizeAndPosition.size.height){ //largeur supérieur à la longeur: ligne horizontale
-	 sensitiveRect = NSMakeRect(_sizeAndPosition.origin.x, _sizeAndPosition.origin.y-(_sizeAndPosition.size.height/2), _sizeAndPosition.size.width, _sizeAndPosition.size.height);
-	 }else{ //ligne vertivale
-	 sensitiveRect = NSMakeRect(_sizeAndPosition.origin.x-(_sizeAndPosition.size.width/2), _sizeAndPosition.origin.y, _sizeAndPosition.size.width, _sizeAndPosition.size.height);
-	 }
-	*/
+	
 	NSBezierPath * bp1 = [NSBezierPath bezierPathWithRect:correctedFrame];
 	[_vectorPath addObject:[[bp1 retain] autorelease]];
 	
@@ -148,13 +140,7 @@
 	}else{ //ligne vertivale
 		[bp lineToPoint:NSMakePoint(x, height+y)];
 	}
-	/*
-	 if(_sizeAndPosition.size.width>_sizeAndPosition.size.height){ //largeur supérieur à la longeur: ligne horizontale
-	 [bp lineToPoint:NSMakePoint(_sizeAndPosition.size.width+_sizeAndPosition.origin.x, _sizeAndPosition.origin.y)];
-	 }else{ //ligne vertivale
-	 [bp lineToPoint:NSMakePoint(_sizeAndPosition.origin.x, _sizeAndPosition.size.height+_sizeAndPosition.origin.y)];
-	 }
-	*/
+    
 	[bp stroke];
 	[_vectorPath addObject:[[bp retain] autorelease]];
 }
@@ -194,19 +180,6 @@
 	_style=newStyle;
 	[self didChangeValueForKey:FigureDrawingContentsKey];
 }
-
-/*
-- (void)setWidth:(int)newWidth
-{
-	[self willChangeValueForKey:FigureDrawingContentsKey];
-	_width=newWidth;
-	[self didChangeValueForKey:FigureDrawingContentsKey];
-}
-
-- (int)getWidth
-{
-	return _width;
-}*/
 
 - (void)setSizeAndPosition:(NSRect)rect{
 	[self willChangeValueForKey:FigureDrawingBoundsKey];
