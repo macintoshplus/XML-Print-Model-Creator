@@ -313,7 +313,7 @@
 									<string key="NSTitle">Exporter en SVG...</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
-									<object class="NSCustomResource" key="NSImage" id="856362855">
+									<object class="NSCustomResource" key="NSImage" id="356713637">
 										<string key="NSClassName">NSImage</string>
 										<string key="NSResourceName">In Dev</string>
 									</object>
@@ -710,12 +710,21 @@
 									<string key="NSKeyEquiv">i</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSImage" ref="856362855"/>
+									<reference key="NSImage" ref="356713637"/>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 									<object class="NSAttributedString" key="NSAttributedTitle">
 										<string key="NSString"/>
 									</object>
+								</object>
+								<object class="NSMenuItem" id="486358456">
+									<reference key="NSMenu" ref="510263114"/>
+									<string key="NSTitle">Add Circle</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSImage" ref="356713637"/>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
 								</object>
 								<object class="NSMenuItem" id="126613730">
 									<reference key="NSMenu" ref="510263114"/>
@@ -1145,7 +1154,7 @@
 									<string key="NSTitle">Insérer une variable</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSImage" ref="856362855"/>
+									<reference key="NSImage" ref="356713637"/>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 									<string key="NSAction">submenuAction:</string>
@@ -2836,6 +2845,7 @@
 							<reference ref="970685249"/>
 							<reference ref="411082457"/>
 							<reference ref="290989030"/>
+							<reference ref="486358456"/>
 						</array>
 						<reference key="parent" ref="550574832"/>
 					</object>
@@ -2969,6 +2979,11 @@
 						<int key="objectID">498</int>
 						<reference key="object" ref="549352381"/>
 						<reference key="parent" ref="720053764"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">500</int>
+						<reference key="object" ref="486358456"/>
+						<reference key="parent" ref="510263114"/>
 					</object>
 				</array>
 			</object>
@@ -3109,6 +3124,7 @@
 				<string key="496.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="498.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="500.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3129,7 +3145,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">499</int>
+			<int key="maxID">501</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3274,6 +3290,7 @@
 						<string key="ol_ObjectTableView">NSTableView</string>
 						<string key="ol_PageSelector">NSPopUpButton</string>
 						<string key="pagesArrayController">NSArrayController</string>
+						<string key="tool_PagesView">NSView</string>
 						<string key="tool_ZoomMenu">NSPopUpButton</string>
 						<string key="tool_ZoomView">NSView</string>
 					</dictionary>
@@ -3333,6 +3350,10 @@
 						<object class="IBToOneOutletInfo" key="pagesArrayController">
 							<string key="name">pagesArrayController</string>
 							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tool_PagesView">
+							<string key="name">tool_PagesView</string>
+							<string key="candidateClassName">NSView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="tool_ZoomMenu">
 							<string key="name">tool_ZoomMenu</string>
