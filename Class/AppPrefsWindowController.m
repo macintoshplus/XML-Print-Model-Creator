@@ -1,6 +1,12 @@
 //
 //  AppPrefsWindowController.m
+//  XML Print Model Creator
 //
+//  Created by Jean-Baptiste Nahan on 08/02/09.
+//  Copyright 2009 Jean-Baptiste Nahan. All rights reserved.
+//
+
+
 
 
 #import "AppPrefsWindowController.h"
